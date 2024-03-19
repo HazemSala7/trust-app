@@ -1,0 +1,14 @@
+io.flutter.plugins.firebase.core.firebase_core-jetified-firebase-common-20.4.2-0 C:\Users\raya co\.gradle\caches\transforms-3\2f0f819bfe50fc19daa26147d2821e9e\transformed\jetified-firebase-common-20.4.2\res
+io.flutter.plugins.firebase.core.firebase_core-jetified-window-1.0.0-beta04-1 C:\Users\raya co\.gradle\caches\transforms-3\60762251fae452debfca1bd89aea51ff\transformed\jetified-window-1.0.0-beta04\res
+io.flutter.plugins.firebase.core.firebase_core-core-1.6.0-2 C:\Users\raya co\.gradle\caches\transforms-3\782481524675b5e826749c7ea85d5ccf\transformed\core-1.6.0\res
+io.flutter.plugins.firebase.core.firebase_core-jetified-annotation-experimental-1.1.0-3 C:\Users\raya co\.gradle\caches\transforms-3\c6a2258bcd9d71e4272c1711a07b9229\transformed\jetified-annotation-experimental-1.1.0\res
+io.flutter.plugins.firebase.core.firebase_core-jetified-play-services-basement-18.1.0-4 C:\Users\raya co\.gradle\caches\transforms-3\ea4389520b701c4a0a0ff18c1f3c86a3\transformed\jetified-play-services-basement-18.1.0\res
+io.flutter.plugins.firebase.core.firebase_core-jetified-window-java-1.0.0-beta04-5 C:\Users\raya co\.gradle\caches\transforms-3\fee2c687881b07b45fdc79ddebd334d4\transformed\jetified-window-java-1.0.0-beta04\res
+io.flutter.plugins.firebase.core.firebase_core-main-6 C:\Users\raya co\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_core-2.21.0\android\src\main\res
+io.flutter.plugins.firebase.core.firebase_core-release-7 C:\Users\raya co\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_core-2.21.0\android\src\release\res
+io.flutter.plugins.firebase.core.firebase_core-pngs-8 F:\Well App Flutter\well_app_flutter\build\firebase_core\generated\res\pngs\release
+io.flutter.plugins.firebase.core.firebase_core-resValues-9 F:\Well App Flutter\well_app_flutter\build\firebase_core\generated\res\resValues\release
+io.flutter.plugins.firebase.core.firebase_core-rs-10 F:\Well App Flutter\well_app_flutter\build\firebase_core\generated\res\rs\release
+io.flutter.plugins.firebase.core.firebase_core-mergeReleaseResources-11 F:\Well App Flutter\well_app_flutter\build\firebase_core\intermediates\incremental\release\mergeReleaseResources\merged.dir
+io.flutter.plugins.firebase.core.firebase_core-mergeReleaseResources-12 F:\Well App Flutter\well_app_flutter\build\firebase_core\intermediates\incremental\release\mergeReleaseResources\stripped.dir
+io.flutter.plugins.firebase.core.firebase_core-merged_res-13 F:\Well App Flutter\well_app_flutter\build\firebase_core\intermediates\merged_res\release

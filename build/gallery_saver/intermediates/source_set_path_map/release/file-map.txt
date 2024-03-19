@@ -1,0 +1,15 @@
+carnegietechnologies.gallery_saver-media-1.0.0-0 C:\Users\raya co\.gradle\caches\transforms-3\22e4fea7dacfd273eee2100801ad738d\transformed\media-1.0.0\res
+carnegietechnologies.gallery_saver-jetified-window-1.0.0-beta04-1 C:\Users\raya co\.gradle\caches\transforms-3\60762251fae452debfca1bd89aea51ff\transformed\jetified-window-1.0.0-beta04\res
+carnegietechnologies.gallery_saver-core-1.6.0-2 C:\Users\raya co\.gradle\caches\transforms-3\782481524675b5e826749c7ea85d5ccf\transformed\core-1.6.0\res
+carnegietechnologies.gallery_saver-jetified-core-ktx-1.5.0-3 C:\Users\raya co\.gradle\caches\transforms-3\9a88dd2fa4f00b9233627bcf07415b77\transformed\jetified-core-ktx-1.5.0\res
+carnegietechnologies.gallery_saver-coordinatorlayout-1.0.0-4 C:\Users\raya co\.gradle\caches\transforms-3\aeb8e0d7a297ce6e241c36b7d39a351b\transformed\coordinatorlayout-1.0.0\res
+carnegietechnologies.gallery_saver-jetified-annotation-experimental-1.1.0-5 C:\Users\raya co\.gradle\caches\transforms-3\c6a2258bcd9d71e4272c1711a07b9229\transformed\jetified-annotation-experimental-1.1.0\res
+carnegietechnologies.gallery_saver-jetified-window-java-1.0.0-beta04-6 C:\Users\raya co\.gradle\caches\transforms-3\fee2c687881b07b45fdc79ddebd334d4\transformed\jetified-window-java-1.0.0-beta04\res
+carnegietechnologies.gallery_saver-main-7 C:\Users\raya co\AppData\Local\Pub\Cache\hosted\pub.dev\gallery_saver-2.3.2\android\src\main\res
+carnegietechnologies.gallery_saver-release-8 C:\Users\raya co\AppData\Local\Pub\Cache\hosted\pub.dev\gallery_saver-2.3.2\android\src\release\res
+carnegietechnologies.gallery_saver-pngs-9 F:\Well App Flutter\well_app_flutter\build\gallery_saver\generated\res\pngs\release
+carnegietechnologies.gallery_saver-resValues-10 F:\Well App Flutter\well_app_flutter\build\gallery_saver\generated\res\resValues\release
+carnegietechnologies.gallery_saver-rs-11 F:\Well App Flutter\well_app_flutter\build\gallery_saver\generated\res\rs\release
+carnegietechnologies.gallery_saver-mergeReleaseResources-12 F:\Well App Flutter\well_app_flutter\build\gallery_saver\intermediates\incremental\release\mergeReleaseResources\merged.dir
+carnegietechnologies.gallery_saver-mergeReleaseResources-13 F:\Well App Flutter\well_app_flutter\build\gallery_saver\intermediates\incremental\release\mergeReleaseResources\stripped.dir
+carnegietechnologies.gallery_saver-merged_res-14 F:\Well App Flutter\well_app_flutter\build\gallery_saver\intermediates\merged_res\release

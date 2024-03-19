@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="gcm_defaultSenderId" translatable="false">500421848749</string>
+    <string name="google_api_key" translatable="false">AIzaSyCUaXCOMSMPiVjj3581C3v67_qHg7L3a0E</string>
+    <string name="google_app_id" translatable="false">1:500421848749:android:558e815e4fcc830a9ae024</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCUaXCOMSMPiVjj3581C3v67_qHg7L3a0E</string>
+    <string name="google_storage_bucket" translatable="false">well-royal.appspot.com</string>
+    <string name="project_id" translatable="false">well-royal</string>
+</resources>

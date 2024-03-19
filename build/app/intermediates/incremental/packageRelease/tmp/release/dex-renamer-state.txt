@@ -1,0 +1,4 @@
+#Sun Feb 04 15:24:48 EET 2024
+base.0=F\:\\Well App Flutter\\well_app_flutter\\build\\app\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex

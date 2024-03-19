@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "com.cygnati.social_share_plugin.social_share_plugin_android-merged_res-22:/animator/fragment_open_enter.xml",
+        "source": "com.cygnati.social_share_plugin.social_share_plugin_android-fragment-1.3.0-6:/animator/fragment_open_enter.xml"
+    },
+    {
+        "merged": "com.cygnati.social_share_plugin.social_share_plugin_android-merged_res-22:/animator/fragment_fade_exit.xml",
+        "source": "com.cygnati.social_share_plugin.social_share_plugin_android-fragment-1.3.0-6:/animator/fragment_fade_exit.xml"
+    },
+    {
+        "merged": "com.cygnati.social_share_plugin.social_share_plugin_android-merged_res-22:/animator/fragment_open_exit.xml",
+        "source": "com.cygnati.social_share_plugin.social_share_plugin_android-fragment-1.3.0-6:/animator/fragment_open_exit.xml"
+    },
+    {
+        "merged": "com.cygnati.social_share_plugin.social_share_plugin_android-merged_res-22:/animator/fragment_close_enter.xml",
+        "source": "com.cygnati.social_share_plugin.social_share_plugin_android-fragment-1.3.0-6:/animator/fragment_close_enter.xml"
+    },
+    {
+        "merged": "com.cygnati.social_share_plugin.social_share_plugin_android-merged_res-22:/animator/fragment_fade_enter.xml",
+        "source": "com.cygnati.social_share_plugin.social_share_plugin_android-fragment-1.3.0-6:/animator/fragment_fade_enter.xml"
+    },
+    {
+        "merged": "com.cygnati.social_share_plugin.social_share_plugin_android-merged_res-22:/animator/fragment_close_exit.xml",
+        "source": "com.cygnati.social_share_plugin.social_share_plugin_android-fragment-1.3.0-6:/animator/fragment_close_exit.xml"
+    }
+]

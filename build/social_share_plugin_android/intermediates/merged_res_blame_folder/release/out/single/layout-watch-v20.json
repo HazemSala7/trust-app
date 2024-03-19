@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "com.cygnati.social_share_plugin.social_share_plugin_android-merged_res-22:/layout-watch-v20/abc_alert_dialog_button_bar_material.xml",
+        "source": "com.cygnati.social_share_plugin.social_share_plugin_android-appcompat-1.1.0-8:/layout-watch-v20/abc_alert_dialog_button_bar_material.xml"
+    },
+    {
+        "merged": "com.cygnati.social_share_plugin.social_share_plugin_android-merged_res-22:/layout-watch-v20/abc_alert_dialog_title_material.xml",
+        "source": "com.cygnati.social_share_plugin.social_share_plugin_android-appcompat-1.1.0-8:/layout-watch-v20/abc_alert_dialog_title_material.xml"
+    }
+]
