@@ -19,7 +19,8 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ProductWidget extends StatefulWidget {
   final name_ar, name_en, image;
-  List<String>? SIZES;
+  List<String>? SIZES_EN;
+  List<String>? SIZES_AR;
   List<int>? SIZESIDs;
   List? colors;
   int id = 0, category_id;
@@ -28,7 +29,8 @@ class ProductWidget extends StatefulWidget {
       required this.name_ar,
       required this.name_en,
       required this.image,
-      required this.SIZES,
+      required this.SIZES_EN,
+      required this.SIZES_AR,
       required this.SIZESIDs,
       required this.colors,
       required this.category_id,
@@ -130,22 +132,23 @@ class _ProductWidgetState extends State<ProductWidget> {
             ),
             Visibility(
               visible:
-                  ROLEID == "3" && widget.SIZES!.length != 0 ? true : false,
+                  ROLEID == "3" && widget.SIZES_EN!.length != 0 ? true : false,
               child: InkWell(
                 onTap: () {
                   showDialogToAddToCart(
-                      SIZES: widget.SIZES,
-                      SIZESIDs: widget.SIZESIDs,
-                      category_id: widget.category_id,
-                      colors: widget.colors,
-                      context: context,
-                      image: URLIMAGE + widget.image,
-                      product_id: widget.id,
-                      selectedSize: selectedSize,
-                      cartProvider: cartProvider,
-                      name: locale.toString() == "ar"
-                          ? widget.name_ar
-                          : widget.name_en);
+                    SIZES_EN: widget.SIZES_EN,
+                    SIZES_AR: widget.SIZES_AR,
+                    SIZESIDs: widget.SIZESIDs,
+                    category_id: widget.category_id,
+                    colors: widget.colors,
+                    context: context,
+                    image: URLIMAGE + widget.image,
+                    product_id: widget.id,
+                    selectedSize: selectedSize,
+                    cartProvider: cartProvider,
+                    name_ar: widget.name_ar,
+                    name_en: widget.name_en,
+                  );
                 },
                 child: Container(
                   height: 30,

@@ -6,9 +6,9 @@ io.flutter.plugins.urllauncher.url_launcher_android-core-1.10.1-4 C:\Users\raya 
 io.flutter.plugins.urllauncher.url_launcher_android-jetified-window-java-1.0.0-beta04-5 C:\Users\raya co\.gradle\caches\transforms-3\fee2c687881b07b45fdc79ddebd334d4\transformed\jetified-window-java-1.0.0-beta04\res
 io.flutter.plugins.urllauncher.url_launcher_android-main-6 C:\Users\raya co\AppData\Local\Pub\Cache\hosted\pub.dev\url_launcher_android-6.2.0\android\src\main\res
 io.flutter.plugins.urllauncher.url_launcher_android-release-7 C:\Users\raya co\AppData\Local\Pub\Cache\hosted\pub.dev\url_launcher_android-6.2.0\android\src\release\res
-io.flutter.plugins.urllauncher.url_launcher_android-pngs-8 F:\Well App Flutter\well_app_flutter\build\url_launcher_android\generated\res\pngs\release
-io.flutter.plugins.urllauncher.url_launcher_android-resValues-9 F:\Well App Flutter\well_app_flutter\build\url_launcher_android\generated\res\resValues\release
-io.flutter.plugins.urllauncher.url_launcher_android-rs-10 F:\Well App Flutter\well_app_flutter\build\url_launcher_android\generated\res\rs\release
-io.flutter.plugins.urllauncher.url_launcher_android-mergeReleaseResources-11 F:\Well App Flutter\well_app_flutter\build\url_launcher_android\intermediates\incremental\release\mergeReleaseResources\merged.dir
-io.flutter.plugins.urllauncher.url_launcher_android-mergeReleaseResources-12 F:\Well App Flutter\well_app_flutter\build\url_launcher_android\intermediates\incremental\release\mergeReleaseResources\stripped.dir
-io.flutter.plugins.urllauncher.url_launcher_android-merged_res-13 F:\Well App Flutter\well_app_flutter\build\url_launcher_android\intermediates\merged_res\release
+io.flutter.plugins.urllauncher.url_launcher_android-pngs-8 F:\Trust App\trust_app_flutter\build\url_launcher_android\generated\res\pngs\release
+io.flutter.plugins.urllauncher.url_launcher_android-resValues-9 F:\Trust App\trust_app_flutter\build\url_launcher_android\generated\res\resValues\release
+io.flutter.plugins.urllauncher.url_launcher_android-rs-10 F:\Trust App\trust_app_flutter\build\url_launcher_android\generated\res\rs\release
+io.flutter.plugins.urllauncher.url_launcher_android-mergeReleaseResources-11 F:\Trust App\trust_app_flutter\build\url_launcher_android\intermediates\incremental\release\mergeReleaseResources\merged.dir
+io.flutter.plugins.urllauncher.url_launcher_android-mergeReleaseResources-12 F:\Trust App\trust_app_flutter\build\url_launcher_android\intermediates\incremental\release\mergeReleaseResources\stripped.dir
+io.flutter.plugins.urllauncher.url_launcher_android-merged_res-13 F:\Trust App\trust_app_flutter\build\url_launcher_android\intermediates\merged_res\release

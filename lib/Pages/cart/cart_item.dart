@@ -38,7 +38,7 @@ class _CartItemCardState extends State<CartItemCard> {
         NavigatorFunction(
             context,
             ProductScreen(
-                name: widget.item.name,
+                name: widget.item.name_ar,
                 category_id: widget.item.categoryID,
                 image: widget.item.image,
                 product_id: widget.item.productId));
@@ -76,13 +76,21 @@ class _CartItemCardState extends State<CartItemCard> {
                       Column(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          Text(widget.item.name),
-                          Text(widget.item.size),
+                          Text(locale.toString() == "ar"
+                              ? widget.item.name_ar
+                              : widget.item.name_en),
+                          Text(locale.toString() == "ar"
+                              ? widget
+                                  .item.sizes_ar[widget.item.selectedSizeIndex]
+                              : widget.item
+                                  .sizes_en[widget.item.selectedSizeIndex]),
                           Visibility(
-                            visible: widget.item.color == "" ? false : true,
+                            visible: widget.item.color_en == "" ? false : true,
                             child: Column(
                               children: [
-                                Text(widget.item.color),
+                                Text(locale.toString() == "ar"
+                                    ? widget.item.color_ar
+                                    : widget.item.color_en),
                               ],
                             ),
                           ),
@@ -204,8 +212,13 @@ class _CartItemCardState extends State<CartItemCard> {
                     children: [
                       InkWell(
                         onTap: () {
-                          String selectedColorName = widget.item.color;
-                          String selectedSize = widget.item.size;
+                          String selectedColorName = locale.toString() == "ar"
+                              ? widget.item.color_ar
+                              : widget.item.color_en;
+                          int selectedIndex = 0;
+                          String selectedSize = locale.toString() == "ar"
+                              ? widget.item.size_ar
+                              : widget.item.size_en;
                           String selectedImage = widget.item.image;
                           TextEditingController _countController =
                               TextEditingController();
@@ -223,13 +236,15 @@ class _CartItemCardState extends State<CartItemCard> {
                                 bool emptyColors = false;
 
                                 List<int> _Counters = [];
-                                List<String> _Names = [];
+                                List<String> _NamesEN = [];
+                                List<String> _NamesAR = [];
                                 List<String> _Images = [];
                                 for (int i = 0;
-                                    i < widget.item.colorsNames.length;
+                                    i < widget.item.colorsNamesEN.length;
                                     i++) {
                                   _Counters.add(0);
-                                  _Names.add(widget.item.colorsNames[i]);
+                                  _NamesEN.add(widget.item.colorsNamesEN[i]);
+                                  _NamesAR.add(widget.item.colorsNamesAR[i]);
                                   _Images.add(widget.item.colorsImages[i]);
                                 }
                                 return AlertDialog(
@@ -249,97 +264,21 @@ class _CartItemCardState extends State<CartItemCard> {
                                             fontSize: 16,
                                             color: Colors.white),
                                       ))),
-                                  content: Container(
-                                    width: isTablet
-                                        ? MediaQuery.of(context).size.width
-                                        : 300,
-                                    child: Column(
-                                      children: [
-                                        Padding(
-                                          padding: const EdgeInsets.only(
-                                              top: 15, left: 15, right: 15),
-                                          child: Row(
-                                            children: [
-                                              Text(
-                                                AppLocalizations.of(context)!
-                                                    .size,
-                                                style: TextStyle(
-                                                    fontWeight: FontWeight.bold,
-                                                    fontSize: 20),
-                                              ),
-                                              SizedBox(
-                                                width: 5,
-                                              ),
-                                              Visibility(
-                                                visible: emptySizes,
-                                                child: Text(
-                                                  "(${AppLocalizations.of(context)!.select_size})",
-                                                  style: TextStyle(
-                                                      fontWeight:
-                                                          FontWeight.bold,
-                                                      fontSize: 15,
-                                                      color: Colors.red),
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                        // ...widget.item.sizes
-                                        //     .map((size) => RadioListTile(
-                                        //           activeColor: MAIN_COLOR,
-                                        //           contentPadding:
-                                        //               EdgeInsets.zero,
-                                        //           title: Text(size),
-                                        //           value: size,
-                                        //           groupValue: selectedSize,
-                                        //           onChanged: (value) {
-                                        //             selectedSize = value!;
-
-                                        //             setState(() {});
-                                        //           },
-                                        //         )),
-                                        Column(
-                                          children: widget.item.sizes
-                                              .asMap()
-                                              .entries
-                                              .map((entry) {
-                                            final index = entry.key;
-                                            final size = entry.value;
-
-                                            return RadioListTile(
-                                              activeColor: MAIN_COLOR,
-                                              contentPadding: EdgeInsets.zero,
-                                              title: Text(size),
-                                              value: size,
-                                              groupValue: selectedSize,
-                                              onChanged: (value) {
-                                                setState(() {
-                                                  selectedSize =
-                                                      value as String;
-                                                  selectedIndex = index;
-                                                });
-                                              },
-                                            );
-                                          }).toList(),
-                                        ),
-                                        Container(
-                                          width: double.infinity,
-                                          height: 1,
-                                          color: Color.fromARGB(
-                                              255, 167, 167, 167),
-                                        ),
-                                        Visibility(
-                                          visible: selectedColorName == ""
-                                              ? false
-                                              : true,
-                                          child: Padding(
+                                  content: SingleChildScrollView(
+                                    child: Container(
+                                      width: isTablet
+                                          ? MediaQuery.of(context).size.width
+                                          : 300,
+                                      child: Column(
+                                        children: [
+                                          Padding(
                                             padding: const EdgeInsets.only(
                                                 top: 15, left: 15, right: 15),
                                             child: Row(
                                               children: [
                                                 Text(
                                                   AppLocalizations.of(context)!
-                                                      .color,
+                                                      .size,
                                                   style: TextStyle(
                                                       fontWeight:
                                                           FontWeight.bold,
@@ -349,9 +288,9 @@ class _CartItemCardState extends State<CartItemCard> {
                                                   width: 5,
                                                 ),
                                                 Visibility(
-                                                  visible: emptyColors,
+                                                  visible: emptySizes,
                                                   child: Text(
-                                                    "(${AppLocalizations.of(context)!.select_color})",
+                                                    "(${AppLocalizations.of(context)!.select_size})",
                                                     style: TextStyle(
                                                         fontWeight:
                                                             FontWeight.bold,
@@ -362,101 +301,294 @@ class _CartItemCardState extends State<CartItemCard> {
                                               ],
                                             ),
                                           ),
-                                        ),
-                                        Visibility(
-                                          visible: selectedColorName == ""
-                                              ? false
-                                              : true,
-                                          child: Container(
-                                            width: 300,
-                                            height: 380,
-                                            child: ListView.builder(
-                                                key: UniqueKey(),
-                                                itemCount: widget
-                                                    .item.colorsNames.length,
-                                                itemBuilder:
-                                                    (BuildContext context,
-                                                        int index) {
-                                                  return Padding(
-                                                    padding:
-                                                        const EdgeInsets.only(
-                                                            right: 15,
-                                                            left: 15,
-                                                            top: 10),
-                                                    child: Row(
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .spaceBetween,
-                                                      children: [
-                                                        Container(
-                                                          width: 150,
-                                                          height: 50,
-                                                          child: RadioListTile(
-                                                            activeColor:
-                                                                MAIN_COLOR,
-                                                            contentPadding:
-                                                                EdgeInsets.zero,
-                                                            title: Text(
-                                                                _Names[index]),
-                                                            value:
-                                                                _Names[index],
-                                                            groupValue:
-                                                                selectedColorName,
-                                                            onChanged: (value) {
-                                                              setState(() {
-                                                                selectedColorName =
-                                                                    value!;
-                                                                selectedImage =
-                                                                    _Images[
-                                                                        index];
-                                                              });
-                                                            },
-                                                            selected: _Names[
-                                                                    index] ==
-                                                                selectedColorName,
+                                          locale.toString() == "ar"
+                                              ? Column(
+                                                  children: widget.item.sizes_ar
+                                                      .asMap()
+                                                      .entries
+                                                      .map((entry) {
+                                                    final index = entry.key;
+                                                    final size = entry.value;
+
+                                                    return RadioListTile(
+                                                      activeColor: MAIN_COLOR,
+                                                      contentPadding:
+                                                          EdgeInsets.zero,
+                                                      title: Text(size),
+                                                      value: size,
+                                                      groupValue: selectedSize,
+                                                      onChanged: (value) {
+                                                        setState(() {
+                                                          selectedSize =
+                                                              value as String;
+                                                          selectedIndex = index;
+                                                        });
+                                                      },
+                                                    );
+                                                  }).toList(),
+                                                )
+                                              : Column(
+                                                  children: widget.item.sizes_en
+                                                      .asMap()
+                                                      .entries
+                                                      .map((entry) {
+                                                    final index = entry.key;
+                                                    final size = entry.value;
+
+                                                    return RadioListTile(
+                                                      activeColor: MAIN_COLOR,
+                                                      contentPadding:
+                                                          EdgeInsets.zero,
+                                                      title: Text(size),
+                                                      value: size,
+                                                      groupValue: selectedSize,
+                                                      onChanged: (value) {
+                                                        setState(() {
+                                                          selectedSize =
+                                                              value as String;
+                                                          selectedIndex = index;
+                                                        });
+                                                      },
+                                                    );
+                                                  }).toList(),
+                                                ),
+                                          Container(
+                                            width: double.infinity,
+                                            height: 1,
+                                            color: Color.fromARGB(
+                                                255, 167, 167, 167),
+                                          ),
+                                          Visibility(
+                                            visible: selectedColorName == ""
+                                                ? false
+                                                : true,
+                                            child: Padding(
+                                              padding: const EdgeInsets.only(
+                                                  top: 15, left: 15, right: 15),
+                                              child: Row(
+                                                children: [
+                                                  Text(
+                                                    AppLocalizations.of(
+                                                            context)!
+                                                        .color,
+                                                    style: TextStyle(
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        fontSize: 20),
+                                                  ),
+                                                  SizedBox(
+                                                    width: 5,
+                                                  ),
+                                                  Visibility(
+                                                    visible: emptyColors,
+                                                    child: Text(
+                                                      "(${AppLocalizations.of(context)!.select_color})",
+                                                      style: TextStyle(
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                          fontSize: 15,
+                                                          color: Colors.red),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                          Visibility(
+                                            visible: selectedColorName == ""
+                                                ? false
+                                                : true,
+                                            child: Container(
+                                              width: 300,
+                                              height: 380,
+                                              child: ListView.builder(
+                                                  key: UniqueKey(),
+                                                  itemCount: widget.item
+                                                      .colorsNamesEN.length,
+                                                  itemBuilder:
+                                                      (BuildContext context,
+                                                          int index) {
+                                                    return Padding(
+                                                      padding:
+                                                          const EdgeInsets.only(
+                                                              right: 15,
+                                                              left: 15,
+                                                              top: 10),
+                                                      child: Row(
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .spaceBetween,
+                                                        children: [
+                                                          Container(
+                                                            width: 150,
+                                                            height: 50,
+                                                            child:
+                                                                RadioListTile(
+                                                              activeColor:
+                                                                  MAIN_COLOR,
+                                                              contentPadding:
+                                                                  EdgeInsets
+                                                                      .zero,
+                                                              title: Text(locale
+                                                                          .toString() ==
+                                                                      "ar"
+                                                                  ? _NamesAR[
+                                                                      index]
+                                                                  : _NamesEN[
+                                                                      index]),
+                                                              value: locale
+                                                                          .toString() ==
+                                                                      "ar"
+                                                                  ? _NamesAR[
+                                                                      index]
+                                                                  : _NamesEN[
+                                                                      index],
+                                                              groupValue:
+                                                                  selectedColorName,
+                                                              onChanged:
+                                                                  (value) {
+                                                                setState(() {
+                                                                  selectedColorName =
+                                                                      value!;
+                                                                  selectedImage =
+                                                                      _Images[
+                                                                          index];
+                                                                  selectedIndex =
+                                                                      index;
+                                                                });
+                                                              },
+                                                              selected: locale
+                                                                          .toString() ==
+                                                                      "ar"
+                                                                  ? _NamesEN[
+                                                                          index] ==
+                                                                      selectedColorName
+                                                                  : _NamesAR[
+                                                                          index] ==
+                                                                      selectedColorName,
+                                                            ),
+                                                          ),
+                                                          Image.network(
+                                                            URLIMAGE +
+                                                                _Images[index],
+                                                            height: 30,
+                                                            width: 30,
+                                                            fit: BoxFit.cover,
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    );
+                                                  }),
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding: const EdgeInsets.only(
+                                                top: 20, left: 25, right: 25),
+                                            child: Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.end,
+                                              children: [
+                                                InkWell(
+                                                  onTap: () {
+                                                    setState(() {
+                                                      var COUNT = int.parse(
+                                                          _countController
+                                                              .text);
+                                                      COUNT++;
+                                                      _countController.text =
+                                                          COUNT.toString();
+                                                    });
+                                                  },
+                                                  child: Container(
+                                                    height: 30,
+                                                    width: 30,
+                                                    child: Center(
+                                                      child: Container(
+                                                        height: 30,
+                                                        width: 30,
+                                                        decoration: BoxDecoration(
+                                                            borderRadius: locale
+                                                                        .toString() ==
+                                                                    "ar"
+                                                                ? BorderRadius.only(
+                                                                    topRight: Radius
+                                                                        .circular(
+                                                                            10),
+                                                                    bottomRight:
+                                                                        Radius.circular(
+                                                                            10))
+                                                                : BorderRadius.only(
+                                                                    topLeft: Radius
+                                                                        .circular(
+                                                                            10),
+                                                                    bottomLeft:
+                                                                        Radius.circular(
+                                                                            10)),
+                                                            color: MAIN_COLOR),
+                                                        child: Center(
+                                                          child: FaIcon(
+                                                            FontAwesomeIcons
+                                                                .plus,
+                                                            color: Colors.white,
+                                                            size: 20,
                                                           ),
                                                         ),
-                                                        Image.network(
-                                                          URLIMAGE +
-                                                              _Images[index],
-                                                          height: 30,
-                                                          width: 30,
-                                                          fit: BoxFit.cover,
-                                                        ),
-                                                      ],
+                                                      ),
                                                     ),
-                                                  );
-                                                }),
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.only(
-                                              top: 20, left: 25, right: 25),
-                                          child: Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.end,
-                                            children: [
-                                              InkWell(
-                                                onTap: () {
-                                                  setState(() {
-                                                    var COUNT = int.parse(
-                                                        _countController.text);
-                                                    COUNT++;
-                                                    _countController.text =
-                                                        COUNT.toString();
-                                                  });
-                                                },
-                                                child: Container(
-                                                  height: 30,
-                                                  width: 30,
-                                                  child: Center(
+                                                  ),
+                                                ),
+                                                Container(
+                                                    height: 30,
+                                                    width: 30,
+                                                    decoration: BoxDecoration(
+                                                        border: Border.all(
+                                                            color: MAIN_COLOR,
+                                                            width: 1)),
                                                     child: Container(
                                                       height: 30,
                                                       width: 30,
+                                                      child: Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                    .only(
+                                                                bottom: 5),
+                                                        child: TextField(
+                                                          textAlign:
+                                                              TextAlign.center,
+                                                          decoration:
+                                                              InputDecoration(
+                                                            border: InputBorder
+                                                                .none,
+                                                          ),
+                                                          controller:
+                                                              _countController,
+                                                        ),
+                                                      ),
+                                                    )),
+                                                InkWell(
+                                                  onTap: () {
+                                                    var COUNT = int.parse(
+                                                        _countController.text);
+
+                                                    if (COUNT > 1) {
+                                                      setState(() {
+                                                        if (COUNT != 1) COUNT--;
+
+                                                        _countController.text =
+                                                            COUNT.toString();
+                                                      });
+                                                    }
+                                                  },
+                                                  child: Container(
+                                                    height: 30,
+                                                    width: 30,
+                                                    child: Container(
+                                                      width: 30,
+                                                      height: 30,
                                                       decoration: BoxDecoration(
                                                           borderRadius: locale
                                                                       .toString() ==
-                                                                  "ar"
+                                                                  "en"
                                                               ? BorderRadius.only(
                                                                   topRight: Radius
                                                                       .circular(
@@ -474,7 +606,8 @@ class _CartItemCardState extends State<CartItemCard> {
                                                           color: MAIN_COLOR),
                                                       child: Center(
                                                         child: FaIcon(
-                                                          FontAwesomeIcons.plus,
+                                                          FontAwesomeIcons
+                                                              .minus,
                                                           color: Colors.white,
                                                           size: 20,
                                                         ),
@@ -482,87 +615,11 @@ class _CartItemCardState extends State<CartItemCard> {
                                                     ),
                                                   ),
                                                 ),
-                                              ),
-                                              Container(
-                                                  height: 30,
-                                                  width: 30,
-                                                  decoration: BoxDecoration(
-                                                      border: Border.all(
-                                                          color: MAIN_COLOR,
-                                                          width: 1)),
-                                                  child: Container(
-                                                    height: 30,
-                                                    width: 30,
-                                                    child: Padding(
-                                                      padding:
-                                                          const EdgeInsets.only(
-                                                              bottom: 5),
-                                                      child: TextField(
-                                                        textAlign:
-                                                            TextAlign.center,
-                                                        decoration:
-                                                            InputDecoration(
-                                                          border:
-                                                              InputBorder.none,
-                                                        ),
-                                                        controller:
-                                                            _countController,
-                                                      ),
-                                                    ),
-                                                  )),
-                                              InkWell(
-                                                onTap: () {
-                                                  var COUNT = int.parse(
-                                                      _countController.text);
-
-                                                  if (COUNT > 1) {
-                                                    setState(() {
-                                                      if (COUNT != 1) COUNT--;
-
-                                                      _countController.text =
-                                                          COUNT.toString();
-                                                    });
-                                                  }
-                                                },
-                                                child: Container(
-                                                  height: 30,
-                                                  width: 30,
-                                                  child: Container(
-                                                    width: 30,
-                                                    height: 30,
-                                                    decoration: BoxDecoration(
-                                                        borderRadius: locale
-                                                                    .toString() ==
-                                                                "en"
-                                                            ? BorderRadius.only(
-                                                                topRight: Radius
-                                                                    .circular(
-                                                                        10),
-                                                                bottomRight:
-                                                                    Radius.circular(
-                                                                        10))
-                                                            : BorderRadius.only(
-                                                                topLeft: Radius
-                                                                    .circular(
-                                                                        10),
-                                                                bottomLeft:
-                                                                    Radius.circular(
-                                                                        10)),
-                                                        color: MAIN_COLOR),
-                                                    child: Center(
-                                                      child: FaIcon(
-                                                        FontAwesomeIcons.minus,
-                                                        color: Colors.white,
-                                                        size: 20,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                            ],
+                                              ],
+                                            ),
                                           ),
-                                        ),
-                                      ],
+                                        ],
+                                      ),
                                     ),
                                   ),
                                   actions: <Widget>[
@@ -577,7 +634,13 @@ class _CartItemCardState extends State<CartItemCard> {
                                           if (selectedColorName == "") {
                                             widget.cartProvider?.updateCartItem(
                                               widget.item.copyWith(
-                                                size: selectedSize,
+                                                selectedSizeIndex:
+                                                    selectedIndex,
+                                                size_en: selectedSize,
+                                                color_en:
+                                                    _NamesEN[selectedIndex],
+                                                color_ar:
+                                                    _NamesAR[selectedIndex],
                                                 quantity: int.parse(
                                                     _countController.text),
                                               ),
@@ -598,13 +661,18 @@ class _CartItemCardState extends State<CartItemCard> {
                                           } else {
                                             widget.cartProvider?.updateCartItem(
                                               widget.item.copyWith(
-                                                  size: selectedSize,
-                                                  // size_id: widget.,
-                                                  quantity: int.parse(
-                                                      _countController.text),
-                                                  image:
-                                                      URLIMAGE + selectedImage,
-                                                  color: selectedColorName),
+                                                selectedSizeIndex:
+                                                    selectedIndex,
+                                                size_en: selectedSize,
+                                                // size_id: widget.,
+                                                quantity: int.parse(
+                                                    _countController.text),
+                                                image: URLIMAGE + selectedImage,
+                                                color_en:
+                                                    _NamesEN[selectedIndex],
+                                                color_ar:
+                                                    _NamesAR[selectedIndex],
+                                              ),
                                             );
                                             Navigator.pop(context);
                                             Fluttertoast.showToast(
@@ -731,8 +799,11 @@ class _CartItemCardState extends State<CartItemCard> {
                                                         timeInSecForIosWeb: 2,
                                                         backgroundColor:
                                                             const Color
-                                                                .fromARGB(255,
-                                                                28, 116, 31),
+                                                                    .fromARGB(
+                                                                255,
+                                                                28,
+                                                                116,
+                                                                31),
                                                         textColor: Colors.white,
                                                         fontSize: 16.0);
                                                   },

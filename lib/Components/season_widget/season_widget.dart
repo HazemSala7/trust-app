@@ -73,7 +73,6 @@ class _SeasonWidgetState extends State<SeasonWidget> {
               child: Center(
                   child: SvgPicture.asset(
                 widget.image,
-                color: Colors.black,
                 fit: BoxFit.cover,
                 width: 65,
                 height: 65,

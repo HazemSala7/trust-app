@@ -1,13 +1,13 @@
 <variant
     name="release"
-    package="com.royal.well"
+    package="com.royal.trust"
     minSdkVersion="21"
     targetSdkVersion="33"
     shrinking="true"
-    mergedManifest="F:\Well App Flutter\well_app_flutter\build\app\intermediates\merged_manifest\release\AndroidManifest.xml"
-    manifestMergeReport="F:\Well App Flutter\well_app_flutter\build\app\outputs\logs\manifest-merger-release-report.txt"
-    proguardFiles="F:\Well App Flutter\well_app_flutter\build\app\intermediates\default_proguard_files\global\proguard-android.txt-7.3.0;C:\Users\raya co\Downloads\flutter_windows_2.8.1-stable\flutter\packages\flutter_tools\gradle\flutter_proguard_rules.pro;proguard-rules.pro"
-    partialResultsDir="F:\Well App Flutter\well_app_flutter\build\app\intermediates\lint_vital_partial_results\release\out">
+    mergedManifest="F:\Trust App\trust_app_flutter\build\app\intermediates\merged_manifest\release\AndroidManifest.xml"
+    manifestMergeReport="F:\Trust App\trust_app_flutter\build\app\outputs\logs\manifest-merger-release-report.txt"
+    proguardFiles="F:\Trust App\trust_app_flutter\build\app\intermediates\default_proguard_files\global\proguard-android.txt-7.3.0;C:\Users\raya co\Downloads\flutter_windows_2.8.1-stable\flutter\packages\flutter_tools\gradle\flutter_proguard_rules.pro;proguard-rules.pro"
+    partialResultsDir="F:\Trust App\trust_app_flutter\build\app\intermediates\lint_vital_partial_results\release\out">
   <buildFeatures
       namespacing="REQUIRED"/>
   <sourceProviders>
@@ -32,9 +32,9 @@
         value="android.app.Application" />
   </manifestPlaceholders>
   <mainArtifact
-      classOutputs="F:\Well App Flutter\well_app_flutter\build\app\intermediates\javac\release\classes;F:\Well App Flutter\well_app_flutter\build\app\tmp\kotlin-classes\release;F:\Well App Flutter\well_app_flutter\build\app\kotlinToolingMetadata;F:\Well App Flutter\well_app_flutter\build\app\intermediates\compile_and_runtime_not_namespaced_r_class_jar\release\R.jar"
-      applicationId="com.royal.well"
-      generatedSourceFolders="F:\Well App Flutter\well_app_flutter\build\app\generated\ap_generated_sources\release\out;F:\Well App Flutter\well_app_flutter\build\app\generated\aidl_source_output_dir\release\out;F:\Well App Flutter\well_app_flutter\build\app\generated\source\buildConfig\release;F:\Well App Flutter\well_app_flutter\build\app\generated\renderscript_source_output_dir\release\out"
-      generatedResourceFolders="F:\Well App Flutter\well_app_flutter\build\app\generated\res\google-services\release;F:\Well App Flutter\well_app_flutter\build\app\generated\res\rs\release;F:\Well App Flutter\well_app_flutter\build\app\generated\res\resValues\release">
+      classOutputs="F:\Trust App\trust_app_flutter\build\app\intermediates\javac\release\classes;F:\Trust App\trust_app_flutter\build\app\tmp\kotlin-classes\release;F:\Trust App\trust_app_flutter\build\app\kotlinToolingMetadata;F:\Trust App\trust_app_flutter\build\app\intermediates\compile_and_runtime_not_namespaced_r_class_jar\release\R.jar"
+      applicationId="com.royal.trust"
+      generatedSourceFolders="F:\Trust App\trust_app_flutter\build\app\generated\ap_generated_sources\release\out;F:\Trust App\trust_app_flutter\build\app\generated\aidl_source_output_dir\release\out;F:\Trust App\trust_app_flutter\build\app\generated\source\buildConfig\release;F:\Trust App\trust_app_flutter\build\app\generated\renderscript_source_output_dir\release\out"
+      generatedResourceFolders="F:\Trust App\trust_app_flutter\build\app\generated\res\google-services\release;F:\Trust App\trust_app_flutter\build\app\generated\res\rs\release;F:\Trust App\trust_app_flutter\build\app\generated\res\resValues\release">
   </mainArtifact>
 </variant>

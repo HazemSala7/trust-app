@@ -8,6 +8,57 @@ class AppLocalizationsAr extends AppLocalizations {
   String get new_homepage => 'جديد';
 
   @override
+  String get add_waranty => 'اضافة كفالة';
+
+  @override
+  String get pending => 'بانتظار التوصيل للصيانة';
+
+  @override
+  String get warranties_and_maintenances => 'الكفالات و الصيانة';
+
+  @override
+  String get in_progress => 'في الصيانة';
+
+  @override
+  String get done => 'تم الصيانة';
+
+  @override
+  String get delivered => 'تم التسليم للتاجر';
+
+  @override
+  String get edit_selected => 'تعديل متعدد';
+
+  @override
+  String get cost => 'التكلفة : ';
+
+  @override
+  String get desc_problem => 'وصف العطل : ';
+
+  @override
+  String get notes_warranty => 'الملاحظات : ';
+
+  @override
+  String get my_location => 'موقعي';
+
+  @override
+  String get maintenance_status => 'حالة الصيانة';
+
+  @override
+  String get maintenance_notes => 'ملاحظات طلب الصيانة : ';
+
+  @override
+  String get malfunction_description => 'وصف العطل : ';
+
+  @override
+  String get maintenance_department => 'قسم الصيانة';
+
+  @override
+  String get merchants_location => 'موقع التجار على الخريطة';
+
+  @override
+  String get show_merchants_location => 'عرض جميع التجار على الخريطة';
+
+  @override
   String get send_order => 'أرسل الطلبية';
 
   @override
@@ -36,6 +87,81 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get edit => 'تعديل';
+
+  @override
+  String get poin_of_sales => 'نقاط البيع';
+
+  @override
+  String get hebron => 'الخليل';
+
+  @override
+  String get ramallah => 'رام الله';
+
+  @override
+  String get all => 'الجميع';
+
+  @override
+  String get description => 'الوصف';
+
+  @override
+  String get merchant_name => 'أسم التاجر : ';
+
+  @override
+  String get product_name => 'أسم المنتج';
+
+  @override
+  String get order_status_new => 'حالة الطلب : ';
+
+  @override
+  String get merchant_phone => 'رقم هاتف التاجر : ';
+
+  @override
+  String get continue_operation => 'اكمال الاجراءات';
+
+  @override
+  String get not_effectice => 'غير فعالة';
+
+  @override
+  String get effectice => 'فعالة';
+
+  @override
+  String get confirm_info => 'تأكيد المعلومات';
+
+  @override
+  String get no_internet => 'لا يوجد اتصال بالانترنت , الرجاء التحقق منه';
+
+  @override
+  String get empty_warranties => 'لا يوجد أي كفالة';
+
+  @override
+  String get empty_maintencaes => 'لا يوجد أي \'طلبات صيانة\'';
+
+  @override
+  String get add_maintenance_request => 'اضافة طلب صيانة';
+
+  @override
+  String get effectice_status => 'حالة الكفالة';
+
+  @override
+  String get customer_name => 'أسم المستهلك';
+
+  @override
+  String get please_enter_product_serial_number => 'الرجاء ادخال الرقم التسلسلي للمنتج';
+
+  @override
+  String get please_enter_a_your_customer_name => 'الرجاء ادخال أسم الزبون';
+
+  @override
+  String get please_enter_a_customer_phone_number => 'الرحاء ادخال رقم هاتف الزبون';
+
+  @override
+  String get customer_phone => 'رقم هاتف المستهلك';
+
+  @override
+  String get maintenance_requests => 'طلبات الصيانة';
+
+  @override
+  String get product_serial_number => 'الرقم التسلسلي للمنتج';
 
   @override
   String get navigator_home => 'الانتقال الى الصفحة الرئيسية';
@@ -594,9 +720,6 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get send_to_maintenance => 'ارسال الى الصيانة';
-
-  @override
-  String get maintenance_status => 'حالة الصيانة';
 
   @override
   String get inquire_about_product_specifications => 'استعلام عن مواصفات المنتج';

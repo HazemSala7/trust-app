@@ -4,9 +4,9 @@ io.github.ponnamkarthik.toast.fluttertoast-jetified-annotation-experimental-1.1.
 io.github.ponnamkarthik.toast.fluttertoast-jetified-window-java-1.0.0-beta04-3 C:\Users\raya co\.gradle\caches\transforms-3\fee2c687881b07b45fdc79ddebd334d4\transformed\jetified-window-java-1.0.0-beta04\res
 io.github.ponnamkarthik.toast.fluttertoast-main-4 C:\Users\raya co\AppData\Local\Pub\Cache\hosted\pub.dev\fluttertoast-8.2.2\android\src\main\res
 io.github.ponnamkarthik.toast.fluttertoast-release-5 C:\Users\raya co\AppData\Local\Pub\Cache\hosted\pub.dev\fluttertoast-8.2.2\android\src\release\res
-io.github.ponnamkarthik.toast.fluttertoast-pngs-6 F:\Well App Flutter\well_app_flutter\build\fluttertoast\generated\res\pngs\release
-io.github.ponnamkarthik.toast.fluttertoast-resValues-7 F:\Well App Flutter\well_app_flutter\build\fluttertoast\generated\res\resValues\release
-io.github.ponnamkarthik.toast.fluttertoast-rs-8 F:\Well App Flutter\well_app_flutter\build\fluttertoast\generated\res\rs\release
-io.github.ponnamkarthik.toast.fluttertoast-mergeReleaseResources-9 F:\Well App Flutter\well_app_flutter\build\fluttertoast\intermediates\incremental\release\mergeReleaseResources\merged.dir
-io.github.ponnamkarthik.toast.fluttertoast-mergeReleaseResources-10 F:\Well App Flutter\well_app_flutter\build\fluttertoast\intermediates\incremental\release\mergeReleaseResources\stripped.dir
-io.github.ponnamkarthik.toast.fluttertoast-merged_res-11 F:\Well App Flutter\well_app_flutter\build\fluttertoast\intermediates\merged_res\release
+io.github.ponnamkarthik.toast.fluttertoast-pngs-6 F:\Trust App\trust_app_flutter\build\fluttertoast\generated\res\pngs\release
+io.github.ponnamkarthik.toast.fluttertoast-resValues-7 F:\Trust App\trust_app_flutter\build\fluttertoast\generated\res\resValues\release
+io.github.ponnamkarthik.toast.fluttertoast-rs-8 F:\Trust App\trust_app_flutter\build\fluttertoast\generated\res\rs\release
+io.github.ponnamkarthik.toast.fluttertoast-mergeReleaseResources-9 F:\Trust App\trust_app_flutter\build\fluttertoast\intermediates\incremental\release\mergeReleaseResources\merged.dir
+io.github.ponnamkarthik.toast.fluttertoast-mergeReleaseResources-10 F:\Trust App\trust_app_flutter\build\fluttertoast\intermediates\incremental\release\mergeReleaseResources\stripped.dir
+io.github.ponnamkarthik.toast.fluttertoast-merged_res-11 F:\Trust App\trust_app_flutter\build\fluttertoast\intermediates\merged_res\release

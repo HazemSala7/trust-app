@@ -6,6 +6,7 @@ import 'package:well_app_flutter/Pages/cart/cart.dart';
 import 'package:well_app_flutter/Server/functions/functions.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../../Pages/home_screen/home_screen.dart';
+import '../../Pages/notifications/notifications.dart';
 import '../search_dialog/search_dialog.dart';
 
 class AppBarWidget extends StatefulWidget {
@@ -76,6 +77,19 @@ class _AppBarWidgetState extends State<AppBarWidget> {
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
                   children: [
+                    IconButton(
+                        padding: EdgeInsets.all(0),
+                        onPressed: () {
+                          NavigatorFunction(context, Notifications());
+                        },
+                        icon: Icon(
+                          Icons.notifications,
+                          color: Colors.white,
+                          size: 20,
+                        )),
+                    SizedBox(
+                      width: 5,
+                    ),
                     Container(
                       width: 20,
                       height: 20,
@@ -98,7 +112,7 @@ class _AppBarWidgetState extends State<AppBarWidget> {
                     Visibility(
                         visible: ROLEID.toString() == "3" ? true : false,
                         child: SizedBox(
-                          width: 30,
+                          width: 15,
                         )),
                     Visibility(
                         visible: ROLEID.toString() == "3" ? true : false,

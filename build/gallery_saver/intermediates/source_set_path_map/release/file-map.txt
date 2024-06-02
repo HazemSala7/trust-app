@@ -7,9 +7,9 @@ carnegietechnologies.gallery_saver-jetified-annotation-experimental-1.1.0-5 C:\U
 carnegietechnologies.gallery_saver-jetified-window-java-1.0.0-beta04-6 C:\Users\raya co\.gradle\caches\transforms-3\fee2c687881b07b45fdc79ddebd334d4\transformed\jetified-window-java-1.0.0-beta04\res
 carnegietechnologies.gallery_saver-main-7 C:\Users\raya co\AppData\Local\Pub\Cache\hosted\pub.dev\gallery_saver-2.3.2\android\src\main\res
 carnegietechnologies.gallery_saver-release-8 C:\Users\raya co\AppData\Local\Pub\Cache\hosted\pub.dev\gallery_saver-2.3.2\android\src\release\res
-carnegietechnologies.gallery_saver-pngs-9 F:\Well App Flutter\well_app_flutter\build\gallery_saver\generated\res\pngs\release
-carnegietechnologies.gallery_saver-resValues-10 F:\Well App Flutter\well_app_flutter\build\gallery_saver\generated\res\resValues\release
-carnegietechnologies.gallery_saver-rs-11 F:\Well App Flutter\well_app_flutter\build\gallery_saver\generated\res\rs\release
-carnegietechnologies.gallery_saver-mergeReleaseResources-12 F:\Well App Flutter\well_app_flutter\build\gallery_saver\intermediates\incremental\release\mergeReleaseResources\merged.dir
-carnegietechnologies.gallery_saver-mergeReleaseResources-13 F:\Well App Flutter\well_app_flutter\build\gallery_saver\intermediates\incremental\release\mergeReleaseResources\stripped.dir
-carnegietechnologies.gallery_saver-merged_res-14 F:\Well App Flutter\well_app_flutter\build\gallery_saver\intermediates\merged_res\release
+carnegietechnologies.gallery_saver-pngs-9 F:\Trust App\trust_app_flutter\build\gallery_saver\generated\res\pngs\release
+carnegietechnologies.gallery_saver-resValues-10 F:\Trust App\trust_app_flutter\build\gallery_saver\generated\res\resValues\release
+carnegietechnologies.gallery_saver-rs-11 F:\Trust App\trust_app_flutter\build\gallery_saver\generated\res\rs\release
+carnegietechnologies.gallery_saver-mergeReleaseResources-12 F:\Trust App\trust_app_flutter\build\gallery_saver\intermediates\incremental\release\mergeReleaseResources\merged.dir
+carnegietechnologies.gallery_saver-mergeReleaseResources-13 F:\Trust App\trust_app_flutter\build\gallery_saver\intermediates\incremental\release\mergeReleaseResources\stripped.dir
+carnegietechnologies.gallery_saver-merged_res-14 F:\Trust App\trust_app_flutter\build\gallery_saver\intermediates\merged_res\release

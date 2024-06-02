@@ -1,46 +1,66 @@
 [
     {
-        "merged": "com.royal.well.app-merged_res-30:/mipmap-hdpi_launcher_icon.png.flat",
-        "source": "com.royal.well.app-main-23:/mipmap-hdpi/launcher_icon.png"
+        "merged": "C:\\Users\\raya co\\.gradle\\daemon\\7.5\\com.royal.trust.app-merged_res-32:\\mipmap-xxhdpi_launcher_icon.png.flat",
+        "source": "C:\\Users\\raya co\\.gradle\\daemon\\7.5\\com.royal.trust.app-main-25:\\mipmap-xxhdpi\\launcher_icon.png"
     },
     {
-        "merged": "com.royal.well.app-merged_res-30:/mipmap-xxxhdpi_launcher_icon.png.flat",
-        "source": "com.royal.well.app-main-23:/mipmap-xxxhdpi/launcher_icon.png"
+        "merged": "C:\\Users\\raya co\\.gradle\\daemon\\7.5\\com.royal.trust.app-merged_res-32:\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\raya co\\.gradle\\daemon\\7.5\\com.royal.trust.app-main-25:\\mipmap-xxhdpi\\ic_launcher.png"
     },
     {
-        "merged": "com.royal.well.app-merged_res-30:/mipmap-xxhdpi_launcher_icon.png.flat",
-        "source": "com.royal.well.app-main-23:/mipmap-xxhdpi/launcher_icon.png"
+        "merged": "C:\\Users\\raya co\\.gradle\\daemon\\7.5\\com.royal.trust.app-merged_res-32:\\drawable-v21_launch_background.xml.flat",
+        "source": "C:\\Users\\raya co\\.gradle\\daemon\\7.5\\com.royal.trust.app-main-25:\\drawable-v21\\launch_background.xml"
     },
     {
-        "merged": "com.royal.well.app-merged_res-30:/mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "com.royal.well.app-main-23:/mipmap-xhdpi/ic_launcher.png"
+        "merged": "com.royal.trust.app-merged_res-32:/mipmap-xhdpi_launcher_icon.png.flat",
+        "source": "com.royal.trust.app-main-25:/mipmap-xhdpi/launcher_icon.png"
     },
     {
-        "merged": "com.royal.well.app-merged_res-30:/mipmap-xhdpi_launcher_icon.png.flat",
-        "source": "com.royal.well.app-main-23:/mipmap-xhdpi/launcher_icon.png"
+        "merged": "com.royal.trust.app-merged_res-32:/mipmap-hdpi_launcher_icon.png.flat",
+        "source": "com.royal.trust.app-main-25:/mipmap-hdpi/launcher_icon.png"
     },
     {
-        "merged": "com.royal.well.app-merged_res-30:/mipmap-mdpi_launcher_icon.png.flat",
-        "source": "com.royal.well.app-main-23:/mipmap-mdpi/launcher_icon.png"
+        "merged": "C:\\Users\\raya co\\.gradle\\daemon\\7.5\\com.royal.trust.app-merged_res-32:\\mipmap-mdpi_launcher_icon.png.flat",
+        "source": "C:\\Users\\raya co\\.gradle\\daemon\\7.5\\com.royal.trust.app-main-25:\\mipmap-mdpi\\launcher_icon.png"
     },
     {
-        "merged": "com.royal.well.app-merged_res-30:/mipmap-mdpi_ic_launcher.png.flat",
-        "source": "com.royal.well.app-main-23:/mipmap-mdpi/ic_launcher.png"
+        "merged": "C:\\Users\\raya co\\.gradle\\daemon\\7.5\\com.royal.trust.app-merged_res-32:\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\raya co\\.gradle\\daemon\\7.5\\com.royal.trust.app-main-25:\\mipmap-xhdpi\\ic_launcher.png"
     },
     {
-        "merged": "com.royal.well.app-merged_res-30:/mipmap-hdpi_ic_launcher.png.flat",
-        "source": "com.royal.well.app-main-23:/mipmap-hdpi/ic_launcher.png"
+        "merged": "com.royal.trust.app-merged_res-32:/mipmap-xxhdpi_launcher_icon.png.flat",
+        "source": "com.royal.trust.app-main-25:/mipmap-xxhdpi/launcher_icon.png"
     },
     {
-        "merged": "com.royal.well.app-merged_res-30:/mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "com.royal.well.app-main-23:/mipmap-xxhdpi/ic_launcher.png"
+        "merged": "C:\\Users\\raya co\\.gradle\\daemon\\7.5\\com.royal.trust.app-merged_res-32:\\mipmap-xhdpi_launcher_icon.png.flat",
+        "source": "C:\\Users\\raya co\\.gradle\\daemon\\7.5\\com.royal.trust.app-main-25:\\mipmap-xhdpi\\launcher_icon.png"
     },
     {
-        "merged": "com.royal.well.app-merged_res-30:/mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "com.royal.well.app-main-23:/mipmap-xxxhdpi/ic_launcher.png"
+        "merged": "C:\\Users\\raya co\\.gradle\\daemon\\7.5\\com.royal.trust.app-merged_res-32:\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\raya co\\.gradle\\daemon\\7.5\\com.royal.trust.app-main-25:\\mipmap-xxxhdpi\\ic_launcher.png"
     },
     {
-        "merged": "com.royal.well.app-merged_res-30:/drawable-v21_launch_background.xml.flat",
-        "source": "com.royal.well.app-main-23:/drawable-v21/launch_background.xml"
+        "merged": "C:\\Users\\raya co\\.gradle\\daemon\\7.5\\com.royal.trust.app-merged_res-32:\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\raya co\\.gradle\\daemon\\7.5\\com.royal.trust.app-main-25:\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\raya co\\.gradle\\daemon\\7.5\\com.royal.trust.app-merged_res-32:\\mipmap-hdpi_launcher_icon.png.flat",
+        "source": "C:\\Users\\raya co\\.gradle\\daemon\\7.5\\com.royal.trust.app-main-25:\\mipmap-hdpi\\launcher_icon.png"
+    },
+    {
+        "merged": "com.royal.trust.app-merged_res-32:/mipmap-mdpi_launcher_icon.png.flat",
+        "source": "com.royal.trust.app-main-25:/mipmap-mdpi/launcher_icon.png"
+    },
+    {
+        "merged": "C:\\Users\\raya co\\.gradle\\daemon\\7.5\\com.royal.trust.app-merged_res-32:\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\raya co\\.gradle\\daemon\\7.5\\com.royal.trust.app-main-25:\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "com.royal.trust.app-merged_res-32:/mipmap-xxxhdpi_launcher_icon.png.flat",
+        "source": "com.royal.trust.app-main-25:/mipmap-xxxhdpi/launcher_icon.png"
+    },
+    {
+        "merged": "C:\\Users\\raya co\\.gradle\\daemon\\7.5\\com.royal.trust.app-merged_res-32:\\mipmap-xxxhdpi_launcher_icon.png.flat",
+        "source": "C:\\Users\\raya co\\.gradle\\daemon\\7.5\\com.royal.trust.app-main-25:\\mipmap-xxxhdpi\\launcher_icon.png"
     }
 ]

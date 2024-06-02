@@ -52,9 +52,12 @@ class _SplashScreenState extends State<SplashScreen> {
           body: Container(
             height: MediaQuery.of(context).size.height,
             width: double.infinity,
-            child: Image.asset(
-              'assets/images/splash.png',
-              fit: BoxFit.cover,
+            color: MAIN_COLOR,
+            child: Center(
+              child: Image.asset(
+                'assets/images/logo-trust.png',
+                fit: BoxFit.cover,
+              ),
             ),
           ),
         ),

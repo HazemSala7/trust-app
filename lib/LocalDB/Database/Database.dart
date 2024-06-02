@@ -8,6 +8,7 @@ import '../Models/FavoriteItem.dart';
 
 class CartDatabaseHelper {
   static final CartDatabaseHelper _instance = CartDatabaseHelper._internal();
+  static final int dbVersion = 8;
 
   factory CartDatabaseHelper() => _instance;
 
@@ -43,7 +44,8 @@ class CartDatabaseHelper {
 
     return await openDatabase(
       path,
-      version: 1,
+      version: dbVersion,
+      onUpgrade: _onUpgrade,
       onCreate: (db, version) async {
         await _createDb(db);
       },
@@ -56,16 +58,22 @@ class CartDatabaseHelper {
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         productId INTEGER NOT NULL,
         size_id INTEGER NOT NULL,
-        name TEXT NOT NULL,
-        size TEXT NOT NULL,
-        color TEXT NOT NULL,
+        name_ar TEXT NOT NULL,
+        name_en TEXT NOT NULL,
+        size_ar TEXT NOT NULL,
+        size_en TEXT NOT NULL,
+        color_en TEXT NOT NULL,
+        color_ar TEXT NOT NULL,
         notes TEXT NOT NULL,
         categoryID INTEGER NOT NULL,
         image TEXT NOT NULL,
         quantity INTEGER NOT NULL,
-        sizes TEXT NOT NULL,
+        selectedSizeIndex INTEGER NOT NULL,
+        sizes_en TEXT NOT NULL,
+        sizes_ar TEXT NOT NULL,
         sizesIDs TEXT NOT NULL,
-        colorsNames TEXT NOT NULL,
+        colorsNamesEN TEXT NOT NULL,
+        colorsNamesAR TEXT NOT NULL,
         color_id INTEGER NOT NULL,
         colorsImages TEXT NOT NULL
       )
@@ -80,6 +88,15 @@ class CartDatabaseHelper {
         image TEXT NOT NULL
       )
     ''');
+  }
+
+  Future<void> _onUpgrade(Database db, int oldVersion, int newVersion) async {
+    // Drop existing tables
+    await db.execute('DROP TABLE IF EXISTS cart');
+    await db.execute('DROP TABLE IF EXISTS favorites');
+
+    // Recreate tables with updated schema
+    await _createDb(db);
   }
 
   Future<FavoriteItem?> getFavoriteItemByProductId(int productId) async {
@@ -126,18 +143,24 @@ class CartDatabaseHelper {
     final db = await database;
     return await db!.insert('cart', {
       'productId': item.productId,
-      'name': item.name,
-      'color': item.color,
+      'name_ar': item.name_ar,
+      'name_en': item.name_en,
+      'color_en': item.color_en,
+      'color_ar': item.color_ar,
       'notes': item.notes,
       'categoryID': item.categoryID,
       'image': item.image,
-      'size': item.size,
+      'selectedSizeIndex': item.selectedSizeIndex,
+      'size_ar': item.size_ar,
+      'size_en': item.size_en,
       'color_id': item.color_id,
       'quantity': item.quantity,
       'size_id': item.size_id,
-      'sizes': item.sizes.join(','),
+      'sizes_en': item.sizes_en.join(','),
+      'sizes_ar': item.sizes_ar.join(','),
       'sizesIDs': item.sizesIDs.join(','),
-      'colorsNames': item.colorsNames.join(','),
+      'colorsNamesEN': item.colorsNamesEN.join(','),
+      'colorsNamesAR': item.colorsNamesAR.join(','),
       'colorsImages': item.colorsImages.join(','),
     });
   }

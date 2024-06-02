@@ -24,9 +24,10 @@ class CartProvider extends ChangeNotifier {
         .indexWhere((cartItem) => cartItem.productId == item.productId);
 
     if (existingIndex != -1) {
-      if (item.color == '') {
+      if (item.color_en == '') {
         final existingSize = _cartItems.indexWhere((cartItem) =>
-            cartItem.productId == item.productId && cartItem.size == item.size);
+            cartItem.productId == item.productId &&
+            cartItem.size_en == item.size_en);
         if (existingSize != -1) {
           _cartItems[existingSize].quantity += item.quantity;
           await _dbHelper.updateCartItem(_cartItems[existingSize]);
@@ -35,7 +36,7 @@ class CartProvider extends ChangeNotifier {
           _cartItems.add(item);
         }
       } else {
-        if (_cartItems[existingIndex].color == "") {
+        if (_cartItems[existingIndex].color_en == "") {
           _cartItems[existingIndex].quantity += item.quantity;
           await _dbHelper.updateCartItem(_cartItems[existingIndex]);
         } else {
@@ -80,12 +81,17 @@ class CartProvider extends ChangeNotifier {
     for (CartItem item in _cartItems) {
       Map<String, dynamic> productData = {
         'product_id': item.productId,
-        'name': item.name,
+        'name_ar': item.name_ar,
+        'name_en': item.name_en,
         'image': item.image,
-        'size': item.size,
+        'size_ar': item.size_ar,
+        'size_en': item.size_en,
         'size_id': item.size_id,
+        'color_ar': item.color_ar,
+        'color_en': item.color_en,
         'notes': item.notes,
-        'sizes': item.sizes,
+        'sizes_en': item.sizes_en,
+        'sizes_ar': item.sizes_ar,
         'quantity': item.quantity,
       };
       productsArray.add(productData);

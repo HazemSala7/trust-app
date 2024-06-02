@@ -1,0 +1,14 @@
+io.flutter.plugins.videoplayer.video_player_android-core-1.7.0-0 C:\Users\raya co\.gradle\caches\transforms-3\3711e761e5cab9914a4044ebefffb808\transformed\core-1.7.0\res
+io.flutter.plugins.videoplayer.video_player_android-lifecycle-runtime-2.3.1-1 C:\Users\raya co\.gradle\caches\transforms-3\56dc8ab98360a9eb5effe2c6b635ca12\transformed\lifecycle-runtime-2.3.1\res
+io.flutter.plugins.videoplayer.video_player_android-jetified-window-1.0.0-beta04-2 C:\Users\raya co\.gradle\caches\transforms-3\60762251fae452debfca1bd89aea51ff\transformed\jetified-window-1.0.0-beta04\res
+io.flutter.plugins.videoplayer.video_player_android-jetified-exoplayer-core-2.18.7-3 C:\Users\raya co\.gradle\caches\transforms-3\81a7b42541a0007e657bb23bf35e8f70\transformed\jetified-exoplayer-core-2.18.7\res
+io.flutter.plugins.videoplayer.video_player_android-jetified-annotation-experimental-1.1.0-4 C:\Users\raya co\.gradle\caches\transforms-3\c6a2258bcd9d71e4272c1711a07b9229\transformed\jetified-annotation-experimental-1.1.0\res
+io.flutter.plugins.videoplayer.video_player_android-jetified-window-java-1.0.0-beta04-5 C:\Users\raya co\.gradle\caches\transforms-3\fee2c687881b07b45fdc79ddebd334d4\transformed\jetified-window-java-1.0.0-beta04\res
+io.flutter.plugins.videoplayer.video_player_android-main-6 C:\Users\raya co\AppData\Local\Pub\Cache\hosted\pub.dev\video_player_android-2.4.12\android\src\main\res
+io.flutter.plugins.videoplayer.video_player_android-release-7 C:\Users\raya co\AppData\Local\Pub\Cache\hosted\pub.dev\video_player_android-2.4.12\android\src\release\res
+io.flutter.plugins.videoplayer.video_player_android-pngs-8 F:\Trust App\trust_app_flutter\build\video_player_android\generated\res\pngs\release
+io.flutter.plugins.videoplayer.video_player_android-resValues-9 F:\Trust App\trust_app_flutter\build\video_player_android\generated\res\resValues\release
+io.flutter.plugins.videoplayer.video_player_android-rs-10 F:\Trust App\trust_app_flutter\build\video_player_android\generated\res\rs\release
+io.flutter.plugins.videoplayer.video_player_android-mergeReleaseResources-11 F:\Trust App\trust_app_flutter\build\video_player_android\intermediates\incremental\release\mergeReleaseResources\merged.dir
+io.flutter.plugins.videoplayer.video_player_android-mergeReleaseResources-12 F:\Trust App\trust_app_flutter\build\video_player_android\intermediates\incremental\release\mergeReleaseResources\stripped.dir
+io.flutter.plugins.videoplayer.video_player_android-merged_res-13 F:\Trust App\trust_app_flutter\build\video_player_android\intermediates\merged_res\release

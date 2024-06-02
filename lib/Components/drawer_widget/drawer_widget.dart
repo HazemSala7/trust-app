@@ -8,10 +8,14 @@ import 'package:well_app_flutter/Pages/authentication/login_screen/login_screen.
 import 'package:well_app_flutter/Pages/contact_us/contact_us.dart';
 import 'package:well_app_flutter/Pages/home_screen/home_screen.dart';
 import 'package:well_app_flutter/Pages/main_categories/main_categories.dart';
+import 'package:well_app_flutter/Pages/merchant_screen/maintenance_requests/maintenance_requests.dart';
+import 'package:well_app_flutter/Pages/merchant_screen/warranties/warranties.dart';
 import 'package:well_app_flutter/Pages/my_account/my_account.dart';
 import 'package:well_app_flutter/Pages/my_account/my_orders/my_orders.dart';
 import 'package:well_app_flutter/Pages/wishlists/wishlists.dart';
 import 'package:well_app_flutter/Server/functions/functions.dart';
+import '../../Pages/merchant_screen/merchant_screen.dart';
+import '../../Pages/point_of_sales/point_of_sales.dart';
 import '../../main.dart';
 import '../search_dialog/search_dialog.dart';
 
@@ -88,6 +92,23 @@ class _DrawerWellState extends State<DrawerWell> {
               },
               icon: Icons.category_sharp,
               iconPath: "assets/images/products.svg"),
+          DrawerMethod(
+              name: AppLocalizations.of(context)!.poin_of_sales,
+              OnCLICK: () {
+                NavigatorFunction(context, PointOfSales());
+              },
+              icon: Icons.category_sharp,
+              iconPath: "assets/images/point_of_sales.svg"),
+          Visibility(
+            visible: ROLEID.toString() == "3" ? true : false,
+            child: DrawerMethod(
+                name: "الكفالات و الصيانة",
+                OnCLICK: () {
+                  NavigatorFunction(context, MerchantScreen());
+                },
+                icon: Icons.fmd_good,
+                iconPath: "assets/images/maintences_warranties.svg"),
+          ),
           DrawerMethod(
               name: AppLocalizations.of(context)!.contact,
               OnCLICK: () {

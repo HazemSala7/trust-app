@@ -6,9 +6,9 @@ io.flutter.plugins.firebase.core.firebase_core-jetified-play-services-basement-1
 io.flutter.plugins.firebase.core.firebase_core-jetified-window-java-1.0.0-beta04-5 C:\Users\raya co\.gradle\caches\transforms-3\fee2c687881b07b45fdc79ddebd334d4\transformed\jetified-window-java-1.0.0-beta04\res
 io.flutter.plugins.firebase.core.firebase_core-main-6 C:\Users\raya co\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_core-2.21.0\android\src\main\res
 io.flutter.plugins.firebase.core.firebase_core-release-7 C:\Users\raya co\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_core-2.21.0\android\src\release\res
-io.flutter.plugins.firebase.core.firebase_core-pngs-8 F:\Well App Flutter\well_app_flutter\build\firebase_core\generated\res\pngs\release
-io.flutter.plugins.firebase.core.firebase_core-resValues-9 F:\Well App Flutter\well_app_flutter\build\firebase_core\generated\res\resValues\release
-io.flutter.plugins.firebase.core.firebase_core-rs-10 F:\Well App Flutter\well_app_flutter\build\firebase_core\generated\res\rs\release
-io.flutter.plugins.firebase.core.firebase_core-mergeReleaseResources-11 F:\Well App Flutter\well_app_flutter\build\firebase_core\intermediates\incremental\release\mergeReleaseResources\merged.dir
-io.flutter.plugins.firebase.core.firebase_core-mergeReleaseResources-12 F:\Well App Flutter\well_app_flutter\build\firebase_core\intermediates\incremental\release\mergeReleaseResources\stripped.dir
-io.flutter.plugins.firebase.core.firebase_core-merged_res-13 F:\Well App Flutter\well_app_flutter\build\firebase_core\intermediates\merged_res\release
+io.flutter.plugins.firebase.core.firebase_core-pngs-8 F:\Trust App\trust_app_flutter\build\firebase_core\generated\res\pngs\release
+io.flutter.plugins.firebase.core.firebase_core-resValues-9 F:\Trust App\trust_app_flutter\build\firebase_core\generated\res\resValues\release
+io.flutter.plugins.firebase.core.firebase_core-rs-10 F:\Trust App\trust_app_flutter\build\firebase_core\generated\res\rs\release
+io.flutter.plugins.firebase.core.firebase_core-mergeReleaseResources-11 F:\Trust App\trust_app_flutter\build\firebase_core\intermediates\incremental\release\mergeReleaseResources\merged.dir
+io.flutter.plugins.firebase.core.firebase_core-mergeReleaseResources-12 F:\Trust App\trust_app_flutter\build\firebase_core\intermediates\incremental\release\mergeReleaseResources\stripped.dir
+io.flutter.plugins.firebase.core.firebase_core-merged_res-13 F:\Trust App\trust_app_flutter\build\firebase_core\intermediates\merged_res\release

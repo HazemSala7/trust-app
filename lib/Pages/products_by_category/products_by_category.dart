@@ -152,6 +152,7 @@ class _ProductsByCategoryState extends State<ProductsByCategory> {
                                               }
                                             }
                                             List<String> _initSizes = [];
+                                            List<String> _initSizesAR = [];
                                             List<int> _initSizesIDs = [];
                                             for (int i = 0;
                                                 i <
@@ -161,6 +162,11 @@ class _ProductsByCategoryState extends State<ProductsByCategory> {
                                               _initSizes.add(AllProducts[index]
                                                       ["sizes"][i]["title"]
                                                   .toString());
+                                              _initSizesAR.add(
+                                                  AllProducts[index]["sizes"][i]
+                                                              ["translations"]
+                                                          [0]["value"]
+                                                      .toString());
                                               _initSizesIDs.add(
                                                   AllProducts[index]["sizes"][i]
                                                       ["id"]);
@@ -178,7 +184,8 @@ class _ProductsByCategoryState extends State<ProductsByCategory> {
                                                     curve: Curves.easeOut,
                                                     child: ProductWidget(
                                                         image: resultList[0],
-                                                        SIZES: _initSizes,
+                                                        SIZES_AR: _initSizesAR,
+                                                        SIZES_EN: _initSizes,
                                                         SIZESIDs: _initSizesIDs,
                                                         name_ar: AllProducts[index]
                                                                     ["translations"]

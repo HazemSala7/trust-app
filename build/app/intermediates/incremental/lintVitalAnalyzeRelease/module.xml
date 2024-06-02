@@ -1,11 +1,11 @@
 <lint-module
     format="1"
-    dir="F:\Well App Flutter\well_app_flutter\android\app"
+    dir="F:\Trust App\trust_app_flutter\android\app"
     name=":app"
     type="APP"
     maven="android:app:"
     gradle="7.3.0"
-    buildFolder="F:\Well App Flutter\well_app_flutter\build\app"
+    buildFolder="F:\Trust App\trust_app_flutter\build\app"
     bootClassPath="C:\Users\raya co\AppData\Local\Android\sdk\platforms\android-33\android.jar;C:\Users\raya co\AppData\Local\Android\sdk\build-tools\30.0.3\core-lambda-stubs.jar"
     javaSourceLevel="1.8"
     compileTarget="android-33">

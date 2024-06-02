@@ -8,6 +8,57 @@ class AppLocalizationsHe extends AppLocalizations {
   String get new_homepage => 'New';
 
   @override
+  String get add_waranty => 'Add Wareanty';
+
+  @override
+  String get pending => 'Pending';
+
+  @override
+  String get warranties_and_maintenances => 'الكفالات و الصيانة';
+
+  @override
+  String get in_progress => 'In Progress';
+
+  @override
+  String get done => 'Done';
+
+  @override
+  String get delivered => 'Delivered';
+
+  @override
+  String get edit_selected => 'Edit Selected';
+
+  @override
+  String get cost => 'Cost : ';
+
+  @override
+  String get desc_problem => 'Malfunction Description : ';
+
+  @override
+  String get notes_warranty => 'Notes : ';
+
+  @override
+  String get my_location => 'My Location';
+
+  @override
+  String get maintenance_status => 'Maintenance Status';
+
+  @override
+  String get maintenance_notes => 'maintenance Notes : ';
+
+  @override
+  String get malfunction_description => 'Malfunction Description : ';
+
+  @override
+  String get maintenance_department => 'Maintenance Department';
+
+  @override
+  String get merchants_location => 'Merchants Location';
+
+  @override
+  String get show_merchants_location => 'Show All Merchants Location On Map';
+
+  @override
   String get send_order => 'Send Order';
 
   @override
@@ -36,6 +87,81 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String get edit => 'ُEdit';
+
+  @override
+  String get poin_of_sales => 'Point Of Sales';
+
+  @override
+  String get hebron => 'Hebron';
+
+  @override
+  String get ramallah => 'Ramallah';
+
+  @override
+  String get all => 'All';
+
+  @override
+  String get description => 'Description';
+
+  @override
+  String get merchant_name => 'Merchant Name : ';
+
+  @override
+  String get product_name => 'Product Name';
+
+  @override
+  String get order_status_new => 'Order Status : ';
+
+  @override
+  String get merchant_phone => 'Merchant Phone : ';
+
+  @override
+  String get continue_operation => 'Continue';
+
+  @override
+  String get not_effectice => 'Not Effective';
+
+  @override
+  String get effectice => 'Effective';
+
+  @override
+  String get confirm_info => 'Confirm Information';
+
+  @override
+  String get no_internet => 'No internet , plesae check internet connection';
+
+  @override
+  String get empty_warranties => 'There is no warranties';
+
+  @override
+  String get empty_maintencaes => 'There is no maintenance request';
+
+  @override
+  String get add_maintenance_request => 'Add Maintenance Request';
+
+  @override
+  String get effectice_status => 'Warranty Status';
+
+  @override
+  String get customer_name => 'Customer Name';
+
+  @override
+  String get please_enter_product_serial_number => 'please enter product serial number';
+
+  @override
+  String get please_enter_a_your_customer_name => 'Please enter a your customer name';
+
+  @override
+  String get please_enter_a_customer_phone_number => 'Please enter a customer phone number';
+
+  @override
+  String get customer_phone => 'Customer Phone';
+
+  @override
+  String get maintenance_requests => 'Maintenance Requests';
+
+  @override
+  String get product_serial_number => 'Product Serial Number';
 
   @override
   String get navigator_home => 'Go To Home';
@@ -71,7 +197,7 @@ class AppLocalizationsHe extends AppLocalizations {
   String get related_products => 'Related Products';
 
   @override
-  String get send => 'ارسال';
+  String get send => 'Send';
 
   @override
   String get explanation => 'Ask abou...';
@@ -158,7 +284,7 @@ class AppLocalizationsHe extends AppLocalizations {
   String get contact_email => 'Email';
 
   @override
-  String get parts => 'الاقسام';
+  String get parts => 'Categories';
 
   @override
   String get about_well => 'About Us';
@@ -176,22 +302,22 @@ class AppLocalizationsHe extends AppLocalizations {
   String get view_by_category => 'View By Category';
 
   @override
-  String get more => 'المزيد';
+  String get more => 'More';
 
   @override
-  String get home => 'התחברות';
+  String get home => 'Home';
 
   @override
-  String get offer => 'العروض';
+  String get offer => 'Offers';
 
   @override
-  String get alqaima => 'المزيد';
+  String get alqaima => 'List';
 
   @override
-  String get qaf => 'الأسئله الشائعه';
+  String get qaf => 'Common Questions';
 
   @override
-  String get profile => 'الملف الشخصي';
+  String get profile => 'Profile';
 
   @override
   String get edit_profile => 'Edit Profile';
@@ -209,64 +335,64 @@ class AppLocalizationsHe extends AppLocalizations {
   String get delete_account => 'Delete Account';
 
   @override
-  String get contact => 'تواصل معنا';
+  String get contact => 'Contact Us';
 
   @override
-  String get cart => 'السله';
+  String get cart => 'Cart';
 
   @override
-  String get terms => 'شروط الاستخدام';
+  String get terms => 'Terms Of Use';
 
   @override
-  String get who => 'من نحن';
+  String get who => 'About Us';
 
   @override
-  String get favourite => 'المفضله';
+  String get favourite => 'Favourite';
 
   @override
-  String get order => 'طلباتي';
+  String get order => 'My Order';
 
   @override
-  String get privacy => 'سياسه الخصوصيه';
+  String get privacy => 'Privacy And Policy';
 
   @override
-  String get logout => 'تسجيل خروج';
+  String get logout => 'Logout';
 
   @override
-  String get login => 'התחברות';
+  String get login => 'Login';
 
   @override
-  String get dialogl1 => 'يجب عليك تسجيل الدخول اولا';
+  String get dialogl1 => 'You have to login first';
 
   @override
-  String get ok => 'בסדר';
+  String get ok => 'ok';
 
   @override
-  String get enterphone => 'ادخل رقم الهاتف';
+  String get enterphone => 'enter phone number';
 
   @override
-  String get enterpassword => 'סיסמה';
+  String get enterpassword => 'enter password';
 
   @override
-  String get donthaveaccount => 'אין לך חשבון';
+  String get donthaveaccount => 'Dont have an account ? ';
 
   @override
-  String get youcansignup => 'רשום חשבון כאן';
+  String get youcansignup => 'You can sign up here ';
 
   @override
-  String get signup => 'פתח חשבון';
+  String get signup => 'Sign Up';
 
   @override
-  String get username => 'שם המשתמש';
+  String get username => 'enter username';
 
   @override
-  String get confirmpassword => 'אשר סיסמה';
+  String get confirmpassword => 'confirm password';
 
   @override
-  String get youcansigninhere => 'היכנס כאן';
+  String get youcansigninhere => 'You can sign in here ';
 
   @override
-  String get doyouhaveaccount => 'יש לך חשבון?';
+  String get doyouhaveaccount => 'Do you have an account ? ';
 
   @override
   String get logging_in => 'Loggin you in';
@@ -275,154 +401,154 @@ class AppLocalizationsHe extends AppLocalizations {
   String get create_account => 'Create Account';
 
   @override
-  String get logoutsure => 'هل تريد بالتأكيد تسجيل الخروج ؟ ';
+  String get logoutsure => 'Are you sure want to logout? ';
 
   @override
-  String get yes => 'نعم';
+  String get yes => 'Yes';
 
   @override
-  String get no => 'لا';
+  String get no => 'No';
 
   @override
-  String get toastlogout => 'נותקת בהצלחה';
+  String get toastlogout => 'You have been successfully logged out';
 
   @override
-  String get loginsuccess => 'אתה מחובר בהצלחה';
+  String get loginsuccess => 'You have been successfully logged in';
 
   @override
-  String get loginempty => 'كلمه المرور او رقم الهاتف فارغان';
+  String get loginempty => 'phone number or password is empty';
 
   @override
-  String get incorrectpass => 'كلمه المرور غير صحيحه';
+  String get incorrectpass => 'password is incorrct!';
 
   @override
-  String get incorrectphone => 'رقم الهاتف غير صحيح';
+  String get incorrectphone => 'phonenumber is incorrect!';
 
   @override
-  String get phoneorpassin => 'رقم الهاتف او كلمه المرور غير صحيحه';
+  String get phoneorpassin => 'phone number or password is incorrect!';
 
   @override
-  String get regempty => 'الرجاء تعبئه جميع الفراغات';
+  String get regempty => 'Please fill in all blanks';
 
   @override
-  String get regsuccess => 'تم تسجيل حسابك بنجاح';
+  String get regsuccess => 'Your account has been successfully registered';
 
   @override
-  String get regphonefailed => 'رقم الهاتف المدخل مسجل مسبقا';
+  String get regphonefailed => 'The phone number entered is already registered';
 
   @override
-  String get editprofile => 'تعديل حسابي';
+  String get editprofile => 'Edit my profile';
 
   @override
-  String get deletecart => 'تم حذفها من السله بنجاح';
+  String get deletecart => 'It has been successfully removed from the cart';
 
   @override
-  String get alreadydeletecart => 'محذوف مسبقا';
+  String get alreadydeletecart => 'already deleted';
 
   @override
-  String get total => 'المجموع';
+  String get total => 'Total';
 
   @override
-  String get buynow => 'شراء الأن';
+  String get buynow => 'Buy Now';
 
   @override
-  String get price => 'السعر';
+  String get price => 'price';
 
   @override
-  String get qty => 'الكميه';
+  String get qty => 'quantity';
 
   @override
-  String get namecon => 'الاسم';
+  String get namecon => 'name';
 
   @override
-  String get phonecon => 'رقم الهاتف';
+  String get phonecon => 'phone number';
 
   @override
-  String get mailcon => 'البريد الالكتروني';
+  String get mailcon => 'mail';
 
   @override
-  String get subcon => 'الموضوع';
+  String get subcon => 'subject of the message';
 
   @override
-  String get bodycon => 'نص الرساله';
+  String get bodycon => 'body of the message';
 
   @override
-  String get consuccess => 'تم ارسال رسالتك بنجاح';
+  String get consuccess => 'Your message was sent successfully';
 
   @override
   String get delete_success => 'Account deleted sunccessfully';
 
   @override
-  String get confailed => 'فشلت عمليه ارسال الرساله';
+  String get confailed => 'Failed to send the message';
 
   @override
-  String get number => 'الرقم';
+  String get number => 'Number';
 
   @override
-  String get date => 'היסטוריה ';
+  String get date => 'Date';
 
   @override
-  String get case1 => 'الحاله';
+  String get case1 => 'Case';
 
   @override
-  String get male => 'ذكر';
+  String get male => 'male';
 
   @override
-  String get female => 'انثى';
+  String get female => 'female';
 
   @override
-  String get editsuccess => 'تم تعديل حسابك بنجاح';
+  String get editsuccess => 'Your account has been successfully modified';
 
   @override
-  String get editfailed => 'فشلت عمليه التعديل';
+  String get editfailed => 'Edit operation failed';
 
   @override
-  String get editsave => 'حفظ التعديلات';
+  String get editsave => 'save the changes';
 
   @override
-  String get queseditpass => 'هل تريد تغيير كلمه المرور';
+  String get queseditpass => 'Do you want to change the password';
 
   @override
-  String get editpassword => 'تعديل كلمه المرور';
+  String get editpassword => 'Edit PassWord';
 
   @override
-  String get oldpassword => 'كلمه المرور القديمه';
+  String get oldpassword => 'Old PassWord';
 
   @override
-  String get newpassword => 'كلمه المرور الجديده';
+  String get newpassword => 'New PassWord';
 
   @override
-  String get confirmnewpass => 'تأكيد كلمه المرور الجديده';
+  String get confirmnewpass => 'Confirm newpassword';
 
   @override
-  String get updatepass => 'تحديث كلمه السر';
+  String get updatepass => 'Update my password';
 
   @override
-  String get dontmatch => 'كلمه المرور الجديده لا تطابق كلمه المرور ';
+  String get dontmatch => 'The new password does not match the password';
 
   @override
-  String get product => 'المنتج';
+  String get product => 'Products';
 
   @override
-  String get getgeoarea => 'اختيار المنطقه الجغرافيه';
+  String get getgeoarea => 'Choose a geographical area';
 
   @override
-  String get getarea => 'اختيار المنطقه';
+  String get getarea => 'Choose the area';
 
   @override
-  String get getcountry => 'اختيار المدينه';
+  String get getcountry => 'Choose the country';
 
   @override
-  String get confirmbuy => 'تأكيد الطلب';
+  String get confirmbuy => 'Confirmation';
 
   @override
-  String get deliveryprice => 'سعر التوصيل ';
+  String get deliveryprice => 'Delivery price';
 
   @override
-  String get totally => 'الاجمالي';
+  String get totally => 'Total all';
 
   @override
-  String get notes => 'ملاحطات';
+  String get notes => 'notes';
 
   @override
   String get nearof => 'near of ';
@@ -524,67 +650,67 @@ class AppLocalizationsHe extends AppLocalizations {
   String get my_points => 'Points';
 
   @override
-  String get dailt_atten => 'שיא נוכחות יומי';
+  String get dailt_atten => 'تسجيل حضور عمال يومي';
 
   @override
-  String get attendace => 'הקהל';
+  String get attendace => 'الحضور';
 
   @override
-  String get notes_general => 'פתקים כללים';
+  String get notes_general => 'ملاحظات عامه';
 
   @override
-  String get save_date => 'שמירת נתונים';
+  String get save_date => 'حفظ البيانات';
 
   @override
-  String get attendace_successfully => 'נוכחות והיעדרות נוספו בהצלחה';
+  String get attendace_successfully => 'تم اضافه الحضور و الغياب بنجاح';
 
   @override
-  String get kind_employee_drawer => 'סוג עובדים';
+  String get kind_employee_drawer => 'نوع العمال';
 
   @override
-  String get user_no_active => 'חשבונך אינו מופעל, אנא צור קשר עם הבעלים של האפליקציה';
+  String get user_no_active => 'حسابك غير مفعل , الرجاء التواصل مع صاحب التطبيق';
 
   @override
-  String get no_employees_here => 'אין עובדים בסדנה זו';
+  String get no_employees_here => 'لا يوجد اي عمال في هذه الورشه';
 
   @override
-  String get number_attendace => 'מספר המשתתפים';
+  String get number_attendace => 'عدد الحضور';
 
   @override
-  String get number_employee => 'המספר';
+  String get number_employee => 'الرقم';
 
   @override
-  String get hour_employee => 'השעות';
+  String get hour_employee => 'الساعات';
 
   @override
-  String get note_employee => 'הוסף הערות';
+  String get note_employee => 'اضافه ملاحظات';
 
   @override
-  String get name_employee => 'שם העובד';
+  String get name_employee => 'أسم العامل';
 
   @override
-  String get atten_hour => 'רשום את נוכחות העובדים לפי שעות';
+  String get atten_hour => 'تسجيل حضور عمال بالساعات';
 
   @override
-  String get app_name => 'רישום נוכחות העובדים';
+  String get app_name => 'تسجيل حضور العمال';
 
   @override
-  String get account_disabled => 'החשבון שלך לא מופעל, אנא צור איתנו קשר כדי להפעיל אותו בסדר';
+  String get account_disabled => 'حسابك غير مفعل , يرجى التواصل معنا لتفعيله';
 
   @override
-  String get project_id => 'מספר סדנה';
+  String get project_id => 'Project ID';
 
   @override
-  String get kind_employee => 'בחר את סוג העובדים';
+  String get kind_employee => '  ';
 
   @override
-  String get daily => 'יום / יומי';
+  String get daily => 'שעה / ות';
 
   @override
   String get admin => 'מנהל';
 
   @override
-  String get hourly => 'שעה / ות';
+  String get hourly => 'יום / יומי';
 
   @override
   String get warranty_inspection => 'Warranty Inspection';
@@ -594,9 +720,6 @@ class AppLocalizationsHe extends AppLocalizations {
 
   @override
   String get send_to_maintenance => 'Send To Maintenance';
-
-  @override
-  String get maintenance_status => 'Maintenance Status';
 
   @override
   String get inquire_about_product_specifications => 'Inquire About Product Specifications';

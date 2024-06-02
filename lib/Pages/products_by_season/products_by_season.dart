@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -177,24 +179,25 @@ class _ProductsBySeasonState extends State<ProductsBySeason> {
                                             itemBuilder: (context, int index) {
                                               var imageString =
                                                   AllProducts[index]["image"];
-                                              if (AllProducts.isNotEmpty) {
+                                              List<String> resultList = [];
+                                              if (imageString.isNotEmpty) {
                                                 // Check if the imageString is in the expected format
                                                 if (imageString != null &&
                                                     imageString
                                                         .startsWith("[") &&
                                                     imageString.endsWith("]")) {
-                                                  // Remove square brackets and any surrounding double quotes
-                                                  imageString = imageString
-                                                      .substring(
-                                                          1,
-                                                          imageString.length -
-                                                              1)
-                                                      .replaceAll('"', '');
+                                                  resultList =
+                                                      (jsonDecode(imageString)
+                                                              as List)
+                                                          .map((item) =>
+                                                              item as String)
+                                                          .toList();
                                                 } else {
                                                   imageString = "";
                                                 }
                                               }
                                               List<String> _initSizes = [];
+                                              List<String> _initSizesAR = [];
                                               List<int> _initSizesIDs = [];
                                               for (int i = 0;
                                                   i <
@@ -205,6 +208,12 @@ class _ProductsBySeasonState extends State<ProductsBySeason> {
                                                 _initSizes.add(
                                                     AllProducts[index]["sizes"]
                                                             [i]["title"]
+                                                        .toString());
+                                                _initSizesAR.add(
+                                                    AllProducts[index]["sizes"]
+                                                                    [i]
+                                                                ["translations"]
+                                                            [0]["value"]
                                                         .toString());
                                                 _initSizesIDs.add(
                                                     AllProducts[index]["sizes"]
@@ -224,8 +233,10 @@ class _ProductsBySeasonState extends State<ProductsBySeason> {
                                                       child: ProductWidget(
                                                           SIZESIDs:
                                                               _initSizesIDs,
-                                                          image: imageString,
-                                                          SIZES: _initSizes,
+                                                          image: resultList[0],
+                                                          SIZES_EN: _initSizes,
+                                                          SIZES_AR:
+                                                              _initSizesAR,
                                                           name_ar: AllProducts[index]
                                                                       ["translations"][0]
                                                                   ["value"] ??

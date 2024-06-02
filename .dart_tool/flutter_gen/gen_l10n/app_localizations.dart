@@ -101,6 +101,108 @@ abstract class AppLocalizations {
   /// **'New'**
   String get new_homepage;
 
+  /// No description provided for @add_waranty.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Wareanty'**
+  String get add_waranty;
+
+  /// No description provided for @pending.
+  ///
+  /// In en, this message translates to:
+  /// **'Pending'**
+  String get pending;
+
+  /// No description provided for @warranties_and_maintenances.
+  ///
+  /// In en, this message translates to:
+  /// **'Warranties And Maintenances'**
+  String get warranties_and_maintenances;
+
+  /// No description provided for @in_progress.
+  ///
+  /// In en, this message translates to:
+  /// **'In Progress'**
+  String get in_progress;
+
+  /// No description provided for @done.
+  ///
+  /// In en, this message translates to:
+  /// **'Done'**
+  String get done;
+
+  /// No description provided for @delivered.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivered'**
+  String get delivered;
+
+  /// No description provided for @edit_selected.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Selected'**
+  String get edit_selected;
+
+  /// No description provided for @cost.
+  ///
+  /// In en, this message translates to:
+  /// **'Cost : '**
+  String get cost;
+
+  /// No description provided for @desc_problem.
+  ///
+  /// In en, this message translates to:
+  /// **'Malfunction Description : '**
+  String get desc_problem;
+
+  /// No description provided for @notes_warranty.
+  ///
+  /// In en, this message translates to:
+  /// **'Notes : '**
+  String get notes_warranty;
+
+  /// No description provided for @my_location.
+  ///
+  /// In en, this message translates to:
+  /// **'My Location'**
+  String get my_location;
+
+  /// No description provided for @maintenance_status.
+  ///
+  /// In en, this message translates to:
+  /// **'Maintenance Status'**
+  String get maintenance_status;
+
+  /// No description provided for @maintenance_notes.
+  ///
+  /// In en, this message translates to:
+  /// **'maintenance Notes : '**
+  String get maintenance_notes;
+
+  /// No description provided for @malfunction_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Malfunction Description : '**
+  String get malfunction_description;
+
+  /// No description provided for @maintenance_department.
+  ///
+  /// In en, this message translates to:
+  /// **'Maintenance Department'**
+  String get maintenance_department;
+
+  /// No description provided for @merchants_location.
+  ///
+  /// In en, this message translates to:
+  /// **'Merchants Location'**
+  String get merchants_location;
+
+  /// No description provided for @show_merchants_location.
+  ///
+  /// In en, this message translates to:
+  /// **'Show All Merchants Location On Map'**
+  String get show_merchants_location;
+
   /// No description provided for @send_order.
   ///
   /// In en, this message translates to:
@@ -160,6 +262,156 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'ُEdit'**
   String get edit;
+
+  /// No description provided for @poin_of_sales.
+  ///
+  /// In en, this message translates to:
+  /// **'Point Of Sales'**
+  String get poin_of_sales;
+
+  /// No description provided for @hebron.
+  ///
+  /// In en, this message translates to:
+  /// **'Hebron'**
+  String get hebron;
+
+  /// No description provided for @ramallah.
+  ///
+  /// In en, this message translates to:
+  /// **'Ramallah'**
+  String get ramallah;
+
+  /// No description provided for @all.
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get all;
+
+  /// No description provided for @description.
+  ///
+  /// In en, this message translates to:
+  /// **'Description'**
+  String get description;
+
+  /// No description provided for @merchant_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Merchant Name : '**
+  String get merchant_name;
+
+  /// No description provided for @product_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Product Name'**
+  String get product_name;
+
+  /// No description provided for @order_status_new.
+  ///
+  /// In en, this message translates to:
+  /// **'Order Status : '**
+  String get order_status_new;
+
+  /// No description provided for @merchant_phone.
+  ///
+  /// In en, this message translates to:
+  /// **'Merchant Phone : '**
+  String get merchant_phone;
+
+  /// No description provided for @continue_operation.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue'**
+  String get continue_operation;
+
+  /// No description provided for @not_effectice.
+  ///
+  /// In en, this message translates to:
+  /// **'Not Effective'**
+  String get not_effectice;
+
+  /// No description provided for @effectice.
+  ///
+  /// In en, this message translates to:
+  /// **'Effective'**
+  String get effectice;
+
+  /// No description provided for @confirm_info.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm Information'**
+  String get confirm_info;
+
+  /// No description provided for @no_internet.
+  ///
+  /// In en, this message translates to:
+  /// **'No internet , plesae check internet connection'**
+  String get no_internet;
+
+  /// No description provided for @empty_warranties.
+  ///
+  /// In en, this message translates to:
+  /// **'There is no warranties'**
+  String get empty_warranties;
+
+  /// No description provided for @empty_maintencaes.
+  ///
+  /// In en, this message translates to:
+  /// **'There is no maintenance request'**
+  String get empty_maintencaes;
+
+  /// No description provided for @add_maintenance_request.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Maintenance Request'**
+  String get add_maintenance_request;
+
+  /// No description provided for @effectice_status.
+  ///
+  /// In en, this message translates to:
+  /// **'Warranty Status'**
+  String get effectice_status;
+
+  /// No description provided for @customer_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Customer Name'**
+  String get customer_name;
+
+  /// No description provided for @please_enter_product_serial_number.
+  ///
+  /// In en, this message translates to:
+  /// **'please enter product serial number'**
+  String get please_enter_product_serial_number;
+
+  /// No description provided for @please_enter_a_your_customer_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter a your customer name'**
+  String get please_enter_a_your_customer_name;
+
+  /// No description provided for @please_enter_a_customer_phone_number.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter a customer phone number'**
+  String get please_enter_a_customer_phone_number;
+
+  /// No description provided for @customer_phone.
+  ///
+  /// In en, this message translates to:
+  /// **'Customer Phone'**
+  String get customer_phone;
+
+  /// No description provided for @maintenance_requests.
+  ///
+  /// In en, this message translates to:
+  /// **'Maintenance Requests'**
+  String get maintenance_requests;
+
+  /// No description provided for @product_serial_number.
+  ///
+  /// In en, this message translates to:
+  /// **'Product Serial Number'**
+  String get product_serial_number;
 
   /// No description provided for @navigator_home.
   ///
@@ -1276,12 +1528,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Send To Maintenance'**
   String get send_to_maintenance;
-
-  /// No description provided for @maintenance_status.
-  ///
-  /// In en, this message translates to:
-  /// **'Maintenance Status'**
-  String get maintenance_status;
 
   /// No description provided for @inquire_about_product_specifications.
   ///

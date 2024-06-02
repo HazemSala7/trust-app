@@ -1,41 +1,56 @@
 <dependencies>
   <compile
-      roots="__local_aars__:F:\Well App Flutter\well_app_flutter\build\app\intermediates\flutter\release\libs.jar:unspecified@jar,F:\Well App Flutter\well_app_flutter\android@@:shared_preferences_android::release,F:\Well App Flutter\well_app_flutter\android@@:firebase_messaging::release,F:\Well App Flutter\well_app_flutter\android@@:firebase_core::release,F:\Well App Flutter\well_app_flutter\android@@:social_share_plugin_android::release,F:\Well App Flutter\well_app_flutter\android@@:sqflite::release,F:\Well App Flutter\well_app_flutter\android@@:flutter_local_notifications::release,F:\Well App Flutter\well_app_flutter\android@@:fluttertoast::release,F:\Well App Flutter\well_app_flutter\android@@:url_launcher_android::release,F:\Well App Flutter\well_app_flutter\android@@:path_provider_android::release,F:\Well App Flutter\well_app_flutter\android@@:share::release,F:\Well App Flutter\well_app_flutter\android@@:gallery_saver::release,io.flutter:flutter_embedding_release:1.0.0-45f6e009110df4f34ec2cf99f63cf73b71b7a420@jar,androidx.window:window-java:1.0.0-beta04@aar,androidx.window:window:1.0.0-beta04@aar,org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4@jar,org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.6.4@jar,org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22@jar,org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.22@jar,io.flutter:armeabi_v7a_release:1.0.0-45f6e009110df4f34ec2cf99f63cf73b71b7a420@jar,io.flutter:arm64_v8a_release:1.0.0-45f6e009110df4f34ec2cf99f63cf73b71b7a420@jar,io.flutter:x86_64_release:1.0.0-45f6e009110df4f34ec2cf99f63cf73b71b7a420@jar,androidx.lifecycle:lifecycle-common-java8:2.2.0@jar,androidx.core:core-ktx:1.10.1@aar,androidx.legacy:legacy-support-v4:1.0.0@aar,androidx.fragment:fragment:1.3.0@aar,androidx.fragment:fragment:1.3.0@aar,androidx.media:media:1.1.0@aar,androidx.legacy:legacy-support-core-ui:1.0.0@aar,androidx.legacy:legacy-support-core-utils:1.0.0@aar,androidx.viewpager:viewpager:1.0.0@aar,androidx.loader:loader:1.0.0@aar,androidx.activity:activity:1.2.0@aar,androidx.coordinatorlayout:coordinatorlayout:1.0.0@aar,androidx.drawerlayout:drawerlayout:1.0.0@aar,androidx.slidingpanelayout:slidingpanelayout:1.0.0@aar,androidx.customview:customview:1.0.0@aar,androidx.swiperefreshlayout:swiperefreshlayout:1.0.0@aar,androidx.asynclayoutinflater:asynclayoutinflater:1.0.0@aar,androidx.core:core:1.10.1@aar,androidx.core:core:1.10.1@aar,androidx.lifecycle:lifecycle-runtime:2.3.1@aar,androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.0@aar,androidx.lifecycle:lifecycle-livedata:2.0.0@aar,androidx.lifecycle:lifecycle-livedata-core:2.3.0@aar,androidx.lifecycle:lifecycle-livedata-core:2.3.0@aar,androidx.lifecycle:lifecycle-common:2.3.1@jar,androidx.arch.core:core-runtime:2.1.0@aar,androidx.arch.core:core-common:2.1.0@jar,androidx.versionedparcelable:versionedparcelable:1.1.1@aar,androidx.collection:collection:1.1.0@jar,androidx.lifecycle:lifecycle-viewmodel:2.3.0@aar,androidx.lifecycle:lifecycle-viewmodel:2.3.0@aar,androidx.savedstate:savedstate:1.1.0@aar,androidx.documentfile:documentfile:1.0.0@aar,androidx.localbroadcastmanager:localbroadcastmanager:1.1.0@aar,androidx.print:print:1.0.0@aar,androidx.interpolator:interpolator:1.0.0@aar,androidx.cursoradapter:cursoradapter:1.0.0@aar,androidx.annotation:annotation-jvm:1.7.0@jar,androidx.annotation:annotation-experimental:1.3.0@aar,org.jetbrains.kotlin:kotlin-stdlib:1.8.22@jar,org.jetbrains.kotlin:kotlin-stdlib-common:1.8.22@jar,org.jetbrains:annotations:13.0@jar,androidx.tracing:tracing:1.0.0@aar">
+      roots="__local_aars__:F:\Trust App\trust_app_flutter\build\app\intermediates\flutter\release\libs.jar:unspecified@jar,F:\Trust App\trust_app_flutter\android@@:firebase_messaging::release,F:\Trust App\trust_app_flutter\android@@:firebase_core::release,F:\Trust App\trust_app_flutter\android@@:geolocator_android::release,F:\Trust App\trust_app_flutter\android@@:flutter_plugin_android_lifecycle::release,F:\Trust App\trust_app_flutter\android@@:sqflite::release,F:\Trust App\trust_app_flutter\android@@:flutter_local_notifications::release,F:\Trust App\trust_app_flutter\android@@:url_launcher_android::release,F:\Trust App\trust_app_flutter\android@@:path_provider_android::release,F:\Trust App\trust_app_flutter\android@@:google_maps_flutter_android::release,F:\Trust App\trust_app_flutter\android@@:shared_preferences_android::release,F:\Trust App\trust_app_flutter\android@@:social_share_plugin_android::release,F:\Trust App\trust_app_flutter\android@@:geocoding_android::release,F:\Trust App\trust_app_flutter\android@@:fluttertoast::release,F:\Trust App\trust_app_flutter\android@@:share::release,F:\Trust App\trust_app_flutter\android@@:video_player_android::release,F:\Trust App\trust_app_flutter\android@@:gallery_saver::release,io.flutter:flutter_embedding_release:1.0.0-45f6e009110df4f34ec2cf99f63cf73b71b7a420@jar,androidx.window:window-java:1.0.0-beta04@aar,androidx.window:window:1.0.0-beta04@aar,org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4@jar,org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.6.4@jar,org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22@jar,org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.22@jar,io.flutter:armeabi_v7a_release:1.0.0-45f6e009110df4f34ec2cf99f63cf73b71b7a420@jar,io.flutter:arm64_v8a_release:1.0.0-45f6e009110df4f34ec2cf99f63cf73b71b7a420@jar,io.flutter:x86_64_release:1.0.0-45f6e009110df4f34ec2cf99f63cf73b71b7a420@jar,androidx.legacy:legacy-support-v4:1.0.0@aar,androidx.fragment:fragment:1.3.0@aar,androidx.fragment:fragment:1.3.0@aar,androidx.media:media:1.1.0@aar,androidx.core:core-ktx:1.10.1@aar,androidx.legacy:legacy-support-core-ui:1.0.0@aar,androidx.legacy:legacy-support-core-utils:1.0.0@aar,androidx.viewpager:viewpager:1.0.0@aar,androidx.loader:loader:1.0.0@aar,androidx.activity:activity:1.2.0@aar,androidx.coordinatorlayout:coordinatorlayout:1.0.0@aar,androidx.drawerlayout:drawerlayout:1.0.0@aar,androidx.slidingpanelayout:slidingpanelayout:1.0.0@aar,androidx.customview:customview:1.0.0@aar,androidx.swiperefreshlayout:swiperefreshlayout:1.0.0@aar,androidx.asynclayoutinflater:asynclayoutinflater:1.0.0@aar,androidx.core:core:1.10.1@aar,androidx.core:core:1.10.1@aar,androidx.versionedparcelable:versionedparcelable:1.1.1@aar,androidx.collection:collection:1.1.0@jar,androidx.lifecycle:lifecycle-common-java8:2.2.0@jar,androidx.lifecycle:lifecycle-runtime:2.3.1@aar,androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.0@aar,androidx.lifecycle:lifecycle-livedata:2.0.0@aar,androidx.lifecycle:lifecycle-livedata-core:2.3.0@aar,androidx.lifecycle:lifecycle-livedata-core:2.3.0@aar,androidx.lifecycle:lifecycle-common:2.3.1@jar,androidx.arch.core:core-runtime:2.1.0@aar,androidx.arch.core:core-common:2.1.0@jar,androidx.lifecycle:lifecycle-viewmodel:2.3.0@aar,androidx.lifecycle:lifecycle-viewmodel:2.3.0@aar,androidx.savedstate:savedstate:1.1.0@aar,androidx.documentfile:documentfile:1.0.0@aar,androidx.localbroadcastmanager:localbroadcastmanager:1.1.0@aar,androidx.print:print:1.0.0@aar,androidx.interpolator:interpolator:1.0.0@aar,androidx.cursoradapter:cursoradapter:1.0.0@aar,androidx.annotation:annotation-jvm:1.7.0@jar,androidx.annotation:annotation-experimental:1.3.0@aar,org.jetbrains.kotlin:kotlin-stdlib:1.8.22@jar,org.jetbrains.kotlin:kotlin-stdlib-common:1.8.22@jar,org.jetbrains:annotations:13.0@jar,androidx.tracing:tracing:1.0.0@aar">
     <dependency
-        name="__local_aars__:F:\Well App Flutter\well_app_flutter\build\app\intermediates\flutter\release\libs.jar:unspecified@jar"
-        simpleName="__local_aars__:F:\Well App Flutter\well_app_flutter\build\app\intermediates\flutter\release\libs.jar"/>
+        name="__local_aars__:F:\Trust App\trust_app_flutter\build\app\intermediates\flutter\release\libs.jar:unspecified@jar"
+        simpleName="__local_aars__:F:\Trust App\trust_app_flutter\build\app\intermediates\flutter\release\libs.jar"/>
     <dependency
-        name="F:\Well App Flutter\well_app_flutter\android@@:shared_preferences_android::release"
-        simpleName="io.flutter.plugins.sharedpreferences:shared_preferences_android"/>
-    <dependency
-        name="F:\Well App Flutter\well_app_flutter\android@@:firebase_messaging::release"
+        name="F:\Trust App\trust_app_flutter\android@@:firebase_messaging::release"
         simpleName="io.flutter.plugins.firebasemessaging:firebase_messaging"/>
     <dependency
-        name="F:\Well App Flutter\well_app_flutter\android@@:firebase_core::release"
+        name="F:\Trust App\trust_app_flutter\android@@:firebase_core::release"
         simpleName="io.flutter.plugins.firebase.core:firebase_core"/>
     <dependency
-        name="F:\Well App Flutter\well_app_flutter\android@@:social_share_plugin_android::release"
-        simpleName="com.cygnati.social_share_plugin:social_share_plugin_android"/>
+        name="F:\Trust App\trust_app_flutter\android@@:geolocator_android::release"
+        simpleName="com.baseflow.geolocator:geolocator_android"/>
     <dependency
-        name="F:\Well App Flutter\well_app_flutter\android@@:sqflite::release"
+        name="F:\Trust App\trust_app_flutter\android@@:flutter_plugin_android_lifecycle::release"
+        simpleName="io.flutter.plugins.flutter_plugin_android_lifecycle:flutter_plugin_android_lifecycle"/>
+    <dependency
+        name="F:\Trust App\trust_app_flutter\android@@:sqflite::release"
         simpleName="com.tekartik.sqflite:sqflite"/>
     <dependency
-        name="F:\Well App Flutter\well_app_flutter\android@@:flutter_local_notifications::release"
+        name="F:\Trust App\trust_app_flutter\android@@:flutter_local_notifications::release"
         simpleName="com.dexterous.flutterlocalnotifications:flutter_local_notifications"/>
     <dependency
-        name="F:\Well App Flutter\well_app_flutter\android@@:fluttertoast::release"
-        simpleName="com.example.FlutterToast:fluttertoast"/>
-    <dependency
-        name="F:\Well App Flutter\well_app_flutter\android@@:url_launcher_android::release"
+        name="F:\Trust App\trust_app_flutter\android@@:url_launcher_android::release"
         simpleName="io.flutter.plugins.urllauncher:url_launcher_android"/>
     <dependency
-        name="F:\Well App Flutter\well_app_flutter\android@@:path_provider_android::release"
+        name="F:\Trust App\trust_app_flutter\android@@:path_provider_android::release"
         simpleName="io.flutter.plugins.pathprovider:path_provider_android"/>
     <dependency
-        name="F:\Well App Flutter\well_app_flutter\android@@:share::release"
+        name="F:\Trust App\trust_app_flutter\android@@:google_maps_flutter_android::release"
+        simpleName="io.flutter.plugins.googlemaps:google_maps_flutter_android"/>
+    <dependency
+        name="F:\Trust App\trust_app_flutter\android@@:shared_preferences_android::release"
+        simpleName="io.flutter.plugins.sharedpreferences:shared_preferences_android"/>
+    <dependency
+        name="F:\Trust App\trust_app_flutter\android@@:social_share_plugin_android::release"
+        simpleName="com.cygnati.social_share_plugin:social_share_plugin_android"/>
+    <dependency
+        name="F:\Trust App\trust_app_flutter\android@@:geocoding_android::release"
+        simpleName="com.baseflow.geocoding:geocoding_android"/>
+    <dependency
+        name="F:\Trust App\trust_app_flutter\android@@:fluttertoast::release"
+        simpleName="com.example.FlutterToast:fluttertoast"/>
+    <dependency
+        name="F:\Trust App\trust_app_flutter\android@@:share::release"
         simpleName="io.flutter.plugins.share:share"/>
     <dependency
-        name="F:\Well App Flutter\well_app_flutter\android@@:gallery_saver::release"
+        name="F:\Trust App\trust_app_flutter\android@@:video_player_android::release"
+        simpleName="io.flutter.plugins.videoplayer:video_player_android"/>
+    <dependency
+        name="F:\Trust App\trust_app_flutter\android@@:gallery_saver::release"
         simpleName="carnegietechnologies.gallery_saver:gallery_saver"/>
     <dependency
         name="io.flutter:flutter_embedding_release:1.0.0-45f6e009110df4f34ec2cf99f63cf73b71b7a420@jar"
@@ -68,12 +83,6 @@
         name="io.flutter:x86_64_release:1.0.0-45f6e009110df4f34ec2cf99f63cf73b71b7a420@jar"
         simpleName="io.flutter:x86_64_release"/>
     <dependency
-        name="androidx.lifecycle:lifecycle-common-java8:2.2.0@jar"
-        simpleName="androidx.lifecycle:lifecycle-common-java8"/>
-    <dependency
-        name="androidx.core:core-ktx:1.10.1@aar"
-        simpleName="androidx.core:core-ktx"/>
-    <dependency
         name="androidx.legacy:legacy-support-v4:1.0.0@aar"
         simpleName="androidx.legacy:legacy-support-v4"/>
     <dependency
@@ -82,6 +91,9 @@
     <dependency
         name="androidx.media:media:1.1.0@aar"
         simpleName="androidx.media:media"/>
+    <dependency
+        name="androidx.core:core-ktx:1.10.1@aar"
+        simpleName="androidx.core:core-ktx"/>
     <dependency
         name="androidx.legacy:legacy-support-core-ui:1.0.0@aar"
         simpleName="androidx.legacy:legacy-support-core-ui"/>
@@ -119,6 +131,15 @@
         name="androidx.core:core:1.10.1@aar"
         simpleName="androidx.core:core"/>
     <dependency
+        name="androidx.versionedparcelable:versionedparcelable:1.1.1@aar"
+        simpleName="androidx.versionedparcelable:versionedparcelable"/>
+    <dependency
+        name="androidx.collection:collection:1.1.0@jar"
+        simpleName="androidx.collection:collection"/>
+    <dependency
+        name="androidx.lifecycle:lifecycle-common-java8:2.2.0@jar"
+        simpleName="androidx.lifecycle:lifecycle-common-java8"/>
+    <dependency
         name="androidx.lifecycle:lifecycle-runtime:2.3.1@aar"
         simpleName="androidx.lifecycle:lifecycle-runtime"/>
     <dependency
@@ -139,12 +160,6 @@
     <dependency
         name="androidx.arch.core:core-common:2.1.0@jar"
         simpleName="androidx.arch.core:core-common"/>
-    <dependency
-        name="androidx.versionedparcelable:versionedparcelable:1.1.1@aar"
-        simpleName="androidx.versionedparcelable:versionedparcelable"/>
-    <dependency
-        name="androidx.collection:collection:1.1.0@jar"
-        simpleName="androidx.collection:collection"/>
     <dependency
         name="androidx.lifecycle:lifecycle-viewmodel:2.3.0@aar"
         simpleName="androidx.lifecycle:lifecycle-viewmodel"/>
@@ -186,45 +201,60 @@
         simpleName="androidx.tracing:tracing"/>
   </compile>
   <package
-      roots="__local_aars__:F:\Well App Flutter\well_app_flutter\build\app\intermediates\flutter\release\libs.jar:unspecified@jar,F:\Well App Flutter\well_app_flutter\android@@:shared_preferences_android::release,F:\Well App Flutter\well_app_flutter\android@@:firebase_messaging::release,F:\Well App Flutter\well_app_flutter\android@@:firebase_core::release,F:\Well App Flutter\well_app_flutter\android@@:social_share_plugin_android::release,F:\Well App Flutter\well_app_flutter\android@@:sqflite::release,F:\Well App Flutter\well_app_flutter\android@@:flutter_local_notifications::release,F:\Well App Flutter\well_app_flutter\android@@:fluttertoast::release,F:\Well App Flutter\well_app_flutter\android@@:url_launcher_android::release,F:\Well App Flutter\well_app_flutter\android@@:path_provider_android::release,F:\Well App Flutter\well_app_flutter\android@@:share::release,F:\Well App Flutter\well_app_flutter\android@@:gallery_saver::release,com.facebook.android:facebook-share:16.3.0@aar,com.google.firebase:firebase-messaging:23.3.1@aar,com.google.firebase:firebase-installations:17.2.0@aar,com.google.firebase:firebase-common-ktx:20.4.2@aar,com.google.firebase:firebase-common:20.4.2@aar,io.flutter:flutter_embedding_release:1.0.0-45f6e009110df4f34ec2cf99f63cf73b71b7a420@jar,androidx.window:window-java:1.0.0-beta04@aar,androidx.window:window:1.0.0-beta04@aar,org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4@jar,org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.6.4@jar,org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.4@jar,org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22@jar,org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.22@jar,io.flutter:armeabi_v7a_release:1.0.0-45f6e009110df4f34ec2cf99f63cf73b71b7a420@jar,io.flutter:arm64_v8a_release:1.0.0-45f6e009110df4f34ec2cf99f63cf73b71b7a420@jar,io.flutter:x86_64_release:1.0.0-45f6e009110df4f34ec2cf99f63cf73b71b7a420@jar,com.facebook.android:facebook-common:16.3.0@aar,androidx.legacy:legacy-support-v4:1.0.0@aar,androidx.media:media:1.1.0@aar,androidx.browser:browser:1.5.0@aar,androidx.appcompat:appcompat:1.1.0@aar,com.facebook.android:facebook-core:16.3.0@aar,com.facebook.android:facebook-bolts:16.3.0@aar,androidx.core:core-ktx:1.10.1@aar,androidx.legacy:legacy-support-core-ui:1.0.0@aar,com.google.android.gms:play-services-stats:17.0.2@aar,androidx.legacy:legacy-support-core-utils:1.0.0@aar,com.google.firebase:firebase-iid-interop:17.1.0@aar,com.google.android.gms:play-services-base:18.0.1@aar,com.google.android.gms:play-services-cloud-messaging:17.0.1@aar,com.google.firebase:firebase-measurement-connector:19.0.0@aar,com.google.firebase:firebase-installations-interop:17.1.1@aar,com.google.android.gms:play-services-tasks:18.0.2@aar,com.google.android.gms:play-services-basement:18.1.0@aar,androidx.fragment:fragment:1.3.0@aar,androidx.fragment:fragment:1.3.0@aar,androidx.viewpager:viewpager:1.0.0@aar,androidx.loader:loader:1.0.0@aar,androidx.activity:activity:1.2.0@aar,androidx.appcompat:appcompat-resources:1.1.0@aar,androidx.drawerlayout:drawerlayout:1.0.0@aar,androidx.coordinatorlayout:coordinatorlayout:1.0.0@aar,androidx.slidingpanelayout:slidingpanelayout:1.0.0@aar,androidx.customview:customview:1.0.0@aar,androidx.swiperefreshlayout:swiperefreshlayout:1.0.0@aar,androidx.asynclayoutinflater:asynclayoutinflater:1.0.0@aar,androidx.vectordrawable:vectordrawable-animated:1.1.0@aar,androidx.vectordrawable:vectordrawable:1.1.0@aar,androidx.core:core:1.10.1@aar,androidx.core:core:1.10.1@aar,androidx.exifinterface:exifinterface:1.3.2@aar,androidx.localbroadcastmanager:localbroadcastmanager:1.1.0@aar,androidx.localbroadcastmanager:localbroadcastmanager:1.1.0@aar,androidx.lifecycle:lifecycle-common-java8:2.2.0@jar,androidx.tracing:tracing:1.0.0@aar,androidx.lifecycle:lifecycle-runtime:2.3.1@aar,androidx.interpolator:interpolator:1.0.0@aar,androidx.versionedparcelable:versionedparcelable:1.1.1@aar,androidx.collection:collection:1.1.0@jar,com.google.firebase:firebase-datatransport:18.1.7@aar,com.google.android.datatransport:transport-backend-cct:3.1.8@aar,com.google.android.datatransport:transport-runtime:3.1.8@aar,com.google.firebase:firebase-encoders-proto:16.0.0@jar,com.google.android.datatransport:transport-api:3.0.0@aar,com.google.firebase:firebase-encoders-json:18.0.0@aar,com.google.firebase:firebase-encoders:17.0.0@jar,com.google.firebase:firebase-components:17.1.5@aar,androidx.concurrent:concurrent-futures:1.1.0@jar,androidx.cardview:cardview:1.0.0@aar,androidx.cursoradapter:cursoradapter:1.0.0@aar,androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.0@aar,androidx.savedstate:savedstate:1.1.0@aar,androidx.lifecycle:lifecycle-livedata:2.0.0@aar,androidx.lifecycle:lifecycle-livedata-core:2.3.0@aar,androidx.lifecycle:lifecycle-livedata-core:2.3.0@aar,androidx.lifecycle:lifecycle-common:2.3.1@jar,androidx.arch.core:core-runtime:2.1.0@aar,androidx.arch.core:core-common:2.1.0@jar,androidx.documentfile:documentfile:1.0.0@aar,androidx.print:print:1.0.0@aar,androidx.lifecycle:lifecycle-viewmodel:2.3.0@aar,androidx.lifecycle:lifecycle-viewmodel:2.3.0@aar,com.google.code.gson:gson:2.8.9@jar,com.jakewharton.threetenabp:threetenabp:1.2.3@aar,androidx.annotation:annotation-jvm:1.7.0@jar,androidx.annotation:annotation-experimental:1.3.0@aar,org.jetbrains.kotlin:kotlin-stdlib:1.8.22@jar,org.threeten:threetenbp:1.4.2:no-tzdb@jar,org.jetbrains.kotlin:kotlin-stdlib-common:1.8.22@jar,com.google.guava:listenablefuture:1.0@jar,com.google.errorprone:error_prone_annotations:2.9.0@jar,com.google.firebase:firebase-annotations:16.2.0@jar,com.android.installreferrer:installreferrer:1.0@aar,com.google.zxing:core:3.3.3@jar,org.jetbrains:annotations:13.0@jar,javax.inject:javax.inject:1@jar">
+      roots="__local_aars__:F:\Trust App\trust_app_flutter\build\app\intermediates\flutter\release\libs.jar:unspecified@jar,F:\Trust App\trust_app_flutter\android@@:firebase_messaging::release,F:\Trust App\trust_app_flutter\android@@:firebase_core::release,F:\Trust App\trust_app_flutter\android@@:geolocator_android::release,F:\Trust App\trust_app_flutter\android@@:google_maps_flutter_android::release,F:\Trust App\trust_app_flutter\android@@:flutter_plugin_android_lifecycle::release,F:\Trust App\trust_app_flutter\android@@:sqflite::release,F:\Trust App\trust_app_flutter\android@@:flutter_local_notifications::release,F:\Trust App\trust_app_flutter\android@@:url_launcher_android::release,F:\Trust App\trust_app_flutter\android@@:path_provider_android::release,F:\Trust App\trust_app_flutter\android@@:shared_preferences_android::release,F:\Trust App\trust_app_flutter\android@@:social_share_plugin_android::release,F:\Trust App\trust_app_flutter\android@@:geocoding_android::release,F:\Trust App\trust_app_flutter\android@@:fluttertoast::release,F:\Trust App\trust_app_flutter\android@@:share::release,F:\Trust App\trust_app_flutter\android@@:video_player_android::release,F:\Trust App\trust_app_flutter\android@@:gallery_saver::release,com.facebook.android:facebook-share:17.0.0@aar,com.google.firebase:firebase-messaging:23.3.1@aar,com.google.firebase:firebase-installations:17.2.0@aar,com.google.firebase:firebase-common-ktx:20.4.2@aar,com.google.firebase:firebase-common:20.4.2@aar,io.flutter:flutter_embedding_release:1.0.0-45f6e009110df4f34ec2cf99f63cf73b71b7a420@jar,androidx.window:window-java:1.0.0-beta04@aar,androidx.window:window:1.0.0-beta04@aar,org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4@jar,org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.6.4@jar,org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.4@jar,org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22@jar,org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.22@jar,io.flutter:armeabi_v7a_release:1.0.0-45f6e009110df4f34ec2cf99f63cf73b71b7a420@jar,io.flutter:arm64_v8a_release:1.0.0-45f6e009110df4f34ec2cf99f63cf73b71b7a420@jar,io.flutter:x86_64_release:1.0.0-45f6e009110df4f34ec2cf99f63cf73b71b7a420@jar,com.facebook.android:facebook-common:17.0.0@aar,androidx.legacy:legacy-support-v4:1.0.0@aar,androidx.media:media:1.1.0@aar,androidx.browser:browser:1.5.0@aar,com.google.android.exoplayer:exoplayer-hls:2.18.7@aar,com.google.android.exoplayer:exoplayer-dash:2.18.7@aar,com.google.android.exoplayer:exoplayer-smoothstreaming:2.18.7@aar,com.google.android.exoplayer:exoplayer-core:2.18.7@aar,com.google.android.gms:play-services-location:21.0.1@aar,com.google.android.gms:play-services-maps:18.2.0@aar,com.google.android.gms:play-services-base:18.1.0@aar,com.google.firebase:firebase-iid-interop:17.1.0@aar,com.google.android.gms:play-services-cloud-messaging:17.0.1@aar,com.google.firebase:firebase-installations-interop:17.1.1@aar,com.google.android.gms:play-services-tasks:18.0.2@aar,com.google.android.gms:play-services-stats:17.0.2@aar,com.google.firebase:firebase-measurement-connector:19.0.0@aar,com.google.android.gms:play-services-basement:18.1.0@aar,com.facebook.android:facebook-core:17.0.0@aar,com.facebook.android:facebook-bolts:17.0.0@aar,androidx.core:core-ktx:1.10.1@aar,androidx.appcompat:appcompat:1.1.0@aar,androidx.legacy:legacy-support-core-ui:1.0.0@aar,androidx.legacy:legacy-support-core-utils:1.0.0@aar,androidx.fragment:fragment:1.3.0@aar,androidx.fragment:fragment:1.3.0@aar,androidx.viewpager:viewpager:1.0.0@aar,androidx.loader:loader:1.0.0@aar,androidx.activity:activity:1.2.0@aar,androidx.appcompat:appcompat-resources:1.1.0@aar,androidx.drawerlayout:drawerlayout:1.0.0@aar,androidx.coordinatorlayout:coordinatorlayout:1.0.0@aar,androidx.slidingpanelayout:slidingpanelayout:1.0.0@aar,androidx.customview:customview:1.0.0@aar,androidx.swiperefreshlayout:swiperefreshlayout:1.0.0@aar,androidx.asynclayoutinflater:asynclayoutinflater:1.0.0@aar,androidx.vectordrawable:vectordrawable-animated:1.1.0@aar,androidx.vectordrawable:vectordrawable:1.1.0@aar,androidx.core:core:1.10.1@aar,androidx.core:core:1.10.1@aar,androidx.exifinterface:exifinterface:1.3.2@aar,androidx.localbroadcastmanager:localbroadcastmanager:1.1.0@aar,androidx.localbroadcastmanager:localbroadcastmanager:1.1.0@aar,androidx.lifecycle:lifecycle-common-java8:2.2.0@jar,androidx.tracing:tracing:1.0.0@aar,androidx.lifecycle:lifecycle-runtime:2.3.1@aar,androidx.interpolator:interpolator:1.0.0@aar,androidx.versionedparcelable:versionedparcelable:1.1.1@aar,androidx.collection:collection:1.1.0@jar,com.google.android.exoplayer:exoplayer-datasource:2.18.7@aar,com.google.android.exoplayer:exoplayer-extractor:2.18.7@aar,com.google.android.exoplayer:exoplayer-decoder:2.18.7@aar,com.google.android.exoplayer:exoplayer-database:2.18.7@aar,com.google.android.exoplayer:exoplayer-common:2.18.7@aar,com.google.firebase:firebase-datatransport:18.1.7@aar,com.google.android.datatransport:transport-backend-cct:3.1.8@aar,com.google.android.datatransport:transport-runtime:3.1.8@aar,com.google.firebase:firebase-encoders-proto:16.0.0@jar,com.google.android.datatransport:transport-api:3.0.0@aar,com.google.firebase:firebase-encoders-json:18.0.0@aar,com.google.firebase:firebase-encoders:17.0.0@jar,com.google.firebase:firebase-components:17.1.5@aar,androidx.concurrent:concurrent-futures:1.1.0@jar,androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.0@aar,androidx.savedstate:savedstate:1.1.0@aar,androidx.lifecycle:lifecycle-livedata:2.0.0@aar,androidx.lifecycle:lifecycle-livedata-core:2.3.0@aar,androidx.lifecycle:lifecycle-livedata-core:2.3.0@aar,androidx.lifecycle:lifecycle-common:2.3.1@jar,androidx.arch.core:core-runtime:2.1.0@aar,androidx.arch.core:core-common:2.1.0@jar,androidx.cardview:cardview:1.0.0@aar,androidx.cursoradapter:cursoradapter:1.0.0@aar,androidx.documentfile:documentfile:1.0.0@aar,androidx.print:print:1.0.0@aar,androidx.lifecycle:lifecycle-viewmodel:2.3.0@aar,androidx.lifecycle:lifecycle-viewmodel:2.3.0@aar,com.google.code.gson:gson:2.8.9@jar,com.jakewharton.threetenabp:threetenabp:1.2.3@aar,androidx.annotation:annotation-jvm:1.7.0@jar,androidx.annotation:annotation-experimental:1.3.0@aar,org.jetbrains.kotlin:kotlin-stdlib:1.8.22@jar,org.threeten:threetenbp:1.4.2:no-tzdb@jar,org.jetbrains.kotlin:kotlin-stdlib-common:1.8.22@jar,com.google.guava:guava:31.0.1-android@jar,com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava@jar,com.google.errorprone:error_prone_annotations:2.9.0@jar,com.google.firebase:firebase-annotations:16.2.0@jar,org.jetbrains:annotations:13.0@jar,com.android.installreferrer:installreferrer:1.0@aar,com.google.zxing:core:3.3.3@jar,javax.inject:javax.inject:1@jar,com.google.guava:failureaccess:1.0.1@jar">
     <dependency
-        name="__local_aars__:F:\Well App Flutter\well_app_flutter\build\app\intermediates\flutter\release\libs.jar:unspecified@jar"
-        simpleName="__local_aars__:F:\Well App Flutter\well_app_flutter\build\app\intermediates\flutter\release\libs.jar"/>
+        name="__local_aars__:F:\Trust App\trust_app_flutter\build\app\intermediates\flutter\release\libs.jar:unspecified@jar"
+        simpleName="__local_aars__:F:\Trust App\trust_app_flutter\build\app\intermediates\flutter\release\libs.jar"/>
     <dependency
-        name="F:\Well App Flutter\well_app_flutter\android@@:shared_preferences_android::release"
-        simpleName="io.flutter.plugins.sharedpreferences:shared_preferences_android"/>
-    <dependency
-        name="F:\Well App Flutter\well_app_flutter\android@@:firebase_messaging::release"
+        name="F:\Trust App\trust_app_flutter\android@@:firebase_messaging::release"
         simpleName="io.flutter.plugins.firebasemessaging:firebase_messaging"/>
     <dependency
-        name="F:\Well App Flutter\well_app_flutter\android@@:firebase_core::release"
+        name="F:\Trust App\trust_app_flutter\android@@:firebase_core::release"
         simpleName="io.flutter.plugins.firebase.core:firebase_core"/>
     <dependency
-        name="F:\Well App Flutter\well_app_flutter\android@@:social_share_plugin_android::release"
-        simpleName="com.cygnati.social_share_plugin:social_share_plugin_android"/>
+        name="F:\Trust App\trust_app_flutter\android@@:geolocator_android::release"
+        simpleName="com.baseflow.geolocator:geolocator_android"/>
     <dependency
-        name="F:\Well App Flutter\well_app_flutter\android@@:sqflite::release"
+        name="F:\Trust App\trust_app_flutter\android@@:google_maps_flutter_android::release"
+        simpleName="io.flutter.plugins.googlemaps:google_maps_flutter_android"/>
+    <dependency
+        name="F:\Trust App\trust_app_flutter\android@@:flutter_plugin_android_lifecycle::release"
+        simpleName="io.flutter.plugins.flutter_plugin_android_lifecycle:flutter_plugin_android_lifecycle"/>
+    <dependency
+        name="F:\Trust App\trust_app_flutter\android@@:sqflite::release"
         simpleName="com.tekartik.sqflite:sqflite"/>
     <dependency
-        name="F:\Well App Flutter\well_app_flutter\android@@:flutter_local_notifications::release"
+        name="F:\Trust App\trust_app_flutter\android@@:flutter_local_notifications::release"
         simpleName="com.dexterous.flutterlocalnotifications:flutter_local_notifications"/>
     <dependency
-        name="F:\Well App Flutter\well_app_flutter\android@@:fluttertoast::release"
-        simpleName="com.example.FlutterToast:fluttertoast"/>
-    <dependency
-        name="F:\Well App Flutter\well_app_flutter\android@@:url_launcher_android::release"
+        name="F:\Trust App\trust_app_flutter\android@@:url_launcher_android::release"
         simpleName="io.flutter.plugins.urllauncher:url_launcher_android"/>
     <dependency
-        name="F:\Well App Flutter\well_app_flutter\android@@:path_provider_android::release"
+        name="F:\Trust App\trust_app_flutter\android@@:path_provider_android::release"
         simpleName="io.flutter.plugins.pathprovider:path_provider_android"/>
     <dependency
-        name="F:\Well App Flutter\well_app_flutter\android@@:share::release"
+        name="F:\Trust App\trust_app_flutter\android@@:shared_preferences_android::release"
+        simpleName="io.flutter.plugins.sharedpreferences:shared_preferences_android"/>
+    <dependency
+        name="F:\Trust App\trust_app_flutter\android@@:social_share_plugin_android::release"
+        simpleName="com.cygnati.social_share_plugin:social_share_plugin_android"/>
+    <dependency
+        name="F:\Trust App\trust_app_flutter\android@@:geocoding_android::release"
+        simpleName="com.baseflow.geocoding:geocoding_android"/>
+    <dependency
+        name="F:\Trust App\trust_app_flutter\android@@:fluttertoast::release"
+        simpleName="com.example.FlutterToast:fluttertoast"/>
+    <dependency
+        name="F:\Trust App\trust_app_flutter\android@@:share::release"
         simpleName="io.flutter.plugins.share:share"/>
     <dependency
-        name="F:\Well App Flutter\well_app_flutter\android@@:gallery_saver::release"
+        name="F:\Trust App\trust_app_flutter\android@@:video_player_android::release"
+        simpleName="io.flutter.plugins.videoplayer:video_player_android"/>
+    <dependency
+        name="F:\Trust App\trust_app_flutter\android@@:gallery_saver::release"
         simpleName="carnegietechnologies.gallery_saver:gallery_saver"/>
     <dependency
-        name="com.facebook.android:facebook-share:16.3.0@aar"
+        name="com.facebook.android:facebook-share:17.0.0@aar"
         simpleName="com.facebook.android:facebook-share"/>
     <dependency
         name="com.google.firebase:firebase-messaging:23.3.1@aar"
@@ -272,7 +302,7 @@
         name="io.flutter:x86_64_release:1.0.0-45f6e009110df4f34ec2cf99f63cf73b71b7a420@jar"
         simpleName="io.flutter:x86_64_release"/>
     <dependency
-        name="com.facebook.android:facebook-common:16.3.0@aar"
+        name="com.facebook.android:facebook-common:17.0.0@aar"
         simpleName="com.facebook.android:facebook-common"/>
     <dependency
         name="androidx.legacy:legacy-support-v4:1.0.0@aar"
@@ -284,38 +314,32 @@
         name="androidx.browser:browser:1.5.0@aar"
         simpleName="androidx.browser:browser"/>
     <dependency
-        name="androidx.appcompat:appcompat:1.1.0@aar"
-        simpleName="androidx.appcompat:appcompat"/>
+        name="com.google.android.exoplayer:exoplayer-hls:2.18.7@aar"
+        simpleName="com.google.android.exoplayer:exoplayer-hls"/>
     <dependency
-        name="com.facebook.android:facebook-core:16.3.0@aar"
-        simpleName="com.facebook.android:facebook-core"/>
+        name="com.google.android.exoplayer:exoplayer-dash:2.18.7@aar"
+        simpleName="com.google.android.exoplayer:exoplayer-dash"/>
     <dependency
-        name="com.facebook.android:facebook-bolts:16.3.0@aar"
-        simpleName="com.facebook.android:facebook-bolts"/>
+        name="com.google.android.exoplayer:exoplayer-smoothstreaming:2.18.7@aar"
+        simpleName="com.google.android.exoplayer:exoplayer-smoothstreaming"/>
     <dependency
-        name="androidx.core:core-ktx:1.10.1@aar"
-        simpleName="androidx.core:core-ktx"/>
+        name="com.google.android.exoplayer:exoplayer-core:2.18.7@aar"
+        simpleName="com.google.android.exoplayer:exoplayer-core"/>
     <dependency
-        name="androidx.legacy:legacy-support-core-ui:1.0.0@aar"
-        simpleName="androidx.legacy:legacy-support-core-ui"/>
+        name="com.google.android.gms:play-services-location:21.0.1@aar"
+        simpleName="com.google.android.gms:play-services-location"/>
     <dependency
-        name="com.google.android.gms:play-services-stats:17.0.2@aar"
-        simpleName="com.google.android.gms:play-services-stats"/>
+        name="com.google.android.gms:play-services-maps:18.2.0@aar"
+        simpleName="com.google.android.gms:play-services-maps"/>
     <dependency
-        name="androidx.legacy:legacy-support-core-utils:1.0.0@aar"
-        simpleName="androidx.legacy:legacy-support-core-utils"/>
+        name="com.google.android.gms:play-services-base:18.1.0@aar"
+        simpleName="com.google.android.gms:play-services-base"/>
     <dependency
         name="com.google.firebase:firebase-iid-interop:17.1.0@aar"
         simpleName="com.google.firebase:firebase-iid-interop"/>
     <dependency
-        name="com.google.android.gms:play-services-base:18.0.1@aar"
-        simpleName="com.google.android.gms:play-services-base"/>
-    <dependency
         name="com.google.android.gms:play-services-cloud-messaging:17.0.1@aar"
         simpleName="com.google.android.gms:play-services-cloud-messaging"/>
-    <dependency
-        name="com.google.firebase:firebase-measurement-connector:19.0.0@aar"
-        simpleName="com.google.firebase:firebase-measurement-connector"/>
     <dependency
         name="com.google.firebase:firebase-installations-interop:17.1.1@aar"
         simpleName="com.google.firebase:firebase-installations-interop"/>
@@ -323,8 +347,32 @@
         name="com.google.android.gms:play-services-tasks:18.0.2@aar"
         simpleName="com.google.android.gms:play-services-tasks"/>
     <dependency
+        name="com.google.android.gms:play-services-stats:17.0.2@aar"
+        simpleName="com.google.android.gms:play-services-stats"/>
+    <dependency
+        name="com.google.firebase:firebase-measurement-connector:19.0.0@aar"
+        simpleName="com.google.firebase:firebase-measurement-connector"/>
+    <dependency
         name="com.google.android.gms:play-services-basement:18.1.0@aar"
         simpleName="com.google.android.gms:play-services-basement"/>
+    <dependency
+        name="com.facebook.android:facebook-core:17.0.0@aar"
+        simpleName="com.facebook.android:facebook-core"/>
+    <dependency
+        name="com.facebook.android:facebook-bolts:17.0.0@aar"
+        simpleName="com.facebook.android:facebook-bolts"/>
+    <dependency
+        name="androidx.core:core-ktx:1.10.1@aar"
+        simpleName="androidx.core:core-ktx"/>
+    <dependency
+        name="androidx.appcompat:appcompat:1.1.0@aar"
+        simpleName="androidx.appcompat:appcompat"/>
+    <dependency
+        name="androidx.legacy:legacy-support-core-ui:1.0.0@aar"
+        simpleName="androidx.legacy:legacy-support-core-ui"/>
+    <dependency
+        name="androidx.legacy:legacy-support-core-utils:1.0.0@aar"
+        simpleName="androidx.legacy:legacy-support-core-utils"/>
     <dependency
         name="androidx.fragment:fragment:1.3.0@aar"
         simpleName="androidx.fragment:fragment"/>
@@ -392,6 +440,21 @@
         name="androidx.collection:collection:1.1.0@jar"
         simpleName="androidx.collection:collection"/>
     <dependency
+        name="com.google.android.exoplayer:exoplayer-datasource:2.18.7@aar"
+        simpleName="com.google.android.exoplayer:exoplayer-datasource"/>
+    <dependency
+        name="com.google.android.exoplayer:exoplayer-extractor:2.18.7@aar"
+        simpleName="com.google.android.exoplayer:exoplayer-extractor"/>
+    <dependency
+        name="com.google.android.exoplayer:exoplayer-decoder:2.18.7@aar"
+        simpleName="com.google.android.exoplayer:exoplayer-decoder"/>
+    <dependency
+        name="com.google.android.exoplayer:exoplayer-database:2.18.7@aar"
+        simpleName="com.google.android.exoplayer:exoplayer-database"/>
+    <dependency
+        name="com.google.android.exoplayer:exoplayer-common:2.18.7@aar"
+        simpleName="com.google.android.exoplayer:exoplayer-common"/>
+    <dependency
         name="com.google.firebase:firebase-datatransport:18.1.7@aar"
         simpleName="com.google.firebase:firebase-datatransport"/>
     <dependency
@@ -419,12 +482,6 @@
         name="androidx.concurrent:concurrent-futures:1.1.0@jar"
         simpleName="androidx.concurrent:concurrent-futures"/>
     <dependency
-        name="androidx.cardview:cardview:1.0.0@aar"
-        simpleName="androidx.cardview:cardview"/>
-    <dependency
-        name="androidx.cursoradapter:cursoradapter:1.0.0@aar"
-        simpleName="androidx.cursoradapter:cursoradapter"/>
-    <dependency
         name="androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.0@aar"
         simpleName="androidx.lifecycle:lifecycle-viewmodel-savedstate"/>
     <dependency
@@ -445,6 +502,12 @@
     <dependency
         name="androidx.arch.core:core-common:2.1.0@jar"
         simpleName="androidx.arch.core:core-common"/>
+    <dependency
+        name="androidx.cardview:cardview:1.0.0@aar"
+        simpleName="androidx.cardview:cardview"/>
+    <dependency
+        name="androidx.cursoradapter:cursoradapter:1.0.0@aar"
+        simpleName="androidx.cursoradapter:cursoradapter"/>
     <dependency
         name="androidx.documentfile:documentfile:1.0.0@aar"
         simpleName="androidx.documentfile:documentfile"/>
@@ -476,7 +539,10 @@
         name="org.jetbrains.kotlin:kotlin-stdlib-common:1.8.22@jar"
         simpleName="org.jetbrains.kotlin:kotlin-stdlib-common"/>
     <dependency
-        name="com.google.guava:listenablefuture:1.0@jar"
+        name="com.google.guava:guava:31.0.1-android@jar"
+        simpleName="com.google.guava:guava"/>
+    <dependency
+        name="com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava@jar"
         simpleName="com.google.guava:listenablefuture"/>
     <dependency
         name="com.google.errorprone:error_prone_annotations:2.9.0@jar"
@@ -485,16 +551,19 @@
         name="com.google.firebase:firebase-annotations:16.2.0@jar"
         simpleName="com.google.firebase:firebase-annotations"/>
     <dependency
+        name="org.jetbrains:annotations:13.0@jar"
+        simpleName="org.jetbrains:annotations"/>
+    <dependency
         name="com.android.installreferrer:installreferrer:1.0@aar"
         simpleName="com.android.installreferrer:installreferrer"/>
     <dependency
         name="com.google.zxing:core:3.3.3@jar"
         simpleName="com.google.zxing:core"/>
     <dependency
-        name="org.jetbrains:annotations:13.0@jar"
-        simpleName="org.jetbrains:annotations"/>
-    <dependency
         name="javax.inject:javax.inject:1@jar"
         simpleName="javax.inject:javax.inject"/>
+    <dependency
+        name="com.google.guava:failureaccess:1.0.1@jar"
+        simpleName="com.google.guava:failureaccess"/>
   </package>
 </dependencies>

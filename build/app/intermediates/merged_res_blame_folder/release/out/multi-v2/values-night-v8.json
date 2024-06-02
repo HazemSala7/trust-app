@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.royal.well.app-mergeReleaseResources-28:/values-night-v8/values-night-v8.xml",
+            "outputFile": "com.royal.trust.app-mergeReleaseResources-30:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
                     "source": "C:\\Users\\raya co\\.gradle\\caches\\transforms-3\\931806b0fedf2612b0194c0cfcd15295\\transformed\\appcompat-1.1.0\\res\\values-night-v8\\values-night-v8.xml",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "F:\\Well App Flutter\\well_app_flutter\\android\\app\\src\\main\\res\\values-night\\styles.xml",
+                    "source": "F:\\Trust App\\trust_app_flutter\\android\\app\\src\\main\\res\\values-night\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",

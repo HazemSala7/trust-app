@@ -8,6 +8,57 @@ class AppLocalizationsEn extends AppLocalizations {
   String get new_homepage => 'New';
 
   @override
+  String get add_waranty => 'Add Wareanty';
+
+  @override
+  String get pending => 'Pending';
+
+  @override
+  String get warranties_and_maintenances => 'Warranties And Maintenances';
+
+  @override
+  String get in_progress => 'In Progress';
+
+  @override
+  String get done => 'Done';
+
+  @override
+  String get delivered => 'Delivered';
+
+  @override
+  String get edit_selected => 'Edit Selected';
+
+  @override
+  String get cost => 'Cost : ';
+
+  @override
+  String get desc_problem => 'Malfunction Description : ';
+
+  @override
+  String get notes_warranty => 'Notes : ';
+
+  @override
+  String get my_location => 'My Location';
+
+  @override
+  String get maintenance_status => 'Maintenance Status';
+
+  @override
+  String get maintenance_notes => 'maintenance Notes : ';
+
+  @override
+  String get malfunction_description => 'Malfunction Description : ';
+
+  @override
+  String get maintenance_department => 'Maintenance Department';
+
+  @override
+  String get merchants_location => 'Merchants Location';
+
+  @override
+  String get show_merchants_location => 'Show All Merchants Location On Map';
+
+  @override
   String get send_order => 'Send Order';
 
   @override
@@ -36,6 +87,81 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get edit => 'ُEdit';
+
+  @override
+  String get poin_of_sales => 'Point Of Sales';
+
+  @override
+  String get hebron => 'Hebron';
+
+  @override
+  String get ramallah => 'Ramallah';
+
+  @override
+  String get all => 'All';
+
+  @override
+  String get description => 'Description';
+
+  @override
+  String get merchant_name => 'Merchant Name : ';
+
+  @override
+  String get product_name => 'Product Name';
+
+  @override
+  String get order_status_new => 'Order Status : ';
+
+  @override
+  String get merchant_phone => 'Merchant Phone : ';
+
+  @override
+  String get continue_operation => 'Continue';
+
+  @override
+  String get not_effectice => 'Not Effective';
+
+  @override
+  String get effectice => 'Effective';
+
+  @override
+  String get confirm_info => 'Confirm Information';
+
+  @override
+  String get no_internet => 'No internet , plesae check internet connection';
+
+  @override
+  String get empty_warranties => 'There is no warranties';
+
+  @override
+  String get empty_maintencaes => 'There is no maintenance request';
+
+  @override
+  String get add_maintenance_request => 'Add Maintenance Request';
+
+  @override
+  String get effectice_status => 'Warranty Status';
+
+  @override
+  String get customer_name => 'Customer Name';
+
+  @override
+  String get please_enter_product_serial_number => 'please enter product serial number';
+
+  @override
+  String get please_enter_a_your_customer_name => 'Please enter a your customer name';
+
+  @override
+  String get please_enter_a_customer_phone_number => 'Please enter a customer phone number';
+
+  @override
+  String get customer_phone => 'Customer Phone';
+
+  @override
+  String get maintenance_requests => 'Maintenance Requests';
+
+  @override
+  String get product_serial_number => 'Product Serial Number';
 
   @override
   String get navigator_home => 'Go To Home';
@@ -594,9 +720,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get send_to_maintenance => 'Send To Maintenance';
-
-  @override
-  String get maintenance_status => 'Maintenance Status';
 
   @override
   String get inquire_about_product_specifications => 'Inquire About Product Specifications';

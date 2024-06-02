@@ -1,5 +1,5 @@
-var URL = "http://162.214.197.34:3002/";
-var URLIMAGE = "https://well.com.co/storage/";
+var URL = "http://app.redtrust.ps:3003/";
+var URLIMAGE = "https://test.redtrust.ps/storage/";
 
 //PUBLIC
 var URL_HOME = URL + "homepage";
@@ -22,3 +22,14 @@ var URL_CONTACT = URL + "contact";
 var URL_DELETE_ACCOUNT = URL + "auth/delete";
 var URL_EDIT_NAME = URL + "auth/edit";
 var URL_EDIT_PASSWORD = URL + "auth/change-password";
+var URL_WARRANTIES = URL + "warranties";
+var URL_MERCHANTS = URL + "merchants";
+var URL_MAINTENANCE_REQUESTS = URL + "maintenanceRequests";
+var URL_MAINTENNANCE_REQUEST_BY_PRODUCT_SERIAL_NUMBER =
+    URL + "maintenanceRequests/ProductSerialNumber";
+var URL_MAINTENNANCE_REQUEST_BY_MERCHANT_ID =
+    URL + "maintenanceRequests/merchantId";
+var URL_WARRANTIES_BY_MERCHANT_ID = URL + "warranties/merchantId";
+var URL_PRODUCT_BY_FIRST_SERIAL_PART = URL + "products/number";
+var URL_WARRANTIES_BY_PRODUCT_SERIAL_NUMBER =
+    URL + "warranties/ProductSerialNumber";

@@ -155,21 +155,22 @@ class _NewProductsState extends State<NewProducts> {
                                     itemBuilder: (context, int index) {
                                       var imageString =
                                           AllProducts[index]["image"];
-                                      if (AllProducts.isNotEmpty) {
+                                      List<String> resultList = [];
+                                      if (imageString.isNotEmpty) {
                                         // Check if the imageString is in the expected format
                                         if (imageString != null &&
                                             imageString.startsWith("[") &&
                                             imageString.endsWith("]")) {
-                                          // Remove square brackets and any surrounding double quotes
-                                          imageString = imageString
-                                              .substring(
-                                                  1, imageString.length - 1)
-                                              .replaceAll('"', '');
+                                          resultList =
+                                              (jsonDecode(imageString) as List)
+                                                  .map((item) => item as String)
+                                                  .toList();
                                         } else {
                                           imageString = "";
                                         }
                                       }
                                       List<String> _initSizes = [];
+                                      List<String> _initSizesAR = [];
                                       List<int> _initSizesIDs = [];
                                       for (int i = 0;
                                           i <
@@ -178,6 +179,10 @@ class _NewProductsState extends State<NewProducts> {
                                           i++) {
                                         _initSizes.add(AllProducts[index]
                                                 ["sizes"][i]["title"]
+                                            .toString());
+                                        _initSizesAR.add(AllProducts[index]
+                                                    ["sizes"][i]["translations"]
+                                                [0]["value"]
                                             .toString());
                                         _initSizesIDs.add(AllProducts[index]
                                             ["sizes"][i]["id"]);
@@ -198,12 +203,13 @@ class _NewProductsState extends State<NewProducts> {
                                                   colors: AllProducts[index]
                                                           ["colors"] ??
                                                       [],
-                                                  SIZES: _initSizes,
+                                                  SIZES_EN: _initSizes,
+                                                  SIZES_AR: _initSizesAR,
                                                   category_id:
                                                       AllProducts[index]
                                                               ["categoryId"] ??
                                                           0,
-                                                  image: imageString,
+                                                  image: resultList[0],
                                                   name_ar: AllProducts[index]
                                                               ["translations"]
                                                           [0]["value"] ??

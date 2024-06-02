@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.royal.well.app-mergeDebugResources-28:/values-id/values-id.xml",
+            "outputFile": "com.royal.trust.app-mergeDebugResources-30:/values-id/values-id.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\raya co\\.gradle\\caches\\transforms-3\\92cda4ae8c04527c8a2d7e812626ff31\\transformed\\jetified-facebook-common-16.3.0\\res\\values-id\\values-id.xml",
+                    "source": "C:\\Users\\raya co\\.gradle\\caches\\transforms-3\\d7dbb54c4c652dca4a3b5b108c932fa1\\transformed\\jetified-facebook-common-17.0.0\\res\\values-id\\values-id.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

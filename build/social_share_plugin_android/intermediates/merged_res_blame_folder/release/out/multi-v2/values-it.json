@@ -4,7 +4,7 @@
             "outputFile": "com.cygnati.social_share_plugin.social_share_plugin_android-merged_res-22:/values-it/values-it.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\raya co\\.gradle\\caches\\transforms-3\\010f6452ca1518eef2726792f9295895\\transformed\\jetified-facebook-common-16.2.0\\res\\values-it\\values-it.xml",
+                    "source": "C:\\Users\\raya co\\.gradle\\caches\\transforms-3\\d7dbb54c4c652dca4a3b5b108c932fa1\\transformed\\jetified-facebook-common-17.0.0\\res\\values-it\\values-it.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -60,7 +60,7 @@
             "outputFile": "com.cygnati.social_share_plugin.social_share_plugin_android-mergeReleaseResources-20:/values-it/values-it.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\raya co\\.gradle\\caches\\transforms-3\\010f6452ca1518eef2726792f9295895\\transformed\\jetified-facebook-common-16.2.0\\res\\values-it\\values-it.xml",
+                    "source": "C:\\Users\\raya co\\.gradle\\caches\\transforms-3\\d7dbb54c4c652dca4a3b5b108c932fa1\\transformed\\jetified-facebook-common-17.0.0\\res\\values-it\\values-it.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

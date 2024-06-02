@@ -32,7 +32,7 @@ class _SlideImageState extends State<SlideImage> {
       return ImageSlideshow(
         width: double.infinity,
         indicatorColor: MAIN_COLOR,
-        height: MediaQuery.of(context).size.height * 0.4,
+        height: MediaQuery.of(context).size.height * 0.35,
         children: widget.slideimage
             .map((e) => InkWell(
                   onTap: () {
@@ -64,13 +64,13 @@ class _SlideImageState extends State<SlideImage> {
                           imageUrl: URLIMAGE + e.image,
                           boxFit: BoxFit.cover,
                           width: double.infinity,
-                          height: MediaQuery.of(context).size.height * 0.4,
+                          height: MediaQuery.of(context).size.height * 0.35,
                         ),
                         Visibility(
                           visible: widget.showShadow,
                           child: Container(
                               width: double.infinity,
-                              height: MediaQuery.of(context).size.height * 0.4,
+                              height: MediaQuery.of(context).size.height * 0.2,
                               decoration: BoxDecoration(
                                 gradient: LinearGradient(
                                   begin: Alignment.topCenter,

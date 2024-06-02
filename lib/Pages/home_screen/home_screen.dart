@@ -166,7 +166,7 @@ class _MainScreenState extends State<MainScreen> {
                                 const Color.fromARGB(255, 129, 129, 129),
                             child: Container(
                               width: double.infinity,
-                              height: MediaQuery.of(context).size.height * 0.4,
+                              height: MediaQuery.of(context).size.height * 0.35,
                               color: Colors.white,
                             ),
                           ),
@@ -184,7 +184,7 @@ class _MainScreenState extends State<MainScreen> {
                             width: double.infinity,
                             height: isTablet
                                 ? MediaQuery.of(context).size.height * 0.3
-                                : MediaQuery.of(context).size.height * 0.4,
+                                : MediaQuery.of(context).size.height * 0.35,
                             child: SlideImage(
                               click: true,
                               showShadow: true,
@@ -344,7 +344,8 @@ class _MainScreenState extends State<MainScreen> {
                                 )
                               : Container(
                                   width: double.infinity,
-                                  height: 180,
+                                  height:
+                                      MediaQuery.of(context).size.height * 0.22,
                                   child: ListView.builder(
                                       itemCount: categories.length,
                                       scrollDirection: Axis.horizontal,
@@ -393,39 +394,36 @@ class _MainScreenState extends State<MainScreen> {
                         return Container(
                           width: double.infinity,
                           height: 100,
-                          child: Padding(
-                            padding: const EdgeInsets.only(top: 10),
-                            child: ListView.builder(
-                                itemCount: 3,
-                                scrollDirection: Axis.horizontal,
-                                itemBuilder: (context, int index) {
-                                  return Padding(
-                                    padding: const EdgeInsets.only(
-                                        right: 15, left: 15),
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(10)),
-                                      width: 90,
-                                      height: 80,
-                                      child: Shimmer.fromColors(
-                                        baseColor: const Color.fromARGB(
-                                            255, 196, 196, 196),
-                                        highlightColor: const Color.fromARGB(
-                                            255, 129, 129, 129),
-                                        child: Container(
-                                          width: 90,
-                                          height: 80,
-                                          decoration: BoxDecoration(
-                                              color: Colors.white,
-                                              borderRadius:
-                                                  BorderRadius.circular(10)),
-                                        ),
+                          child: ListView.builder(
+                              itemCount: 3,
+                              scrollDirection: Axis.horizontal,
+                              itemBuilder: (context, int index) {
+                                return Padding(
+                                  padding: const EdgeInsets.only(
+                                      right: 15, left: 15),
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.circular(10)),
+                                    width: 90,
+                                    height: 80,
+                                    child: Shimmer.fromColors(
+                                      baseColor: const Color.fromARGB(
+                                          255, 196, 196, 196),
+                                      highlightColor: const Color.fromARGB(
+                                          255, 129, 129, 129),
+                                      child: Container(
+                                        width: 90,
+                                        height: 80,
+                                        decoration: BoxDecoration(
+                                            color: Colors.white,
+                                            borderRadius:
+                                                BorderRadius.circular(10)),
                                       ),
                                     ),
-                                  );
-                                }),
-                          ),
+                                  ),
+                                );
+                              }),
                         );
                       } else {
                         if (snapshot.data != null) {
@@ -433,7 +431,7 @@ class _MainScreenState extends State<MainScreen> {
 
                           return Container(
                               width: double.infinity,
-                              height: 180,
+                              height: 130,
                               child: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceEvenly,

@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter_svg/svg.dart';
@@ -10,11 +11,14 @@ import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:well_app_flutter/Pages/main_categories/main_categories.dart';
+import 'package:well_app_flutter/Pages/merchant_screen/driver_screen/driver_screen.dart';
+import 'package:well_app_flutter/Pages/merchant_screen/merchant_screen.dart';
 import '../../Components/button_widget/button_widget.dart';
 import '../../Constants/constants.dart';
 import '../../LocalDB/Models/CartItem.dart';
 import '../../LocalDB/Provider/CartProvider.dart';
 import '../../Pages/all_seasons/all_seasons.dart';
+import '../../Pages/merchant_screen/maintenance_department/maintenance_department.dart';
 import '../../Pages/products_by_season/products_by_season.dart';
 import '../../main.dart';
 import '../../pages/home_screen/home_screen.dart';
@@ -38,6 +42,38 @@ getHome() async {
 
 getSeasons() async {
   var response = await http.get(Uri.parse(URL_SEASONS), headers: headers);
+  var res = jsonDecode(response.body)["response"]["data"];
+  return res;
+}
+
+getMerchants(int page, latt, long) async {
+  var response = await http.get(
+      Uri.parse("$URL_MERCHANTS?x=$latt&y=$long&page=$page"),
+      headers: headers);
+  var res = jsonDecode(response.body)["response"]["data"];
+  return res;
+}
+
+getWarranties(int page) async {
+  var response =
+      await http.get(Uri.parse("$URL_WARRANTIES?page=$page"), headers: headers);
+  var res = jsonDecode(response.body)["response"]["data"];
+  return res;
+}
+
+getMaintenanceRequests(int page) async {
+  var response = await http
+      .get(Uri.parse("$URL_MAINTENANCE_REQUESTS?page=$page"), headers: headers);
+  var res = jsonDecode(response.body)["response"]["data"];
+  return res;
+}
+
+getMaintenanceRequestsFilter(int page, String City) async {
+  print("$URL_MAINTENANCE_REQUESTS/maintenanceDepartment/$City?page=$page");
+  var response = await http.get(
+      Uri.parse(
+          "$URL_MAINTENANCE_REQUESTS/maintenanceDepartment/$City?page=$page"),
+      headers: headers);
   var res = jsonDecode(response.body)["response"]["data"];
   return res;
 }
@@ -154,13 +190,22 @@ sendLoginRequest(email, password, context) async {
         textColor: Colors.white,
         fontSize: 16.0);
     final SharedPreferences prefs = await SharedPreferences.getInstance();
+    String roleID = data["user"]["role_id"];
     await prefs.setBool('login', true);
-    await prefs.setString('role_id', data["user"]["role_id"]);
+    await prefs.setString('role_id', roleID);
     await prefs.setString('user_id', data["user"]["id"].toString());
     await prefs.setString('name', data["user"]["name"]);
     await prefs.setString('email', data["user"]["email"]);
     await prefs.setString('token', data["token"]);
-    NavigatorFunction(context, HomeScreen(currentIndex: 0));
+    if (roleID == "6") {
+      NavigatorFunction(context, MaintenanceDepartment());
+    } else if (roleID == "5") {
+      NavigatorFunction(context, DriverScreen());
+    } else if (roleID == "4" || roleID == "3") {
+      NavigatorFunction(context, MerchantScreen());
+    } else {
+      NavigatorFunction(context, HomeScreen(currentIndex: 0));
+    }
   } else {
     Navigator.of(context, rootNavigator: true).pop();
     Fluttertoast.showToast(
@@ -211,6 +256,250 @@ sendMassageRequest(message, productName, email, name, context) async {
         textColor: Colors.white,
         fontSize: 16.0);
     Navigator.pop(context);
+  }
+}
+
+addWarranty(customerPhone, customerName, productSerialNumber, productId,
+    merchantId, notes, context) async {
+  final url = Uri.parse(URL_WARRANTIES);
+
+  final jsonData = {
+    "customerPhone": "${customerPhone}",
+    "customerName": "${customerName}",
+    "productSerialNumber": "${productSerialNumber}",
+    "productId": "${productId}",
+    "merchantId": "${merchantId}",
+    "notes": "${notes}"
+  };
+  final response = await http.post(
+    url,
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: json.encode(jsonData),
+  );
+  var data = json.decode(response.body);
+  if (data["success"] == true) {
+    Fluttertoast.showToast(
+        msg: AppLocalizations.of(context)!.consuccess,
+        toastLength: Toast.LENGTH_LONG,
+        gravity: ToastGravity.BOTTOM,
+        timeInSecForIosWeb: 2,
+        backgroundColor: const Color.fromARGB(255, 28, 116, 31),
+        textColor: Colors.white,
+        fontSize: 16.0);
+    Navigator.pop(context);
+  } else {
+    Fluttertoast.showToast(
+        msg: AppLocalizations.of(context)!.confailed,
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.BOTTOM,
+        timeInSecForIosWeb: 3,
+        backgroundColor: Colors.red,
+        textColor: Colors.white,
+        fontSize: 16.0);
+    Navigator.pop(context);
+  }
+}
+
+editWarranty(warrantyID, customerPhone, customerName, notes, context) async {
+  final url = Uri.parse("$URL_WARRANTIES/edit");
+
+  final jsonData = {
+    "id": "${warrantyID}",
+    "customerPhone": "${customerPhone}",
+    "customerName": "${customerName}",
+    "notes": "${notes}"
+  };
+  final response = await http.put(
+    url,
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: json.encode(jsonData),
+  );
+  var data = json.decode(response.body);
+  if (data["success"] == true) {
+    Fluttertoast.showToast(
+        msg: AppLocalizations.of(context)!.edit_success,
+        toastLength: Toast.LENGTH_LONG,
+        gravity: ToastGravity.BOTTOM,
+        timeInSecForIosWeb: 2,
+        backgroundColor: const Color.fromARGB(255, 28, 116, 31),
+        textColor: Colors.white,
+        fontSize: 16.0);
+  } else {
+    Fluttertoast.showToast(
+        msg: AppLocalizations.of(context)!.confailed,
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.BOTTOM,
+        timeInSecForIosWeb: 3,
+        backgroundColor: Colors.red,
+        textColor: Colors.white,
+        fontSize: 16.0);
+  }
+}
+
+addMaintanenceRequest(
+    customerPhone,
+    customerName,
+    productSerialNumber,
+    productId,
+    merchantId,
+    notes,
+    warrantyId,
+    malfunctionDdescription,
+    context) async {
+  final url = Uri.parse(URL_MAINTENANCE_REQUESTS);
+
+  final jsonData = {
+    "customerPhone": "${customerPhone}",
+    "warrantyId": "${warrantyId}",
+    "customerName": "${customerName}",
+    "productSerialNumber": "${productSerialNumber}",
+    "productId": "${productId}",
+    "merchantId": "${merchantId}",
+    "malfunctionDdescription": "${malfunctionDdescription}",
+    "warrantyStatus": true,
+    "notes": "${notes}"
+  };
+  final response = await http.post(
+    url,
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: json.encode(jsonData),
+  );
+  var data = json.decode(response.body);
+  if (data["success"] == true) {
+    Fluttertoast.showToast(
+        msg: AppLocalizations.of(context)!.consuccess,
+        toastLength: Toast.LENGTH_LONG,
+        gravity: ToastGravity.BOTTOM,
+        timeInSecForIosWeb: 2,
+        backgroundColor: const Color.fromARGB(255, 28, 116, 31),
+        textColor: Colors.white,
+        fontSize: 16.0);
+    Navigator.pop(context);
+  } else {
+    Fluttertoast.showToast(
+        msg: AppLocalizations.of(context)!.confailed,
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.BOTTOM,
+        timeInSecForIosWeb: 3,
+        backgroundColor: Colors.red,
+        textColor: Colors.white,
+        fontSize: 16.0);
+    Navigator.pop(context);
+  }
+}
+
+editMaintanenceRequest(maintanenceRequestID, customerPhone, customerName, notes,
+    malfunctionDdescription, context) async {
+  final url = Uri.parse("$URL_MAINTENANCE_REQUESTS/edit");
+
+  final jsonData = {
+    "id": "${maintanenceRequestID}",
+    "customerPhone": "${customerPhone}",
+    "customerName": "${customerName}",
+    "malfunctionDdescription": "${malfunctionDdescription}",
+    "notes": "${notes}",
+    "status": "pending"
+  };
+  final response = await http.put(
+    url,
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: json.encode(jsonData),
+  );
+  var data = json.decode(response.body);
+  if (data["success"] == true) {
+    Fluttertoast.showToast(
+        msg: AppLocalizations.of(context)!.edit_success,
+        toastLength: Toast.LENGTH_LONG,
+        gravity: ToastGravity.BOTTOM,
+        timeInSecForIosWeb: 2,
+        backgroundColor: const Color.fromARGB(255, 28, 116, 31),
+        textColor: Colors.white,
+        fontSize: 16.0);
+  } else {
+    Fluttertoast.showToast(
+        msg: AppLocalizations.of(context)!.confailed,
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.BOTTOM,
+        timeInSecForIosWeb: 3,
+        backgroundColor: Colors.red,
+        textColor: Colors.white,
+        fontSize: 16.0);
+  }
+}
+
+editMaintanenceRequestStatus(maintanenceRequestID, status, context) async {
+  final url = Uri.parse("$URL_MAINTENANCE_REQUESTS/edit");
+
+  final jsonData = {
+    "id": "${maintanenceRequestID}",
+    "status": "${status}",
+  };
+  final response = await http.put(
+    url,
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: json.encode(jsonData),
+  );
+  var data = json.decode(response.body);
+  if (data["success"] == true) {
+    Fluttertoast.showToast(
+        msg: AppLocalizations.of(context)!.edit_success,
+        toastLength: Toast.LENGTH_LONG,
+        gravity: ToastGravity.BOTTOM,
+        timeInSecForIosWeb: 2,
+        backgroundColor: const Color.fromARGB(255, 28, 116, 31),
+        textColor: Colors.white,
+        fontSize: 16.0);
+  } else {
+    Fluttertoast.showToast(
+        msg: AppLocalizations.of(context)!.confailed,
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.BOTTOM,
+        timeInSecForIosWeb: 3,
+        backgroundColor: Colors.red,
+        textColor: Colors.white,
+        fontSize: 16.0);
+  }
+}
+
+editMaintanenceRequestStatusArray(var maintanenceRequests, context) async {
+  final url = Uri.parse("$URL_MAINTENANCE_REQUESTS/edit");
+
+  final response = await http.put(
+    url,
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: json.encode(maintanenceRequests),
+  );
+  var data = json.decode(response.body);
+  if (data["success"] == true) {
+    Fluttertoast.showToast(
+        msg: AppLocalizations.of(context)!.edit_success,
+        toastLength: Toast.LENGTH_LONG,
+        gravity: ToastGravity.BOTTOM,
+        timeInSecForIosWeb: 2,
+        backgroundColor: const Color.fromARGB(255, 28, 116, 31),
+        textColor: Colors.white,
+        fontSize: 16.0);
+  } else {
+    Fluttertoast.showToast(
+        msg: AppLocalizations.of(context)!.confailed,
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.BOTTOM,
+        timeInSecForIosWeb: 3,
+        backgroundColor: Colors.red,
+        textColor: Colors.white,
+        fontSize: 16.0);
   }
 }
 
@@ -453,6 +742,12 @@ getCatPage() async {
   return res;
 }
 
+getRequest(API_URL) async {
+  var response = await http.get(Uri.parse(API_URL), headers: headers);
+  var res = jsonDecode(response.body);
+  return res;
+}
+
 void showFilterDialog(BuildContext context) {
   showModalBottomSheet(
     context: context,
@@ -634,7 +929,8 @@ void showFilterDialog(BuildContext context) {
 
 showDialogToAddToCart(
     {context,
-    List<String>? SIZES,
+    List<String>? SIZES_EN,
+    List<String>? SIZES_AR,
     List<int>? SIZESIDs,
     colors,
     selectedSize,
@@ -642,22 +938,25 @@ showDialogToAddToCart(
     product_id,
     category_id,
     cartProvider,
-    name,
+    name_ar,
+    name_en,
     image}) async {
   bool emptySizes = false;
   int? selectedIndex;
   bool emptyColors = false;
   List<int> _Counters = [];
-  List<String> _Names = [];
+  List<String> _Names_en = [];
+  List<String> _Names_ar = [];
   List<int> _ColorIDs = [];
   List<String> _Images = [];
   TextEditingController _countController = TextEditingController();
   _countController.text = "1";
   for (int i = 0; i < colors.length; i++) {
     _Counters.add(0);
-    _Names.add(colors[i]["title"]);
+    _Names_en.add(colors[i]["title"]);
+    _Names_ar.add(colors[i]["translations"][0]["value"] ?? "-");
     _ColorIDs.add(colors[i]["id"]);
-    _Images.add(colors[i]["image"]);
+    _Images.add(colors[i]["image"] ?? "");
   }
 
   showDialog(
@@ -718,26 +1017,45 @@ showDialogToAddToCart(
                     ],
                   ),
                 ),
-                Column(
-                  children: SIZES!.asMap().entries.map((entry) {
-                    final index = entry.key;
-                    final size = entry.value;
-
-                    return RadioListTile(
-                      activeColor: MAIN_COLOR,
-                      contentPadding: EdgeInsets.zero,
-                      title: Text(size),
-                      value: size,
-                      groupValue: selectedSize,
-                      onChanged: (value) {
-                        setState(() {
-                          selectedSize = value as String;
-                          selectedIndex = index;
-                        });
-                      },
-                    );
-                  }).toList(),
-                ),
+                locale.toString() == "ar"
+                    ? Column(
+                        children: SIZES_AR!.asMap().entries.map((entry) {
+                          final index = entry.key;
+                          final size = entry.value;
+                          return RadioListTile(
+                            activeColor: MAIN_COLOR,
+                            contentPadding: EdgeInsets.zero,
+                            title: Text(size),
+                            value: size,
+                            groupValue: selectedSize,
+                            onChanged: (value) {
+                              setState(() {
+                                selectedSize = value as String;
+                                selectedIndex = index;
+                              });
+                            },
+                          );
+                        }).toList(),
+                      )
+                    : Column(
+                        children: SIZES_EN!.asMap().entries.map((entry) {
+                          final index = entry.key;
+                          final size = entry.value;
+                          return RadioListTile(
+                            activeColor: MAIN_COLOR,
+                            contentPadding: EdgeInsets.zero,
+                            title: Text(size),
+                            value: size,
+                            groupValue: selectedSize,
+                            onChanged: (value) {
+                              setState(() {
+                                selectedSize = value as String;
+                                selectedIndex = index;
+                              });
+                            },
+                          );
+                        }).toList(),
+                      ),
                 Visibility(
                   visible: colors!.length == 0 ? true : false,
                   child: Padding(
@@ -903,12 +1221,20 @@ showDialogToAddToCart(
                                 children: [
                                   Row(
                                     children: [
-                                      Image.network(
-                                        URLIMAGE + colors[index]["image"],
-                                        height: 30,
-                                        width: 30,
-                                        fit: BoxFit.cover,
-                                      ),
+                                      FancyShimmerImage(
+                                          imageUrl:
+                                              (colors[index]["image"] != null)
+                                                  ? URLIMAGE +
+                                                      colors[index]["image"]
+                                                  : '',
+                                          height: 30,
+                                          width: 30,
+                                          errorWidget: Image.asset(
+                                            "assets/images/logo_well.png",
+                                            fit: BoxFit.cover,
+                                            height: 190,
+                                            width: double.infinity,
+                                          )),
                                       SizedBox(
                                         width: 15,
                                       ),
@@ -978,29 +1304,21 @@ showDialogToAddToCart(
                                         child: SizedBox(
                                           width: 35,
                                           height: 30,
-                                          child: Align(
-                                            alignment: Alignment.center,
-                                            child: Padding(
-                                              padding: const EdgeInsets.only(
-                                                  bottom: 0, top: 0),
-                                              child: Center(
-                                                child: TextField(
-                                                  textAlign: TextAlign.center,
-                                                  decoration: InputDecoration(
-                                                    isDense: true,
-                                                    border: InputBorder.none,
-                                                  ),
-                                                  controller:
-                                                      colorCounterController,
-                                                  onChanged: (value) {
-                                                    setState(() {
-                                                      _Counters[index] =
-                                                          int.parse(
-                                                              value.toString());
-                                                    });
-                                                  },
-                                                ),
+                                          child: Padding(
+                                            padding: const EdgeInsets.only(
+                                                bottom: 0, top: 0),
+                                            child: TextField(
+                                              textAlign: TextAlign.center,
+                                              decoration: InputDecoration(
+                                                isDense: true,
+                                                border: InputBorder.none,
                                               ),
+                                              controller:
+                                                  colorCounterController,
+                                              onChanged: (value) {
+                                                _Counters[index] =
+                                                    int.parse(value.toString());
+                                              },
                                             ),
                                           ),
                                         ),
@@ -1068,23 +1386,32 @@ showDialogToAddToCart(
                     });
                   } else {
                     final newItem = CartItem(
+                      selectedSizeIndex: selectedIndex!,
                       sizesIDs:
                           SIZESIDs!.map((size) => SIZESIDs.toString()).toList(),
                       color_id: 0,
                       notes: "",
-                      sizes: SIZES.map((size) => size.toString()).toList(),
+                      sizes_en:
+                          SIZES_EN!.map((size) => size.toString()).toList(),
+                      sizes_ar:
+                          SIZES_AR!.map((size) => size.toString()).toList(),
                       size_id: SIZESIDs[selectedIndex!],
-                      colorsNames:
-                          _Names.map((size) => size.toString()).toList(),
+                      colorsNamesEN:
+                          _Names_en.map((size) => size.toString()).toList(),
+                      colorsNamesAR:
+                          _Names_ar.map((size) => size.toString()).toList(),
                       colorsImages:
                           _Images.map((size) => size.toString()).toList(),
                       productId: product_id,
-                      name: name,
+                      name_ar: name_ar,
+                      name_en: name_en,
                       categoryID: category_id,
                       image: image,
-                      size: selectedSize.toString(),
+                      size_ar: selectedSize.toString(),
+                      size_en: selectedSize.toString(),
                       quantity: int.parse(_countController.text),
-                      color: '',
+                      color_en: '',
+                      color_ar: '',
                     );
                     cartProvider.addToCart(newItem);
                     Navigator.pop(context);
@@ -1108,24 +1435,36 @@ showDialogToAddToCart(
                     for (int i = 0; i < _Counters.length; i++) {
                       if (_Counters[i] > 0) {
                         final newItem = CartItem(
+                            selectedSizeIndex: selectedIndex!,
                             sizesIDs: SIZESIDs!
                                 .map((size) => SIZESIDs.toString())
                                 .toList(),
                             size_id: SIZESIDs[selectedIndex!],
                             notes: "",
-                            sizes:
-                                SIZES.map((size) => size.toString()).toList(),
-                            colorsNames:
-                                _Names.map((size) => size.toString()).toList(),
+                            sizes_en: SIZES_EN!
+                                .map((size) => size.toString())
+                                .toList(),
+                            sizes_ar: SIZES_AR!
+                                .map((size) => size.toString())
+                                .toList(),
+                            colorsNamesEN:
+                                _Names_en.map((size) => size.toString())
+                                    .toList(),
+                            colorsNamesAR:
+                                _Names_ar.map((size) => size.toString())
+                                    .toList(),
                             colorsImages:
                                 _Images.map((size) => size.toString()).toList(),
                             categoryID: category_id,
                             productId: product_id,
-                            name: name,
+                            name_ar: name_ar,
+                            name_en: name_en,
                             image: URLIMAGE + _Images[i],
-                            size: selectedSize.toString(),
+                            size_ar: selectedSize.toString(),
+                            size_en: selectedSize.toString(),
                             quantity: _Counters[i],
-                            color: _Names[i],
+                            color_en: _Names_en[i],
+                            color_ar: _Names_ar[i],
                             color_id: _ColorIDs[i]);
                         cartProvider.addToCart(newItem);
                       }

@@ -16,6 +16,7 @@ import 'package:social_share_plugin/social_share_plugin.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:well_app_flutter/Components/button_widget/button_widget.dart';
 import 'package:well_app_flutter/Pages/authentication/login_screen/login_screen.dart';
+import 'package:well_app_flutter/Pages/product_screen/product_video/product_video.dart';
 import 'package:well_app_flutter/main.dart';
 import 'package:zoom_pinch_overlay/zoom_pinch_overlay.dart';
 import '../../Components/app_bar_widget/app_bar_widget.dart';
@@ -117,7 +118,7 @@ class _ProductScreenState extends State<ProductScreen> {
                         } else {
                           if (snapshot.data != null) {
                             var Product = snapshot.data;
-                            var imageString = Product["image"];
+                            var imageString = Product["image"] ?? "";
                             List<String> resultList = [];
                             if (imageString.isNotEmpty) {
                               // Check if the imageString is in the expected format
@@ -131,22 +132,32 @@ class _ProductScreenState extends State<ProductScreen> {
                                 imageString = "";
                               }
                             }
-
                             List<String> _initSizes = [];
+                            List<String> _initSizesAR = [];
                             List<int> _initSizesIDs = [];
-                            for (int i = 0; i < Product["sizes"].length; i++) {
-                              _initSizes
-                                  .add(Product["sizes"][i]["title"].toString());
-                              _initSizesIDs.add(Product["sizes"][i]["id"]);
+                            if (Product["sizes"] != null) {
+                              for (int i = 0;
+                                  i < Product["sizes"].length;
+                                  i++) {
+                                _initSizes
+                                    .add(Product["sizes"][i]["title"] ?? "");
+                                _initSizesAR.add(Product["sizes"][i]
+                                        ["translations"][0]["value"]
+                                    .toString());
+                                _initSizesIDs
+                                    .add(Product["sizes"][i]["id"] ?? 0);
+                              }
                             }
                             return ProductScreenParameters(
                                 name_ar:
-                                    Product["translations"][2]["value"] ?? "",
+                                    Product["translations"][0]["value"] ?? "",
                                 name_en: Product["name"] ?? "",
                                 Images: resultList,
                                 sizes: Product["sizes"] ?? [],
+                                video: Product["video"] ?? "",
                                 colors: Product["colors"] ?? [],
-                                SIZES: _initSizes,
+                                SIZES_EN: _initSizes,
+                                SIZES_AR: _initSizesAR,
                                 SIZESIDs: _initSizesIDs,
                                 imagewithout: imageString,
                                 image: URLIMAGE + imageString,
@@ -181,8 +192,10 @@ class _ProductScreenState extends State<ProductScreen> {
       String name_ar = "",
       String name_en = "",
       String number = "",
+      String video = "",
       String selectedSize = "",
-      List<String>? SIZES,
+      List<String>? SIZES_EN,
+      List<String>? SIZES_AR,
       List<int>? SIZESIDs,
       List<String>? Images,
       List? sizes,
@@ -202,427 +215,659 @@ class _ProductScreenState extends State<ProductScreen> {
         children: [
           Stack(
             alignment: locale.toString() == "ar"
-                ? Alignment.bottomRight
-                : Alignment.bottomLeft,
+                ? Alignment.bottomLeft
+                : Alignment.bottomRight,
             children: [
-              Column(
+              Stack(
+                alignment: locale.toString() == "ar"
+                    ? Alignment.bottomRight
+                    : Alignment.bottomLeft,
                 children: [
-                  Stack(
+                  Column(
                     children: [
-                      Container(
-                        width: double.infinity,
-                        height: MediaQuery.of(context).size.height * 0.4,
-                        child: Image.network(
-                          URLIMAGE + Images![0],
-                          fit: BoxFit.cover,
-                          errorBuilder: (BuildContext context, Object exception,
-                              StackTrace? stackTrace) {
-                            return Image.asset(
-                              "assets/images/logo_well.png",
+                      Stack(
+                        children: [
+                          Container(
+                            width: double.infinity,
+                            height: MediaQuery.of(context).size.height * 0.4,
+                            child: Image.network(
+                              URLIMAGE + Images![0],
                               fit: BoxFit.cover,
-                              height: MediaQuery.of(context).size.height * 0.4,
+                              errorBuilder: (BuildContext context,
+                                  Object exception, StackTrace? stackTrace) {
+                                return Image.asset(
+                                  "assets/images/logo_well.png",
+                                  fit: BoxFit.cover,
+                                  height:
+                                      MediaQuery.of(context).size.height * 0.4,
+                                  width: double.infinity,
+                                );
+                              },
+                            ),
+                          ),
+                          Container(
                               width: double.infinity,
-                            );
-                          },
-                        ),
+                              height: MediaQuery.of(context).size.height * 0.4,
+                              decoration: BoxDecoration(
+                                gradient: LinearGradient(
+                                  begin: Alignment.topCenter,
+                                  end: Alignment.bottomCenter,
+                                  colors: [
+                                    Color.fromARGB(183, 92, 92, 92),
+                                    Color.fromARGB(44, 78, 78, 78)
+                                  ],
+                                ),
+                              )),
+                        ],
                       ),
                       Container(
-                          width: double.infinity,
-                          height: MediaQuery.of(context).size.height * 0.4,
-                          decoration: BoxDecoration(
-                            gradient: LinearGradient(
-                              begin: Alignment.topCenter,
-                              end: Alignment.bottomCenter,
-                              colors: [
-                                Color.fromARGB(183, 92, 92, 92),
-                                Color.fromARGB(44, 78, 78, 78)
-                              ],
-                            ),
-                          )),
+                        width: double.infinity,
+                        height: 30,
+                      ),
                     ],
                   ),
-                  Container(
-                    width: double.infinity,
-                    height: 30,
-                  ),
-                ],
-              ),
-              Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(right: 15, left: 15),
-                    child: Row(
-                      children: [
-                        Container(
-                          height: 40,
-                          width: 40,
-                          child: Center(
-                              child: IconButton(
-                            onPressed: () async {
-                              if (Images.length != 0) {
-                                int imageSelected = 0;
-                                showDialog(
-                                  context: context,
-                                  builder: (context) {
-                                    return Dialog(
-                                      backgroundColor: Colors.transparent,
-                                      insetPadding: EdgeInsets.all(0),
-                                      child: Stack(
-                                        alignment: Alignment.topCenter,
-                                        children: [
-                                          Center(
-                                            child: Container(
-                                              height: MediaQuery.of(context)
-                                                  .size
-                                                  .height,
-                                              width: MediaQuery.of(context)
-                                                  .size
-                                                  .width,
-                                              color: Colors.transparent,
-                                              child: Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: <Widget>[
-                                                  Container(
-                                                    width: double.infinity,
-                                                    height:
-                                                        MediaQuery.of(context)
-                                                                .size
-                                                                .height *
-                                                            0.4,
-                                                    child: StatefulBuilder(
-                                                        builder: (BuildContext
-                                                                context,
-                                                            StateSetter
-                                                                setState) {
-                                                      return ImageSlideshow(
-                                                        width: double.infinity,
-                                                        initialPage:
-                                                            imageSelected,
-                                                        onPageChanged: (_) {
-                                                          imageSelected = _;
-
-                                                          setState(() {});
-                                                        },
-                                                        indicatorColor:
-                                                            MAIN_COLOR,
-                                                        height: MediaQuery.of(
-                                                                    context)
-                                                                .size
-                                                                .height *
-                                                            0.4,
-                                                        children:
-                                                            Images.map(
-                                                                (e) => InkWell(
-                                                                      onTap:
-                                                                          () {},
-                                                                      child:
-                                                                          ZoomOverlay(
-                                                                        modalBarrierColor:
-                                                                            Colors.black12,
-                                                                        minScale:
-                                                                            0.5,
-                                                                        maxScale:
-                                                                            3.0,
-                                                                        animationCurve:
-                                                                            Curves.fastOutSlowIn,
-                                                                        animationDuration:
-                                                                            Duration(milliseconds: 300),
-                                                                        twoTouchOnly:
-                                                                            true,
-                                                                        onScaleStart:
-                                                                            () {},
-                                                                        onScaleStop:
-                                                                            () {},
-                                                                        child:
-                                                                            FancyShimmerImage(
-                                                                          imageUrl:
-                                                                              URLIMAGE + Images[imageSelected],
-                                                                          boxFit:
-                                                                              BoxFit.cover,
-                                                                          width:
-                                                                              double.infinity,
-                                                                          height:
-                                                                              MediaQuery.of(context).size.height * 0.4,
-                                                                        ),
-                                                                      ),
-                                                                    )).toList(),
-                                                        autoPlayInterval:
-                                                            60000000,
-                                                      );
-                                                    }),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                          ),
-                                          Container(
-                                            color: Colors.transparent,
-                                            child: Padding(
-                                              padding:
-                                                  const EdgeInsets.all(15.0),
-                                              child: Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceBetween,
-                                                children: [
-                                                  InkWell(
-                                                    onTap: () {
-                                                      Navigator.pop(context);
-                                                    },
-                                                    child: FaIcon(
-                                                      FontAwesomeIcons.close,
-                                                      color: Colors.white,
-                                                      size: isTablet ? 50 : 25,
-                                                    ),
-                                                  ),
-                                                  InkWell(
-                                                    onTap: () async {
-                                                      try {
-                                                        await GallerySaver
-                                                            .saveImage(URLIMAGE +
-                                                                Images[
-                                                                    imageSelected]);
-                                                        Fluttertoast.showToast(
-                                                            msg: AppLocalizations
-                                                                    .of(
-                                                                        context)!
-                                                                .downloaded_successfully,
-                                                            toastLength:
-                                                                Toast
-                                                                    .LENGTH_LONG,
-                                                            gravity:
-                                                                ToastGravity
-                                                                    .BOTTOM,
-                                                            timeInSecForIosWeb:
-                                                                1,
-                                                            backgroundColor:
-                                                                Colors.green,
-                                                            textColor:
-                                                                Colors.white,
-                                                            fontSize: 16.0);
-                                                      } catch (e) {
-                                                        Fluttertoast.showToast(
-                                                            msg: AppLocalizations
-                                                                    .of(
-                                                                        context)!
-                                                                .downloaded_failed,
-                                                            toastLength: Toast
-                                                                .LENGTH_LONG,
-                                                            gravity:
-                                                                ToastGravity
-                                                                    .BOTTOM,
-                                                            timeInSecForIosWeb:
-                                                                1,
-                                                            backgroundColor:
-                                                                Colors.red,
-                                                            textColor:
-                                                                Colors.white,
-                                                            fontSize: 16.0);
-                                                      }
-                                                    },
-                                                    child: FaIcon(
-                                                      FontAwesomeIcons
-                                                          .fileDownload,
-                                                      color: Colors.white,
-                                                      size: isTablet ? 50 : 25,
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                          )
-                                        ],
-                                      ),
-                                    );
-                                  },
-                                );
-                              } else {
-                                showDialog(
-                                  context: context,
-                                  builder: (context) {
-                                    return Dialog(
-                                      backgroundColor: Colors.transparent,
-                                      insetPadding: EdgeInsets.all(0),
-                                      child: Stack(
-                                        alignment: Alignment.topCenter,
-                                        children: [
-                                          Center(
-                                            child: Container(
-                                              height: MediaQuery.of(context)
-                                                  .size
-                                                  .height,
-                                              width: MediaQuery.of(context)
-                                                  .size
-                                                  .width,
-                                              color: Colors.transparent,
-                                              child: Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: <Widget>[
-                                                  Container(
-                                                      width: double.infinity,
-                                                      height:
-                                                          MediaQuery.of(context)
-                                                                  .size
-                                                                  .height *
-                                                              0.4,
-                                                      child: ZoomOverlay(
-                                                        modalBarrierColor:
-                                                            Colors.black12,
-                                                        minScale: 0.5,
-                                                        maxScale: 3.0,
-                                                        animationCurve: Curves
-                                                            .fastOutSlowIn,
-                                                        animationDuration:
-                                                            Duration(
-                                                                milliseconds:
-                                                                    300),
-                                                        twoTouchOnly: true,
-                                                        onScaleStart: () {},
-                                                        onScaleStop: () {},
-                                                        child: Image.network(
-                                                          image,
-                                                          fit: BoxFit.cover,
-                                                        ),
-                                                      )),
-                                                ],
-                                              ),
-                                            ),
-                                          ),
-                                          Container(
-                                            color: Colors.transparent,
-                                            child: Padding(
-                                              padding:
-                                                  const EdgeInsets.all(15.0),
-                                              child: Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceBetween,
-                                                children: [
-                                                  InkWell(
-                                                    onTap: () {
-                                                      Navigator.pop(context);
-                                                    },
-                                                    child: FaIcon(
-                                                      FontAwesomeIcons.close,
-                                                      color: Colors.white,
-                                                      size: isTablet ? 50 : 25,
-                                                    ),
-                                                  ),
-                                                  InkWell(
-                                                    onTap: () async {
-                                                      try {
-                                                        await GallerySaver
-                                                            .saveImage(image);
-                                                        Fluttertoast.showToast(
-                                                            msg: AppLocalizations
-                                                                    .of(
-                                                                        context)!
-                                                                .downloaded_successfully,
-                                                            toastLength:
-                                                                Toast
-                                                                    .LENGTH_LONG,
-                                                            gravity:
-                                                                ToastGravity
-                                                                    .BOTTOM,
-                                                            timeInSecForIosWeb:
-                                                                1,
-                                                            backgroundColor:
-                                                                Colors.green,
-                                                            textColor:
-                                                                Colors.white,
-                                                            fontSize: 16.0);
-                                                      } catch (e) {
-                                                        Fluttertoast.showToast(
-                                                            msg: AppLocalizations
-                                                                    .of(
-                                                                        context)!
-                                                                .downloaded_failed,
-                                                            toastLength: Toast
-                                                                .LENGTH_LONG,
-                                                            gravity:
-                                                                ToastGravity
-                                                                    .BOTTOM,
-                                                            timeInSecForIosWeb:
-                                                                1,
-                                                            backgroundColor:
-                                                                Colors.red,
-                                                            textColor:
-                                                                Colors.white,
-                                                            fontSize: 16.0);
-                                                      }
-                                                    },
-                                                    child: FaIcon(
-                                                      FontAwesomeIcons
-                                                          .fileDownload,
-                                                      color: Colors.white,
-                                                      size: isTablet ? 50 : 25,
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                          )
-                                        ],
-                                      ),
-                                    );
-                                  },
-                                );
-                              }
-                            },
-                            icon: Icon(
-                              Icons.image,
-                              color: Colors.white,
-                              size: 25,
-                            ),
-                          )),
-                          decoration: BoxDecoration(boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey.withOpacity(0.3),
-                              spreadRadius: 5,
-                              blurRadius: 7,
-                              offset:
-                                  Offset(0, 3), // changes position of shadow
-                            ),
-                          ], shape: BoxShape.circle, color: Colors.grey),
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Padding(
-                    padding:
-                        const EdgeInsets.only(bottom: 15, left: 15, right: 15),
-                    child: Row(
-                      children: [
-                        Visibility(
-                          visible: ROLEID == "3" ? true : false,
-                          child: InkWell(
-                            onTap: () {
-                              showDialogToAddToCart(
-                                  SIZES: SIZES,
-                                  SIZESIDs: SIZESIDs,
-                                  category_id: widget.category_id,
-                                  colors: colors,
-                                  context: context,
-                                  image: widget.image,
-                                  product_id: widget.product_id,
-                                  selectedSize: selectedSize,
-                                  cartProvider: cartProvider,
-                                  name: locale.toString() == "ar"
-                                      ? name_ar
-                                      : name_en);
-                            },
-                            child: Container(
+                  Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(right: 15, left: 15),
+                        child: Row(
+                          children: [
+                            Container(
                               height: 40,
                               width: 40,
                               child: Center(
-                                  child: FaIcon(
-                                FontAwesomeIcons.plus,
-                                color: Colors.black,
+                                  child: IconButton(
+                                onPressed: () async {
+                                  if (Images.length != 0) {
+                                    int imageSelected = 0;
+                                    if (Images.length > 1) {
+                                      showDialog(
+                                        context: context,
+                                        builder: (context) {
+                                          return Dialog(
+                                            backgroundColor: Colors.transparent,
+                                            insetPadding: EdgeInsets.all(0),
+                                            child: Stack(
+                                              alignment: Alignment.topCenter,
+                                              children: [
+                                                Center(
+                                                  child: Container(
+                                                    height:
+                                                        MediaQuery.of(context)
+                                                            .size
+                                                            .height,
+                                                    width:
+                                                        MediaQuery.of(context)
+                                                            .size
+                                                            .width,
+                                                    color: Colors.transparent,
+                                                    child: Column(
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .center,
+                                                      children: <Widget>[
+                                                        Container(
+                                                          width:
+                                                              double.infinity,
+                                                          height: MediaQuery.of(
+                                                                      context)
+                                                                  .size
+                                                                  .height *
+                                                              0.4,
+                                                          child: StatefulBuilder(
+                                                              builder: (BuildContext
+                                                                      context,
+                                                                  StateSetter
+                                                                      setState) {
+                                                            return ImageSlideshow(
+                                                              width: double
+                                                                  .infinity,
+                                                              initialPage:
+                                                                  imageSelected,
+                                                              onPageChanged:
+                                                                  (_) {
+                                                                imageSelected =
+                                                                    _;
+
+                                                                setState(() {});
+                                                              },
+                                                              indicatorColor:
+                                                                  MAIN_COLOR,
+                                                              height: MediaQuery.of(
+                                                                          context)
+                                                                      .size
+                                                                      .height *
+                                                                  0.4,
+                                                              children: Images
+                                                                  .map((e) =>
+                                                                      InkWell(
+                                                                        onTap:
+                                                                            () {},
+                                                                        child:
+                                                                            ZoomOverlay(
+                                                                          modalBarrierColor:
+                                                                              Colors.black12,
+                                                                          minScale:
+                                                                              0.5,
+                                                                          maxScale:
+                                                                              3.0,
+                                                                          animationCurve:
+                                                                              Curves.fastOutSlowIn,
+                                                                          animationDuration:
+                                                                              Duration(milliseconds: 300),
+                                                                          twoTouchOnly:
+                                                                              true,
+                                                                          onScaleStart:
+                                                                              () {},
+                                                                          onScaleStop:
+                                                                              () {},
+                                                                          child:
+                                                                              FancyShimmerImage(
+                                                                            imageUrl:
+                                                                                URLIMAGE + Images[imageSelected],
+                                                                            boxFit:
+                                                                                BoxFit.cover,
+                                                                            width:
+                                                                                double.infinity,
+                                                                            height:
+                                                                                MediaQuery.of(context).size.height * 0.4,
+                                                                          ),
+                                                                        ),
+                                                                      )).toList(),
+                                                              autoPlayInterval:
+                                                                  60000000,
+                                                            );
+                                                          }),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                ),
+                                                Container(
+                                                  color: Colors.transparent,
+                                                  child: Padding(
+                                                    padding:
+                                                        const EdgeInsets.all(
+                                                            15.0),
+                                                    child: Row(
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .spaceBetween,
+                                                      children: [
+                                                        InkWell(
+                                                          onTap: () {
+                                                            Navigator.pop(
+                                                                context);
+                                                          },
+                                                          child: FaIcon(
+                                                            FontAwesomeIcons
+                                                                .close,
+                                                            color: Colors.white,
+                                                            size: isTablet
+                                                                ? 50
+                                                                : 25,
+                                                          ),
+                                                        ),
+                                                        InkWell(
+                                                          onTap: () async {
+                                                            try {
+                                                              await GallerySaver
+                                                                  .saveImage(
+                                                                      URLIMAGE +
+                                                                          Images[
+                                                                              imageSelected]);
+                                                              Fluttertoast.showToast(
+                                                                  msg: AppLocalizations
+                                                                          .of(
+                                                                              context)!
+                                                                      .downloaded_successfully,
+                                                                  toastLength: Toast
+                                                                      .LENGTH_LONG,
+                                                                  gravity:
+                                                                      ToastGravity
+                                                                          .BOTTOM,
+                                                                  timeInSecForIosWeb:
+                                                                      1,
+                                                                  backgroundColor:
+                                                                      Colors
+                                                                          .green,
+                                                                  textColor:
+                                                                      Colors
+                                                                          .white,
+                                                                  fontSize:
+                                                                      16.0);
+                                                            } catch (e) {
+                                                              Fluttertoast.showToast(
+                                                                  msg: AppLocalizations
+                                                                          .of(
+                                                                              context)!
+                                                                      .downloaded_failed,
+                                                                  toastLength: Toast
+                                                                      .LENGTH_LONG,
+                                                                  gravity:
+                                                                      ToastGravity
+                                                                          .BOTTOM,
+                                                                  timeInSecForIosWeb:
+                                                                      1,
+                                                                  backgroundColor:
+                                                                      Colors
+                                                                          .red,
+                                                                  textColor:
+                                                                      Colors
+                                                                          .white,
+                                                                  fontSize:
+                                                                      16.0);
+                                                            }
+                                                          },
+                                                          child: FaIcon(
+                                                            FontAwesomeIcons
+                                                                .fileDownload,
+                                                            color: Colors.white,
+                                                            size: isTablet
+                                                                ? 50
+                                                                : 25,
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                )
+                                              ],
+                                            ),
+                                          );
+                                        },
+                                      );
+                                    } else {
+                                      List<String> resultList = [];
+                                      List<Silder> album = colors!
+                                          .map((s) => Silder.fromJson(s))
+                                          .toList();
+                                      if (imagewithout.isNotEmpty) {
+                                        // Check if the imageString is in the expected format
+                                        if (imagewithout != null &&
+                                            imagewithout.startsWith("[") &&
+                                            imagewithout.endsWith("]")) {
+                                          resultList =
+                                              (jsonDecode(imagewithout) as List)
+                                                  .map((item) => item as String)
+                                                  .toList();
+                                        } else {
+                                          imagewithout = "";
+                                        }
+                                      }
+
+                                      Silder newItem = Silder(
+                                          image: resultList[0],
+                                          product_id: "0");
+                                      album.insert(0, newItem);
+                                      showDialog(
+                                        context: context,
+                                        builder: (context) {
+                                          return Dialog(
+                                            backgroundColor: Colors.transparent,
+                                            insetPadding: EdgeInsets.all(0),
+                                            child: Stack(
+                                              alignment: Alignment.topCenter,
+                                              children: [
+                                                Center(
+                                                  child: Container(
+                                                    height:
+                                                        MediaQuery.of(context)
+                                                            .size
+                                                            .height,
+                                                    width:
+                                                        MediaQuery.of(context)
+                                                            .size
+                                                            .width,
+                                                    color: Colors.transparent,
+                                                    child: Column(
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .center,
+                                                      children: <Widget>[
+                                                        Container(
+                                                          width:
+                                                              double.infinity,
+                                                          height: MediaQuery.of(
+                                                                      context)
+                                                                  .size
+                                                                  .height *
+                                                              0.4,
+                                                          child: StatefulBuilder(
+                                                              builder: (BuildContext
+                                                                      context,
+                                                                  StateSetter
+                                                                      setState) {
+                                                            return ImageSlideshow(
+                                                              width: double
+                                                                  .infinity,
+                                                              initialPage:
+                                                                  imageSelected,
+                                                              onPageChanged:
+                                                                  (_) {
+                                                                imageSelected =
+                                                                    _;
+
+                                                                setState(() {});
+                                                              },
+                                                              indicatorColor:
+                                                                  MAIN_COLOR,
+                                                              height: MediaQuery.of(
+                                                                          context)
+                                                                      .size
+                                                                      .height *
+                                                                  0.4,
+                                                              children: album
+                                                                  .map((e) =>
+                                                                      InkWell(
+                                                                        onTap:
+                                                                            () {},
+                                                                        child:
+                                                                            ZoomOverlay(
+                                                                          modalBarrierColor:
+                                                                              Colors.black12,
+                                                                          minScale:
+                                                                              0.5,
+                                                                          maxScale:
+                                                                              3.0,
+                                                                          animationCurve:
+                                                                              Curves.fastOutSlowIn,
+                                                                          animationDuration:
+                                                                              Duration(milliseconds: 300),
+                                                                          twoTouchOnly:
+                                                                              true,
+                                                                          onScaleStart:
+                                                                              () {},
+                                                                          onScaleStop:
+                                                                              () {},
+                                                                          child:
+                                                                              FancyShimmerImage(
+                                                                            imageUrl:
+                                                                                URLIMAGE + e.image,
+                                                                            boxFit:
+                                                                                BoxFit.cover,
+                                                                            width:
+                                                                                double.infinity,
+                                                                            height:
+                                                                                MediaQuery.of(context).size.height * 0.4,
+                                                                          ),
+                                                                        ),
+                                                                      ))
+                                                                  .toList(),
+                                                              autoPlayInterval:
+                                                                  60000000,
+                                                            );
+                                                          }),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                ),
+                                                Container(
+                                                  color: Colors.transparent,
+                                                  child: Padding(
+                                                    padding:
+                                                        const EdgeInsets.all(
+                                                            15.0),
+                                                    child: Row(
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .spaceBetween,
+                                                      children: [
+                                                        InkWell(
+                                                          onTap: () {
+                                                            Navigator.pop(
+                                                                context);
+                                                          },
+                                                          child: FaIcon(
+                                                            FontAwesomeIcons
+                                                                .close,
+                                                            color: Colors.white,
+                                                            size: isTablet
+                                                                ? 50
+                                                                : 25,
+                                                          ),
+                                                        ),
+                                                        InkWell(
+                                                          onTap: () async {
+                                                            try {
+                                                              await GallerySaver
+                                                                  .saveImage(URLIMAGE +
+                                                                      album[imageSelected]
+                                                                          .image);
+                                                              Fluttertoast.showToast(
+                                                                  msg: AppLocalizations
+                                                                          .of(
+                                                                              context)!
+                                                                      .downloaded_successfully,
+                                                                  toastLength: Toast
+                                                                      .LENGTH_LONG,
+                                                                  gravity:
+                                                                      ToastGravity
+                                                                          .BOTTOM,
+                                                                  timeInSecForIosWeb:
+                                                                      1,
+                                                                  backgroundColor:
+                                                                      Colors
+                                                                          .green,
+                                                                  textColor:
+                                                                      Colors
+                                                                          .white,
+                                                                  fontSize:
+                                                                      16.0);
+                                                            } catch (e) {
+                                                              Fluttertoast.showToast(
+                                                                  msg: AppLocalizations
+                                                                          .of(
+                                                                              context)!
+                                                                      .downloaded_failed,
+                                                                  toastLength: Toast
+                                                                      .LENGTH_LONG,
+                                                                  gravity:
+                                                                      ToastGravity
+                                                                          .BOTTOM,
+                                                                  timeInSecForIosWeb:
+                                                                      1,
+                                                                  backgroundColor:
+                                                                      Colors
+                                                                          .red,
+                                                                  textColor:
+                                                                      Colors
+                                                                          .white,
+                                                                  fontSize:
+                                                                      16.0);
+                                                            }
+                                                          },
+                                                          child: FaIcon(
+                                                            FontAwesomeIcons
+                                                                .fileDownload,
+                                                            color: Colors.white,
+                                                            size: isTablet
+                                                                ? 50
+                                                                : 25,
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                )
+                                              ],
+                                            ),
+                                          );
+                                        },
+                                      );
+                                    }
+                                  } else {
+                                    List<String> resultList = [];
+                                    List<Silder> album = colors!
+                                        .map((s) => Silder.fromJson(s))
+                                        .toList();
+                                    if (imagewithout.isNotEmpty) {
+                                      // Check if the imageString is in the expected format
+                                      if (imagewithout != null &&
+                                          imagewithout.startsWith("[") &&
+                                          imagewithout.endsWith("]")) {
+                                        resultList =
+                                            (jsonDecode(imagewithout) as List)
+                                                .map((item) => item as String)
+                                                .toList();
+                                      } else {
+                                        imagewithout = "";
+                                      }
+                                    }
+
+                                    Silder newItem = Silder(
+                                        image: resultList[0], product_id: "0");
+                                    album.insert(0, newItem);
+                                    showDialog(
+                                      context: context,
+                                      builder: (context) {
+                                        return Dialog(
+                                          backgroundColor: Colors.transparent,
+                                          insetPadding: EdgeInsets.all(0),
+                                          child: Stack(
+                                            alignment: Alignment.topCenter,
+                                            children: [
+                                              Center(
+                                                child: Container(
+                                                  height: MediaQuery.of(context)
+                                                      .size
+                                                      .height,
+                                                  width: MediaQuery.of(context)
+                                                      .size
+                                                      .width,
+                                                  color: Colors.transparent,
+                                                  child: Column(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    children: <Widget>[
+                                                      Container(
+                                                          width:
+                                                              double.infinity,
+                                                          height: MediaQuery.of(
+                                                                      context)
+                                                                  .size
+                                                                  .height *
+                                                              0.4,
+                                                          child: ZoomOverlay(
+                                                            modalBarrierColor:
+                                                                Colors.black12,
+                                                            minScale: 0.5,
+                                                            maxScale: 3.0,
+                                                            animationCurve: Curves
+                                                                .fastOutSlowIn,
+                                                            animationDuration:
+                                                                Duration(
+                                                                    milliseconds:
+                                                                        300),
+                                                            twoTouchOnly: true,
+                                                            onScaleStart: () {},
+                                                            onScaleStop: () {},
+                                                            child:
+                                                                Image.network(
+                                                              image,
+                                                              fit: BoxFit.cover,
+                                                            ),
+                                                          )),
+                                                    ],
+                                                  ),
+                                                ),
+                                              ),
+                                              Container(
+                                                color: Colors.transparent,
+                                                child: Padding(
+                                                  padding: const EdgeInsets.all(
+                                                      15.0),
+                                                  child: Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceBetween,
+                                                    children: [
+                                                      InkWell(
+                                                        onTap: () {
+                                                          Navigator.pop(
+                                                              context);
+                                                        },
+                                                        child: FaIcon(
+                                                          FontAwesomeIcons
+                                                              .close,
+                                                          color: Colors.white,
+                                                          size: isTablet
+                                                              ? 50
+                                                              : 25,
+                                                        ),
+                                                      ),
+                                                      InkWell(
+                                                        onTap: () async {
+                                                          try {
+                                                            await GallerySaver
+                                                                .saveImage(
+                                                                    image);
+                                                            Fluttertoast.showToast(
+                                                                msg: AppLocalizations
+                                                                        .of(
+                                                                            context)!
+                                                                    .downloaded_successfully,
+                                                                toastLength: Toast
+                                                                    .LENGTH_LONG,
+                                                                gravity:
+                                                                    ToastGravity
+                                                                        .BOTTOM,
+                                                                timeInSecForIosWeb:
+                                                                    1,
+                                                                backgroundColor:
+                                                                    Colors
+                                                                        .green,
+                                                                textColor:
+                                                                    Colors
+                                                                        .white,
+                                                                fontSize: 16.0);
+                                                          } catch (e) {
+                                                            Fluttertoast.showToast(
+                                                                msg: AppLocalizations.of(
+                                                                        context)!
+                                                                    .downloaded_failed,
+                                                                toastLength: Toast
+                                                                    .LENGTH_LONG,
+                                                                gravity:
+                                                                    ToastGravity
+                                                                        .BOTTOM,
+                                                                timeInSecForIosWeb:
+                                                                    1,
+                                                                backgroundColor:
+                                                                    Colors.red,
+                                                                textColor:
+                                                                    Colors
+                                                                        .white,
+                                                                fontSize: 16.0);
+                                                          }
+                                                        },
+                                                        child: FaIcon(
+                                                          FontAwesomeIcons
+                                                              .fileDownload,
+                                                          color: Colors.white,
+                                                          size: isTablet
+                                                              ? 50
+                                                              : 25,
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                              )
+                                            ],
+                                          ),
+                                        );
+                                      },
+                                    );
+                                  }
+                                },
+                                icon: Icon(
+                                  Icons.image,
+                                  color: Colors.white,
+                                  size: 25,
+                                ),
                               )),
                               decoration: BoxDecoration(boxShadow: [
                                 BoxShadow(
@@ -632,80 +877,180 @@ class _ProductScreenState extends State<ProductScreen> {
                                   offset: Offset(
                                       0, 3), // changes position of shadow
                                 ),
-                              ], shape: BoxShape.circle, color: Colors.white),
+                              ], shape: BoxShape.circle, color: Colors.grey),
                             ),
-                          ),
+                          ],
                         ),
-                        Visibility(
-                          visible: ROLEID == "3" ? true : false,
-                          child: SizedBox(
-                            width: 20,
-                          ),
-                        ),
-                        InkWell(
-                          onTap: () async {
-                            final favoriteProvider =
-                                Provider.of<FavouriteProvider>(context,
-                                    listen: false);
-                            bool isFavorite = favoriteProvider
-                                .isProductFavorite(widget.product_id);
-                            if (isFavorite) {
-                              await favoriteProvider
-                                  .removeFromFavorite(widget.product_id);
-                              Fluttertoast.showToast(
-                                msg: AppLocalizations.of(context)!
-                                    .fav_deleted_successfully,
-                              );
-                            } else {
-                              final newItem = FavoriteItem(
-                                productId: widget.product_id,
-                                categoryID: widget.category_id,
-                                name: widget.name,
-                                image: image,
-                              );
-                              await favoriteProvider.addToFavorite(newItem);
-                              Fluttertoast.showToast(
-                                msg: AppLocalizations.of(context)!
-                                    .fav_added_successfully,
-                              );
-                            }
-                          },
-                          child: Container(
-                            height: 40,
-                            width: 40,
-                            child: Center(
-                              child: Consumer<FavouriteProvider>(
-                                builder: (context, favoriteProvider, _) {
-                                  bool isFavorite = favoriteProvider
-                                      .isProductFavorite(widget.product_id);
-                                  return SvgPicture.asset(
-                                    isFavorite
-                                        ? "assets/images/in_favorite.svg"
-                                        : "assets/images/add_to_favorite.svg",
-                                    color: Colors.black,
-                                    fit: BoxFit.cover,
-                                    width: 30,
-                                    height: 30,
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            bottom: 15, left: 15, right: 15),
+                        child: Row(
+                          children: [
+                            Visibility(
+                              visible: ROLEID == "3" ? true : false,
+                              child: InkWell(
+                                onTap: () {
+                                  showDialogToAddToCart(
+                                    SIZES_EN: SIZES_EN,
+                                    SIZES_AR: SIZES_AR,
+                                    SIZESIDs: SIZESIDs,
+                                    category_id: widget.category_id,
+                                    colors: colors,
+                                    context: context,
+                                    image: URLIMAGE + Images[0],
+                                    product_id: widget.product_id,
+                                    selectedSize: selectedSize,
+                                    cartProvider: cartProvider,
+                                    name_ar: name_ar,
+                                    name_en: name_en,
                                   );
                                 },
+                                child: Container(
+                                  height: 40,
+                                  width: 40,
+                                  child: Center(
+                                      child: FaIcon(
+                                    FontAwesomeIcons.plus,
+                                    color: Colors.black,
+                                  )),
+                                  decoration: BoxDecoration(
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.grey.withOpacity(0.3),
+                                          spreadRadius: 5,
+                                          blurRadius: 7,
+                                          offset: Offset(0,
+                                              3), // changes position of shadow
+                                        ),
+                                      ],
+                                      shape: BoxShape.circle,
+                                      color: Colors.white),
+                                ),
                               ),
                             ),
-                            decoration: BoxDecoration(boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.withOpacity(0.3),
-                                spreadRadius: 5,
-                                blurRadius: 7,
-                                offset:
-                                    Offset(0, 3), // changes position of shadow
+                            Visibility(
+                              visible: ROLEID == "3" ? true : false,
+                              child: SizedBox(
+                                width: 20,
                               ),
-                            ], shape: BoxShape.circle, color: Colors.white),
-                          ),
+                            ),
+                            InkWell(
+                              onTap: () async {
+                                final favoriteProvider =
+                                    Provider.of<FavouriteProvider>(context,
+                                        listen: false);
+                                bool isFavorite = favoriteProvider
+                                    .isProductFavorite(widget.product_id);
+                                if (isFavorite) {
+                                  await favoriteProvider
+                                      .removeFromFavorite(widget.product_id);
+                                  Fluttertoast.showToast(
+                                    msg: AppLocalizations.of(context)!
+                                        .fav_deleted_successfully,
+                                  );
+                                } else {
+                                  final newItem = FavoriteItem(
+                                    productId: widget.product_id,
+                                    categoryID: widget.category_id,
+                                    name: widget.name,
+                                    image: image,
+                                  );
+                                  await favoriteProvider.addToFavorite(newItem);
+                                  Fluttertoast.showToast(
+                                    msg: AppLocalizations.of(context)!
+                                        .fav_added_successfully,
+                                  );
+                                }
+                              },
+                              child: Container(
+                                height: 40,
+                                width: 40,
+                                child: Center(
+                                  child: Consumer<FavouriteProvider>(
+                                    builder: (context, favoriteProvider, _) {
+                                      bool isFavorite = favoriteProvider
+                                          .isProductFavorite(widget.product_id);
+                                      return SvgPicture.asset(
+                                        isFavorite
+                                            ? "assets/images/in_favorite.svg"
+                                            : "assets/images/add_to_favorite.svg",
+                                        color: Colors.black,
+                                        fit: BoxFit.cover,
+                                        width: 30,
+                                        height: 30,
+                                      );
+                                    },
+                                  ),
+                                ),
+                                decoration: BoxDecoration(boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.grey.withOpacity(0.3),
+                                    spreadRadius: 5,
+                                    blurRadius: 7,
+                                    offset: Offset(
+                                        0, 3), // changes position of shadow
+                                  ),
+                                ], shape: BoxShape.circle, color: Colors.white),
+                              ),
+                            ),
+                          ],
                         ),
-                      ],
+                      ),
+                    ],
+                  )
+                ],
+              ),
+              Visibility(
+                visible: video.toString() == "" ? false : true,
+                child: InkWell(
+                  onTap: () {
+                    NavigatorFunction(
+                        context,
+                        VideoSlider(
+                          url_video: video,
+                        ));
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.only(bottom: 50),
+                    child: Container(
+                      height: 35,
+                      width: 70,
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: locale.toString() == "ar"
+                              ? BorderRadius.only(
+                                  topRight: Radius.circular(40),
+                                  bottomRight: Radius.circular(40))
+                              : BorderRadius.only(
+                                  topLeft: Radius.circular(40),
+                                  bottomLeft: Radius.circular(40))),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(top: 5),
+                            child: Text(
+                              "Video",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: MAIN_COLOR),
+                            ),
+                          ),
+                          Image.asset(
+                            "assets/images/play-button.png",
+                            height: 15,
+                            width: 15,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
-                ],
-              )
+                ),
+              ),
             ],
           ),
           Padding(
@@ -794,11 +1139,24 @@ class _ProductScreenState extends State<ProductScreen> {
                     return InkWell(
                       onTap: () {
                         int imageSelected = index + 1;
+                        List<String> resultList = [];
                         List<Silder> album =
                             colors.map((s) => Silder.fromJson(s)).toList();
+                        if (imagewithout.isNotEmpty) {
+                          // Check if the imageString is in the expected format
+                          if (imagewithout != null &&
+                              imagewithout.startsWith("[") &&
+                              imagewithout.endsWith("]")) {
+                            resultList = (jsonDecode(imagewithout) as List)
+                                .map((item) => item as String)
+                                .toList();
+                          } else {
+                            imagewithout = "";
+                          }
+                        }
 
                         Silder newItem =
-                            Silder(image: imagewithout, product_id: "0");
+                            Silder(image: resultList[0], product_id: "0");
                         album.insert(0, newItem);
 
                         showDialog(

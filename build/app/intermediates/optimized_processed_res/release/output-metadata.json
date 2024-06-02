@@ -4,15 +4,15 @@
     "type": "OPTIMIZED_PROCESSED_RES",
     "kind": "Directory"
   },
-  "applicationId": "com.royal.well",
+  "applicationId": "com.royal.trust",
   "variantName": "release",
   "elements": [
     {
       "type": "SINGLE",
       "filters": [],
       "attributes": [],
-      "versionCode": 17,
-      "versionName": "1.16.0",
+      "versionCode": 23,
+      "versionName": "2.2.0",
       "outputFile": "resources-release-optimize.ap_"
     }
   ],

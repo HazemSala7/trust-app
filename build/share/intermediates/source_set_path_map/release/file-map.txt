@@ -4,9 +4,9 @@ io.flutter.plugins.share-jetified-annotation-experimental-1.1.0-2 C:\Users\raya 
 io.flutter.plugins.share-jetified-window-java-1.0.0-beta04-3 C:\Users\raya co\.gradle\caches\transforms-3\fee2c687881b07b45fdc79ddebd334d4\transformed\jetified-window-java-1.0.0-beta04\res
 io.flutter.plugins.share-main-4 C:\Users\raya co\AppData\Local\Pub\Cache\hosted\pub.dev\share-2.0.4\android\src\main\res
 io.flutter.plugins.share-release-5 C:\Users\raya co\AppData\Local\Pub\Cache\hosted\pub.dev\share-2.0.4\android\src\release\res
-io.flutter.plugins.share-pngs-6 F:\Well App Flutter\well_app_flutter\build\share\generated\res\pngs\release
-io.flutter.plugins.share-resValues-7 F:\Well App Flutter\well_app_flutter\build\share\generated\res\resValues\release
-io.flutter.plugins.share-rs-8 F:\Well App Flutter\well_app_flutter\build\share\generated\res\rs\release
-io.flutter.plugins.share-mergeReleaseResources-9 F:\Well App Flutter\well_app_flutter\build\share\intermediates\incremental\release\mergeReleaseResources\merged.dir
-io.flutter.plugins.share-mergeReleaseResources-10 F:\Well App Flutter\well_app_flutter\build\share\intermediates\incremental\release\mergeReleaseResources\stripped.dir
-io.flutter.plugins.share-merged_res-11 F:\Well App Flutter\well_app_flutter\build\share\intermediates\merged_res\release
+io.flutter.plugins.share-pngs-6 F:\Trust App\trust_app_flutter\build\share\generated\res\pngs\release
+io.flutter.plugins.share-resValues-7 F:\Trust App\trust_app_flutter\build\share\generated\res\resValues\release
+io.flutter.plugins.share-rs-8 F:\Trust App\trust_app_flutter\build\share\generated\res\rs\release
+io.flutter.plugins.share-mergeReleaseResources-9 F:\Trust App\trust_app_flutter\build\share\intermediates\incremental\release\mergeReleaseResources\merged.dir
+io.flutter.plugins.share-mergeReleaseResources-10 F:\Trust App\trust_app_flutter\build\share\intermediates\incremental\release\mergeReleaseResources\stripped.dir
+io.flutter.plugins.share-merged_res-11 F:\Trust App\trust_app_flutter\build\share\intermediates\merged_res\release
