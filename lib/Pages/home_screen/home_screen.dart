@@ -2,6 +2,7 @@ import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:in_app_update/in_app_update.dart';
 import 'package:shimmer/shimmer.dart';
 
 import 'package:well_app_flutter/Components/app_bar_widget/app_bar_widget.dart';
@@ -30,6 +31,49 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(Duration.zero, () {
+      _checkForUpdates();
+    });
+  }
+
+  Future<void> _checkForUpdates() async {
+    // final isUpdateAvailable = await checkForUpdate();
+
+    // if (isUpdateAvailable) {
+    _showUpdateDialog();
+    // }
+  }
+
+  void _showUpdateDialog() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          backgroundColor: Colors.white,
+          title: Text(AppLocalizations.of(context)!.update_available),
+          content: Text(AppLocalizations.of(context)!.new_version_desc),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text(AppLocalizations.of(context)!.later),
+            ),
+            TextButton(
+              onPressed: () {
+                InAppUpdate.performImmediateUpdate();
+              },
+              child: Text(AppLocalizations.of(context)!.update),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   List<Widget> _pages = [MainScreen(), NewProducts(), Offers()];
   final GlobalKey<ScaffoldState> _scaffoldState = GlobalKey();
   Widget build(BuildContext context) {
@@ -87,13 +131,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                     items: [
                       BottomNavigationBarItem(
-                          icon: SvgPicture.asset(
-                            widget.currentIndex == 0
-                                ? "assets/images/home-main.svg"
-                                : "assets/images/home-gray.svg",
-                            fit: BoxFit.cover,
-                            width: 30,
-                            height: 30,
+                          icon: ImageIcon(
+                            AssetImage("assets/images/home.png"),
                           ),
                           label: AppLocalizations.of(context)!.home),
                       BottomNavigationBarItem(
@@ -104,7 +143,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           label: ''),
                       BottomNavigationBarItem(
                           icon: ImageIcon(
-                            AssetImage("assets/images/offers_grey.png"),
+                            AssetImage("assets/images/offers.png"),
                           ),
                           label: AppLocalizations.of(context)!.offer)
                     ]),

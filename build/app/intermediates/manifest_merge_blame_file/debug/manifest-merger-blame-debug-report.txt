@@ -1,8 +1,8 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 3    package="com.royal.trust"
-4    android:versionCode="23"
-5    android:versionName="2.2.0" >
+4    android:versionCode="25"
+5    android:versionName="2.4.0" >
 6
 7    <uses-sdk
 8        android:minSdkVersion="21"
@@ -262,43 +262,43 @@
 158            android:foregroundServiceType="location" />
 158-->[:geolocator_android] F:\Trust App\trust_app_flutter\build\geolocator_android\intermediates\merged_manifest\debug\AndroidManifest.xml:14:13-53
 159
-160        <receiver
-160-->[:flutter_local_notifications] F:\Trust App\trust_app_flutter\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:16:9-18:40
-161            android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver"
-161-->[:flutter_local_notifications] F:\Trust App\trust_app_flutter\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:17:13-97
-162            android:exported="false" />
-162-->[:flutter_local_notifications] F:\Trust App\trust_app_flutter\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:18:13-37
-163        <receiver
-163-->[:flutter_local_notifications] F:\Trust App\trust_app_flutter\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:19:9-28:20
-164            android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationBootReceiver"
-164-->[:flutter_local_notifications] F:\Trust App\trust_app_flutter\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:20:13-101
-165            android:exported="false" >
-165-->[:flutter_local_notifications] F:\Trust App\trust_app_flutter\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:21:13-37
-166            <intent-filter>
-166-->[:flutter_local_notifications] F:\Trust App\trust_app_flutter\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:22:13-27:29
-167                <action android:name="android.intent.action.BOOT_COMPLETED" />
-167-->[:flutter_local_notifications] F:\Trust App\trust_app_flutter\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:23:17-79
-167-->[:flutter_local_notifications] F:\Trust App\trust_app_flutter\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:23:25-76
-168                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
-168-->[:flutter_local_notifications] F:\Trust App\trust_app_flutter\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:24:17-84
-168-->[:flutter_local_notifications] F:\Trust App\trust_app_flutter\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:24:25-81
-169                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
-169-->[:flutter_local_notifications] F:\Trust App\trust_app_flutter\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:25:17-82
-169-->[:flutter_local_notifications] F:\Trust App\trust_app_flutter\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:25:25-79
-170                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
-170-->[:flutter_local_notifications] F:\Trust App\trust_app_flutter\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:26:17-82
-170-->[:flutter_local_notifications] F:\Trust App\trust_app_flutter\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:26:25-79
-171            </intent-filter>
-172        </receiver>
-173
-174        <activity
-174-->[:url_launcher_android] F:\Trust App\trust_app_flutter\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-13:74
-175            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
-175-->[:url_launcher_android] F:\Trust App\trust_app_flutter\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-74
-176            android:exported="false"
-176-->[:url_launcher_android] F:\Trust App\trust_app_flutter\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-37
-177            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
-177-->[:url_launcher_android] F:\Trust App\trust_app_flutter\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-71
+160        <activity
+160-->[:url_launcher_android] F:\Trust App\trust_app_flutter\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-13:74
+161            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
+161-->[:url_launcher_android] F:\Trust App\trust_app_flutter\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-74
+162            android:exported="false"
+162-->[:url_launcher_android] F:\Trust App\trust_app_flutter\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-37
+163            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+163-->[:url_launcher_android] F:\Trust App\trust_app_flutter\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-71
+164
+165        <receiver
+165-->[:flutter_local_notifications] F:\Trust App\trust_app_flutter\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:16:9-18:40
+166            android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver"
+166-->[:flutter_local_notifications] F:\Trust App\trust_app_flutter\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:17:13-97
+167            android:exported="false" />
+167-->[:flutter_local_notifications] F:\Trust App\trust_app_flutter\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:18:13-37
+168        <receiver
+168-->[:flutter_local_notifications] F:\Trust App\trust_app_flutter\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:19:9-28:20
+169            android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationBootReceiver"
+169-->[:flutter_local_notifications] F:\Trust App\trust_app_flutter\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:20:13-101
+170            android:exported="false" >
+170-->[:flutter_local_notifications] F:\Trust App\trust_app_flutter\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:21:13-37
+171            <intent-filter>
+171-->[:flutter_local_notifications] F:\Trust App\trust_app_flutter\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:22:13-27:29
+172                <action android:name="android.intent.action.BOOT_COMPLETED" />
+172-->[:flutter_local_notifications] F:\Trust App\trust_app_flutter\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:23:17-79
+172-->[:flutter_local_notifications] F:\Trust App\trust_app_flutter\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:23:25-76
+173                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+173-->[:flutter_local_notifications] F:\Trust App\trust_app_flutter\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:24:17-84
+173-->[:flutter_local_notifications] F:\Trust App\trust_app_flutter\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:24:25-81
+174                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+174-->[:flutter_local_notifications] F:\Trust App\trust_app_flutter\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:25:17-82
+174-->[:flutter_local_notifications] F:\Trust App\trust_app_flutter\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:25:25-79
+175                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
+175-->[:flutter_local_notifications] F:\Trust App\trust_app_flutter\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:26:17-82
+175-->[:flutter_local_notifications] F:\Trust App\trust_app_flutter\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:26:25-79
+176            </intent-filter>
+177        </receiver>
 178
 179        <provider
 179-->[:share] F:\Trust App\trust_app_flutter\build\share\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-18:20
@@ -518,8 +518,18 @@
 301-->[com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\raya co\.gradle\caches\transforms-3\a8567457ad736daeb8b98afef2b60dcb\transformed\jetified-transport-runtime-3.1.8\AndroidManifest.xml:32:9-34:40
 302            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
 302-->[com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\raya co\.gradle\caches\transforms-3\a8567457ad736daeb8b98afef2b60dcb\transformed\jetified-transport-runtime-3.1.8\AndroidManifest.xml:33:13-132
-303            android:exported="false" />
+303            android:exported="false" /> <!-- The activities will be merged into the manifest of the hosting app. -->
 303-->[com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\raya co\.gradle\caches\transforms-3\a8567457ad736daeb8b98afef2b60dcb\transformed\jetified-transport-runtime-3.1.8\AndroidManifest.xml:34:13-37
-304    </application>
-305
-306</manifest>
+304        <activity
+304-->[com.google.android.play:core-common:2.0.3] C:\Users\raya co\.gradle\caches\transforms-3\c157f000a5e6cc0e1c5fe71981f5ebc6\transformed\jetified-core-common-2.0.3\AndroidManifest.xml:14:9-18:65
+305            android:name="com.google.android.play.core.common.PlayCoreDialogWrapperActivity"
+305-->[com.google.android.play:core-common:2.0.3] C:\Users\raya co\.gradle\caches\transforms-3\c157f000a5e6cc0e1c5fe71981f5ebc6\transformed\jetified-core-common-2.0.3\AndroidManifest.xml:15:13-93
+306            android:exported="false"
+306-->[com.google.android.play:core-common:2.0.3] C:\Users\raya co\.gradle\caches\transforms-3\c157f000a5e6cc0e1c5fe71981f5ebc6\transformed\jetified-core-common-2.0.3\AndroidManifest.xml:16:13-37
+307            android:stateNotNeeded="true"
+307-->[com.google.android.play:core-common:2.0.3] C:\Users\raya co\.gradle\caches\transforms-3\c157f000a5e6cc0e1c5fe71981f5ebc6\transformed\jetified-core-common-2.0.3\AndroidManifest.xml:17:13-42
+308            android:theme="@style/Theme.PlayCore.Transparent" />
+308-->[com.google.android.play:core-common:2.0.3] C:\Users\raya co\.gradle\caches\transforms-3\c157f000a5e6cc0e1c5fe71981f5ebc6\transformed\jetified-core-common-2.0.3\AndroidManifest.xml:18:13-62
+309    </application>
+310
+311</manifest>

@@ -73,7 +73,7 @@ class _NewProductsState extends State<NewProducts> {
                                                 errorBuilder: (context, error,
                                                         stackTrace) =>
                                                     Image.asset(
-                                                      "assets/logo.png",
+                                                      "assets/images/logo_red.png",
                                                       fit: BoxFit.cover,
                                                     )),
                                           )
@@ -113,7 +113,10 @@ class _NewProductsState extends State<NewProducts> {
                     children: [
                       Text(
                         AppLocalizations.of(context)!.more_products,
-                        style: TextStyle(color: Colors.red, fontSize: 20),
+                        style: TextStyle(
+                            color: MAIN_COLOR,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold),
                       ),
                     ],
                   ),

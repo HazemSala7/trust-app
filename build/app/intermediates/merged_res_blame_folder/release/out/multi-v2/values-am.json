@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.royal.trust.app-mergeReleaseResources-30:/values-am/values-am.xml",
+            "outputFile": "com.royal.trust.app-mergeReleaseResources-31:/values-am/values-am.xml",
             "map": [
                 {
                     "source": "C:\\Users\\raya co\\.gradle\\caches\\transforms-3\\45dd821083180cdde32e5169be2fa6f8\\transformed\\jetified-play-services-base-18.1.0\\res\\values-am\\values.xml",

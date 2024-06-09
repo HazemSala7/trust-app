@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.royal.trust.app-mergeDebugResources-30:/values-iw/values-iw.xml",
+            "outputFile": "com.royal.trust.app-mergeDebugResources-31:/values-iw/values-iw.xml",
             "map": [
                 {
                     "source": "C:\\Users\\raya co\\.gradle\\caches\\transforms-3\\d7dbb54c4c652dca4a3b5b108c932fa1\\transformed\\jetified-facebook-common-17.0.0\\res\\values-iw\\values-iw.xml",

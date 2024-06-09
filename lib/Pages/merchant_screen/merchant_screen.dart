@@ -48,12 +48,15 @@ class _MerchantScreenState extends State<MerchantScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
+                      SizedBox(
+                        height: 40,
+                      ),
                       Container(
-                        height: 130,
+                        height: 70,
                         width: double.infinity,
                         child: Center(
                           child: Image.asset(
-                            'assets/images/trust-red.png',
+                            'assets/images/logo_red.png',
                             fit: BoxFit.cover,
                           ),
                         ),

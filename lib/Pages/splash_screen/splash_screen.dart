@@ -36,7 +36,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
 
     Timer(
-        Duration(seconds: 1),
+        Duration(seconds: 2),
         () => Navigator.pushReplacement(
             context,
             MaterialPageRoute(
@@ -55,8 +55,10 @@ class _SplashScreenState extends State<SplashScreen> {
             color: MAIN_COLOR,
             child: Center(
               child: Image.asset(
-                'assets/images/logo-trust.png',
+                'assets/images/logo_white.png',
                 fit: BoxFit.cover,
+                // height: 80,
+                width: MediaQuery.of(context).size.width - 50,
               ),
             ),
           ),

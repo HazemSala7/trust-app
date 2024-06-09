@@ -98,10 +98,10 @@ class _ProductWidgetState extends State<ProductWidget> {
                       height: 190,
                       width: double.infinity,
                       errorWidget: Image.asset(
-                        "assets/images/logo_well.png",
-                        fit: BoxFit.cover,
-                        height: 190,
-                        width: double.infinity,
+                        "assets/images/logo_red.png",
+                        fit: BoxFit.contain,
+                        height: 50,
+                        width: 30,
                       )),
                 ),
                 Padding(

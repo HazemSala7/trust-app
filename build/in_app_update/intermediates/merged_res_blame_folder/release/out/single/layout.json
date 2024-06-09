@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "de.ffuf.in_app_update-merged_res-12:/layout/notification_template_icon_group.xml",
+        "source": "de.ffuf.in_app_update-core-1.6.0-1:/layout/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "de.ffuf.in_app_update-merged_res-12:/layout/notification_action.xml",
+        "source": "de.ffuf.in_app_update-core-1.6.0-1:/layout/notification_action.xml"
+    },
+    {
+        "merged": "de.ffuf.in_app_update-merged_res-12:/layout/notification_action_tombstone.xml",
+        "source": "de.ffuf.in_app_update-core-1.6.0-1:/layout/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "de.ffuf.in_app_update-merged_res-12:/layout/notification_template_part_time.xml",
+        "source": "de.ffuf.in_app_update-core-1.6.0-1:/layout/notification_template_part_time.xml"
+    },
+    {
+        "merged": "de.ffuf.in_app_update-merged_res-12:/layout/custom_dialog.xml",
+        "source": "de.ffuf.in_app_update-core-1.6.0-1:/layout/custom_dialog.xml"
+    },
+    {
+        "merged": "de.ffuf.in_app_update-merged_res-12:/layout/notification_template_part_chronometer.xml",
+        "source": "de.ffuf.in_app_update-core-1.6.0-1:/layout/notification_template_part_chronometer.xml"
+    }
+]

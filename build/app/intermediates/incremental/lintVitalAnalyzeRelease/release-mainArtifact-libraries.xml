@@ -69,10 +69,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="F:\Trust App\trust_app_flutter\android@@:flutter_local_notifications::release"
-      jars="F:\Trust App\trust_app_flutter\build\flutter_local_notifications\.transforms\6d6d41bbcb5f284428182f4cb8a11c21\transformed\out\jars\classes.jar;F:\Trust App\trust_app_flutter\build\flutter_local_notifications\.transforms\6d6d41bbcb5f284428182f4cb8a11c21\transformed\out\jars\libs\R.jar"
-      resolved="com.dexterous.flutterlocalnotifications:flutter_local_notifications:unspecified"
-      folder="F:\Trust App\trust_app_flutter\build\flutter_local_notifications\.transforms\6d6d41bbcb5f284428182f4cb8a11c21\transformed\out"
+      name="F:\Trust App\trust_app_flutter\android@@:url_launcher_android::release"
+      jars="F:\Trust App\trust_app_flutter\build\url_launcher_android\.transforms\18436f4ffd382ea4e33d2d0116d73efb\transformed\out\jars\classes.jar;F:\Trust App\trust_app_flutter\build\url_launcher_android\.transforms\18436f4ffd382ea4e33d2d0116d73efb\transformed\out\jars\libs\R.jar"
+      resolved="io.flutter.plugins.urllauncher:url_launcher_android:unspecified"
+      folder="F:\Trust App\trust_app_flutter\build\url_launcher_android\.transforms\18436f4ffd382ea4e33d2d0116d73efb\transformed\out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -82,10 +82,23 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="F:\Trust App\trust_app_flutter\android@@:url_launcher_android::release"
-      jars="F:\Trust App\trust_app_flutter\build\url_launcher_android\.transforms\18436f4ffd382ea4e33d2d0116d73efb\transformed\out\jars\classes.jar;F:\Trust App\trust_app_flutter\build\url_launcher_android\.transforms\18436f4ffd382ea4e33d2d0116d73efb\transformed\out\jars\libs\R.jar"
-      resolved="io.flutter.plugins.urllauncher:url_launcher_android:unspecified"
-      folder="F:\Trust App\trust_app_flutter\build\url_launcher_android\.transforms\18436f4ffd382ea4e33d2d0116d73efb\transformed\out"
+      name="F:\Trust App\trust_app_flutter\android@@:in_app_update::release"
+      jars="F:\Trust App\trust_app_flutter\build\in_app_update\.transforms\91992982ae5003592122386d3cea87b8\transformed\out\jars\classes.jar;F:\Trust App\trust_app_flutter\build\in_app_update\.transforms\91992982ae5003592122386d3cea87b8\transformed\out\jars\libs\R.jar"
+      resolved="de.ffuf.in_app_update:in_app_update:unspecified"
+      folder="F:\Trust App\trust_app_flutter\build\in_app_update\.transforms\91992982ae5003592122386d3cea87b8\transformed\out"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="F:\Trust App\trust_app_flutter\android@@:flutter_local_notifications::release"
+      jars="F:\Trust App\trust_app_flutter\build\flutter_local_notifications\.transforms\6d6d41bbcb5f284428182f4cb8a11c21\transformed\out\jars\classes.jar;F:\Trust App\trust_app_flutter\build\flutter_local_notifications\.transforms\6d6d41bbcb5f284428182f4cb8a11c21\transformed\out\jars\libs\R.jar"
+      resolved="com.dexterous.flutterlocalnotifications:flutter_local_notifications:unspecified"
+      folder="F:\Trust App\trust_app_flutter\build\flutter_local_notifications\.transforms\6d6d41bbcb5f284428182f4cb8a11c21\transformed\out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -705,6 +718,19 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
+      name="com.google.android.play:app-update-ktx:2.1.0@aar"
+      jars="C:\Users\raya co\.gradle\caches\transforms-3\249f990bddb84ff81d16ccd8c535a137\transformed\jetified-app-update-ktx-2.1.0\jars\classes.jar"
+      resolved="com.google.android.play:app-update-ktx:2.1.0"
+      folder="C:\Users\raya co\.gradle\caches\transforms-3\249f990bddb84ff81d16ccd8c535a137\transformed\jetified-app-update-ktx-2.1.0"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
       name="com.facebook.android:facebook-share:17.0.0@aar"
       jars="C:\Users\raya co\.gradle\caches\transforms-3\a9c654fbd07453f58824dd46f2fc12c1\transformed\jetified-facebook-share-17.0.0\jars\classes.jar"
       resolved="com.facebook.android:facebook-share:17.0.0"
@@ -882,6 +908,19 @@
       jars="C:\Users\raya co\.gradle\caches\transforms-3\45dd821083180cdde32e5169be2fa6f8\transformed\jetified-play-services-base-18.1.0\jars\classes.jar"
       resolved="com.google.android.gms:play-services-base:18.1.0"
       folder="C:\Users\raya co\.gradle\caches\transforms-3\45dd821083180cdde32e5169be2fa6f8\transformed\jetified-play-services-base-18.1.0"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="com.google.android.play:app-update:2.1.0@aar"
+      jars="C:\Users\raya co\.gradle\caches\transforms-3\b9e16ac34583a782758c3b998d88db95\transformed\jetified-app-update-2.1.0\jars\classes.jar"
+      resolved="com.google.android.play:app-update:2.1.0"
+      folder="C:\Users\raya co\.gradle\caches\transforms-3\b9e16ac34583a782758c3b998d88db95\transformed\jetified-app-update-2.1.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -1258,10 +1297,6 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="org.threeten:threetenbp:1.4.2:no-tzdb@jar"
-      jars="C:\Users\raya co\.gradle\caches\modules-2\files-2.1\org.threeten\threetenbp\1.4.2\57e6f9d97daa37560acdd69966d7996696d42397\threetenbp-1.4.2-no-tzdb.jar"
-      resolved="org.threeten:threetenbp:1.4.2"/>
-  <library
       name="com.google.guava:guava:31.0.1-android@jar"
       jars="C:\Users\raya co\.gradle\caches\modules-2\files-2.1\com.google.guava\guava\31.0.1-android\b400db548e748a1a60ba18543ad4fbb44a675a69\guava-31.0.1-android.jar"
       resolved="com.google.guava:guava:31.0.1-android"/>
@@ -1269,6 +1304,23 @@
       name="com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava@jar"
       jars="C:\Users\raya co\.gradle\caches\modules-2\files-2.1\com.google.guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\b421526c5f297295adef1c886e5246c39d4ac629\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar"
       resolved="com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava"/>
+  <library
+      name="com.google.android.play:core-common:2.0.3@aar"
+      jars="C:\Users\raya co\.gradle\caches\transforms-3\c157f000a5e6cc0e1c5fe71981f5ebc6\transformed\jetified-core-common-2.0.3\jars\classes.jar"
+      resolved="com.google.android.play:core-common:2.0.3"
+      folder="C:\Users\raya co\.gradle\caches\transforms-3\c157f000a5e6cc0e1c5fe71981f5ebc6\transformed\jetified-core-common-2.0.3"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="org.threeten:threetenbp:1.4.2:no-tzdb@jar"
+      jars="C:\Users\raya co\.gradle\caches\modules-2\files-2.1\org.threeten\threetenbp\1.4.2\57e6f9d97daa37560acdd69966d7996696d42397\threetenbp-1.4.2-no-tzdb.jar"
+      resolved="org.threeten:threetenbp:1.4.2"/>
   <library
       name="com.google.errorprone:error_prone_annotations:2.9.0@jar"
       jars="C:\Users\raya co\.gradle\caches\modules-2\files-2.1\com.google.errorprone\error_prone_annotations\2.9.0\74fe3b8b4f3fc84dc940d0ca4c4b270dbc902764\error_prone_annotations-2.9.0.jar"

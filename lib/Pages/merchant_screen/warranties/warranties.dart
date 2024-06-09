@@ -153,9 +153,13 @@ class _WarrantiesState extends State<Warranties> {
                                                 },
                                                 customerName: AllProducts[index]
                                                     ["customerName"],
+                                                idNumber: AllProducts[index]
+                                                        ["idNumber"] ??
+                                                    "",
                                                 id: AllProducts[index]["id"],
                                                 notes: AllProducts[index]
-                                                    ["notes"],
+                                                        ["notes"] ??
+                                                    "",
                                                 customerPhone:
                                                     AllProducts[index]
                                                         ["customerPhone"],
@@ -185,6 +189,7 @@ class _WarrantiesState extends State<Warranties> {
   Widget warrantyCard({
     bool warrantieStatus = true,
     String customerPhone = "",
+    String idNumber = "",
     Function? Reload,
     String notes = "",
     int id = 0,
@@ -250,6 +255,8 @@ class _WarrantiesState extends State<Warranties> {
                           onPressed: () {
                             TextEditingController CustomerNameController =
                                 TextEditingController();
+                            TextEditingController IDNumberController =
+                                TextEditingController();
                             TextEditingController CustomerPhoneController =
                                 TextEditingController();
                             TextEditingController NotesController =
@@ -259,6 +266,7 @@ class _WarrantiesState extends State<Warranties> {
                             CustomerPhoneController.text =
                                 customerPhone.toString();
                             NotesController.text = notes.toString();
+                            IDNumberController.text = idNumber.toString();
                             showGeneralDialog(
                               context: context,
                               barrierDismissible: true,
@@ -342,6 +350,70 @@ class _WarrantiesState extends State<Warranties> {
                                                                     .white),
                                                             controller:
                                                                 CustomerNameController,
+                                                            obscureText: false,
+                                                            maxLines: 50,
+                                                            decoration:
+                                                                InputDecoration(
+                                                              border:
+                                                                  InputBorder
+                                                                      .none,
+                                                              hintStyle: TextStyle(
+                                                                  color: Colors
+                                                                      .white,
+                                                                  fontSize: 15),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                                Visibility(
+                                                  visible: true,
+                                                  child: Column(
+                                                    children: [
+                                                      Container(
+                                                        width: 220,
+                                                        child: Row(
+                                                          children: [
+                                                            Text(
+                                                              "رقم الهوية",
+                                                              style: TextStyle(
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold,
+                                                                  color: Colors
+                                                                      .white),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .all(12.0),
+                                                        child: Container(
+                                                          height: 50,
+                                                          width: 220,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color:
+                                                                Color.fromARGB(
+                                                                    255,
+                                                                    9,
+                                                                    9,
+                                                                    9),
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        4),
+                                                          ),
+                                                          child: TextField(
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .white),
+                                                            controller:
+                                                                IDNumberController,
                                                             obscureText: false,
                                                             maxLines: 50,
                                                             decoration:
@@ -494,6 +566,8 @@ class _WarrantiesState extends State<Warranties> {
                                                     OnClickFunction: () async {
                                                       await editWarranty(
                                                           id,
+                                                          IDNumberController
+                                                              .text,
                                                           CustomerPhoneController
                                                               .text,
                                                           CustomerNameController

@@ -137,7 +137,7 @@ class _AppBarWidgetState extends State<AppBarWidget> {
                     NavigatorFunction(context, HomeScreen(currentIndex: 0));
                   },
                   child: Image.asset(
-                    "assets/images/logo-trust.png",
+                    "assets/images/logo_white.png",
                     fit: BoxFit.fill,
                     width: 150,
                     height: 40,

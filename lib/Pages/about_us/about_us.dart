@@ -45,7 +45,10 @@ class _AboutUsState extends State<AboutUs> {
                   width: MediaQuery.of(context).size.width,
                   color: MAIN_COLOR,
                   child: Center(
-                    child: Image.asset("assets/images/logo-trust.png"),
+                    child: Image.asset(
+                      "assets/images/logo_white.png",
+                      width: MediaQuery.of(context).size.width - 100,
+                    ),
                   ),
                 ),
                 Padding(
@@ -91,8 +94,8 @@ class _AboutUsState extends State<AboutUs> {
         padding: const EdgeInsets.all(8.0),
         child: Text(
           locale.toString() == "ar"
-              ? "مع بداية كل موسم تطلق شركة ويل انترناشونال مجموعة من الفرش المنزلي تم تصميمها خصيصا لك من قبل مصممينا في عدة دول مصنوعة من مواد فائقة الجودة لتناسب مجموعة واسعة من البيوت ذات التصاميم الحديثة والتقليدية شركة ويل توزع منتجاتها على العديد من المواقع باستمرار ملتزمة بتقديم تصاميم متميزة وابتكار لانهائي مع تجربة استثنائية لعملائنا."
-              : "With the start of every season, Well International Company launches a new collection of home textiles. Designed and produced for you by our stylists in many countries with high quality materials to fit a wide spectrum of homes from traditional to modern. Well International Co. distributes it&rsquo;s products to many locations, constantly committed to deliver outstanding value, continuous innovation and exceptional customer experience.",
+              ? "مع بداية كل موسم تطلق شركة ترست مجموعة من الفرش المنزلي تم تصميمها خصيصا لك من قبل مصممينا في عدة دول مصنوعة من مواد فائقة الجودة لتناسب مجموعة واسعة من البيوت ذات التصاميم الحديثة والتقليدية شركة ويل توزع منتجاتها على العديد من المواقع باستمرار ملتزمة بتقديم تصاميم متميزة وابتكار لانهائي مع تجربة استثنائية لعملائنا."
+              : "With the start of every season, Trust Company launches a new collection of home textiles. Designed and produced for you by our stylists in many countries with high quality materials to fit a wide spectrum of homes from traditional to modern. Well International Co. distributes it&rsquo;s products to many locations, constantly committed to deliver outstanding value, continuous innovation and exceptional customer experience.",
           style: TextStyle(
               fontSize: isTablet ? 25 : 16, fontWeight: FontWeight.bold),
         )

@@ -1,5 +1,9 @@
 {
 "new_homepage": "New",
+"later": "Later",
+"update": "Update",
+"update_available": "Update Available",
+"new_version_desc": "A new version of the app is available. Please update to the latest version.",
 "add_waranty": "Add Wareanty",
 "pending": "Pending",
 "warranties_and_maintenances": "Warranties And Maintenances",

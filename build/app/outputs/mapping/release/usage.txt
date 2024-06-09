@@ -18990,6 +18990,61 @@ com.google.android.gms.tasks.zzw:
     public final com.google.android.gms.tasks.Task continueWithTask(com.google.android.gms.tasks.Continuation)
 com.google.android.gms.tasks.zzx
 com.google.android.gms.tasks.zzy
+com.google.android.play.appupdate.R
+com.google.android.play.appupdate.ktx.R
+com.google.android.play.core.appupdate.AppUpdateInfo:
+    public long bytesDownloaded()
+    public long totalBytesToDownload()
+com.google.android.play.core.appupdate.AppUpdateManager:
+    public abstract com.google.android.gms.tasks.Task startUpdateFlow(com.google.android.play.core.appupdate.AppUpdateInfo,android.app.Activity,com.google.android.play.core.appupdate.AppUpdateOptions)
+    public abstract boolean startUpdateFlowForResult(com.google.android.play.core.appupdate.AppUpdateInfo,int,com.google.android.play.core.common.IntentSenderForResultStarter,int)
+    public abstract boolean startUpdateFlowForResult(com.google.android.play.core.appupdate.AppUpdateInfo,androidx.activity.result.ActivityResultLauncher,com.google.android.play.core.appupdate.AppUpdateOptions)
+    public abstract boolean startUpdateFlowForResult(com.google.android.play.core.appupdate.AppUpdateInfo,com.google.android.play.core.common.IntentSenderForResultStarter,com.google.android.play.core.appupdate.AppUpdateOptions,int)
+com.google.android.play.core.appupdate.AppUpdateManagerFactory:
+    private void <init>()
+com.google.android.play.core.appupdate.AppUpdateOptions$Builder:
+    public abstract com.google.android.play.core.appupdate.AppUpdateOptions$Builder setAppUpdateType(int)
+com.google.android.play.core.appupdate.testing.FakeAppUpdateManager
+com.google.android.play.core.appupdate.zzab:
+    private void <init>()
+com.google.android.play.core.appupdate.zze
+com.google.android.play.core.appupdate.zzg:
+    public final com.google.android.gms.tasks.Task startUpdateFlow(com.google.android.play.core.appupdate.AppUpdateInfo,android.app.Activity,com.google.android.play.core.appupdate.AppUpdateOptions)
+    public final boolean startUpdateFlowForResult(com.google.android.play.core.appupdate.AppUpdateInfo,int,com.google.android.play.core.common.IntentSenderForResultStarter,int)
+    public final boolean startUpdateFlowForResult(com.google.android.play.core.appupdate.AppUpdateInfo,androidx.activity.result.ActivityResultLauncher,com.google.android.play.core.appupdate.AppUpdateOptions)
+com.google.android.play.core.common.LocalTestingException
+com.google.android.play.core.install.InstallException:
+    public int getErrorCode()
+com.google.android.play.core.install.InstallState:
+    public static com.google.android.play.core.install.InstallState zza(int,long,long,int,java.lang.String)
+com.google.android.play.core.install.NativeInstallStateUpdateListener
+com.google.android.play.core.install.model.ActivityResult
+com.google.android.play.core.install.model.AppUpdateType
+com.google.android.play.core.install.model.InstallErrorCode
+com.google.android.play.core.install.model.InstallStatus
+com.google.android.play.core.install.model.UpdateAvailability
+com.google.android.play.core.install.model.UpdatePrecondition
+com.google.android.play.core.ktx.AppUpdateManagerKtxKt$requestAppUpdateInfo$1
+com.google.android.play.core.ktx.AppUpdateManagerKtxKt$requestUpdateFlow$1$1
+com.google.android.play.core.ktx.AppUpdateManagerKtxKt$requestUpdateFlow$1$2
+com.google.android.play.core.ktx.AppUpdateManagerKtxKt$requestUpdateFlow$1$3
+com.google.android.play.core.ktx.AppUpdateManagerKtxKt$requestUpdateFlow$1$globalUpdateListener$1
+com.google.android.play.core.ktx.AppUpdateManagerKtxKt$requestUpdateFlow$1$globalUpdateListener$2
+com.google.android.play.core.ktx.AppUpdateManagerKtxKt$requestUpdateFlow$1
+com.google.android.play.core.ktx.AppUpdateManagerKtxKt$runTask$2
+com.google.android.play.core.ktx.AppUpdateManagerKtxKt$runTask$3$1
+com.google.android.play.core.ktx.AppUpdateManagerKtxKt$runTask$3$2
+com.google.android.play.core.ktx.AppUpdateManagerKtxKt$runTask$3$3
+com.google.android.play.core.ktx.AppUpdateManagerKtxKt$startUpdateFlowForResult$1
+com.google.android.play.core.ktx.AppUpdateManagerKtxKt
+com.google.android.play.core.ktx.AppUpdatePassthroughListener
+com.google.android.play.core.ktx.AppUpdateResult$Available
+com.google.android.play.core.ktx.AppUpdateResult$Downloaded
+com.google.android.play.core.ktx.AppUpdateResult$InProgress
+com.google.android.play.core.ktx.AppUpdateResult$NotAvailable
+com.google.android.play.core.ktx.AppUpdateResult
+com.google.android.play.corecommon.R$style
+com.google.android.play.corecommon.R
 com.google.common.annotations.Beta
 com.google.common.annotations.GwtCompatible
 com.google.common.annotations.GwtIncompatible
@@ -23671,6 +23726,20 @@ com.tekartik.sqflite.operation.Operation:
 com.tekartik.sqflite.operation.OperationRunnable
 com.tekartik.sqflite.operation.SqlErrorInfo:
     public void <init>()
+de.ffuf.in_app_update.BuildConfig
+de.ffuf.in_app_update.InAppUpdatePlugin:
+    private static final int REQUEST_CODE_START_UPDATE
+de.ffuf.in_app_update.R$attr
+de.ffuf.in_app_update.R$color
+de.ffuf.in_app_update.R$dimen
+de.ffuf.in_app_update.R$drawable
+de.ffuf.in_app_update.R$id
+de.ffuf.in_app_update.R$integer
+de.ffuf.in_app_update.R$layout
+de.ffuf.in_app_update.R$string
+de.ffuf.in_app_update.R$style
+de.ffuf.in_app_update.R$styleable
+de.ffuf.in_app_update.R
 io.flutter.BuildConfig
 io.flutter.FlutterInjector$Builder:
     public io.flutter.FlutterInjector$Builder setDeferredComponentManager(io.flutter.embedding.engine.deferredcomponents.DeferredComponentManager)

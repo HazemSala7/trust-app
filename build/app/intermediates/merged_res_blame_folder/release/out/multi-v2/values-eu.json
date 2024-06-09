@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.royal.trust.app-mergeReleaseResources-30:/values-eu/values-eu.xml",
+            "outputFile": "com.royal.trust.app-mergeReleaseResources-31:/values-eu/values-eu.xml",
             "map": [
                 {
                     "source": "C:\\Users\\raya co\\.gradle\\caches\\transforms-3\\81a7b42541a0007e657bb23bf35e8f70\\transformed\\jetified-exoplayer-core-2.18.7\\res\\values-eu\\values-eu.xml",

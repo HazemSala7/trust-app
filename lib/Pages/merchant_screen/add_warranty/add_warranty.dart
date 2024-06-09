@@ -26,6 +26,7 @@ class _AddWarrantyState extends State<AddWarranty> {
   TextEditingController CustomerNameController = TextEditingController();
   TextEditingController CustomerPhoneController = TextEditingController();
   TextEditingController NotesController = TextEditingController();
+  TextEditingController IDNumberController = TextEditingController();
   String resultMessageWarrantStatus = "";
   String productImage = "";
   String productName = "";
@@ -72,8 +73,9 @@ class _AddWarrantyState extends State<AddWarranty> {
                     width: double.infinity,
                     child: Center(
                       child: Image.asset(
-                        'assets/images/trust-red.png',
+                        'assets/images/logo_red.png',
                         fit: BoxFit.cover,
+                        width: MediaQuery.of(context).size.width - 100,
                       ),
                     ),
                   ),
@@ -360,6 +362,19 @@ class _AddWarrantyState extends State<AddWarranty> {
                                     ),
                                     Padding(
                                       padding: const EdgeInsets.only(
+                                          right: 15, left: 15, top: 10),
+                                      child: CustomTextField(
+                                          backgroundColor: Color(0xffEBEBEB),
+                                          borderColor: Color(0xffEBEBEB),
+                                          focusNode: null,
+                                          borderRadius: 40,
+                                          controller: IDNumberController,
+                                          hintText: "رقم الهوية",
+                                          height: 50,
+                                          validator: null),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(
                                           right: 15, left: 15, top: 15),
                                       child: ButtonWidget(
                                           name: "تأكيد المعلومات",
@@ -392,6 +407,7 @@ class _AddWarrantyState extends State<AddWarranty> {
                                                   productSerialNumberController
                                                       .text,
                                                   productID.toString(),
+                                                  IDNumberController.text,
                                                   merchantID.toString(),
                                                   "",
                                                   context);

@@ -7,12 +7,14 @@ MERGED from [:firebase_core] F:\Trust App\trust_app_flutter\build\firebase_core\
 MERGED from [:firebase_core] F:\Trust App\trust_app_flutter\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-15:19
 MERGED from [:geolocator_android] F:\Trust App\trust_app_flutter\build\geolocator_android\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-15:19
 MERGED from [:geolocator_android] F:\Trust App\trust_app_flutter\build\geolocator_android\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-15:19
-MERGED from [:flutter_local_notifications] F:\Trust App\trust_app_flutter\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:15:5-29:19
-MERGED from [:flutter_local_notifications] F:\Trust App\trust_app_flutter\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:15:5-29:19
 MERGED from [:url_launcher_android] F:\Trust App\trust_app_flutter\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-14:19
 MERGED from [:url_launcher_android] F:\Trust App\trust_app_flutter\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-14:19
+MERGED from [:flutter_local_notifications] F:\Trust App\trust_app_flutter\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:15:5-29:19
+MERGED from [:flutter_local_notifications] F:\Trust App\trust_app_flutter\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:15:5-29:19
 MERGED from [:share] F:\Trust App\trust_app_flutter\build\share\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-19:19
 MERGED from [:share] F:\Trust App\trust_app_flutter\build\share\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-19:19
+MERGED from [com.google.android.play:app-update-ktx:2.1.0] C:\Users\raya co\.gradle\caches\transforms-3\249f990bddb84ff81d16ccd8c535a137\transformed\jetified-app-update-ktx-2.1.0\AndroidManifest.xml:11:5-12:19
+MERGED from [com.google.android.play:app-update-ktx:2.1.0] C:\Users\raya co\.gradle\caches\transforms-3\249f990bddb84ff81d16ccd8c535a137\transformed\jetified-app-update-ktx-2.1.0\AndroidManifest.xml:11:5-12:19
 MERGED from [com.facebook.android:facebook-share:17.0.0] C:\Users\raya co\.gradle\caches\transforms-3\a9c654fbd07453f58824dd46f2fc12c1\transformed\jetified-facebook-share-17.0.0\AndroidManifest.xml:16:5-17:19
 MERGED from [com.facebook.android:facebook-share:17.0.0] C:\Users\raya co\.gradle\caches\transforms-3\a9c654fbd07453f58824dd46f2fc12c1\transformed\jetified-facebook-share-17.0.0\AndroidManifest.xml:16:5-17:19
 MERGED from [com.google.firebase:firebase-messaging:23.3.1] C:\Users\raya co\.gradle\caches\transforms-3\b12e7a41c545a43b72246d4cfd153e37\transformed\jetified-firebase-messaging-23.3.1\AndroidManifest.xml:28:5-64:19
@@ -33,6 +35,8 @@ MERGED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\raya co\
 MERGED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\raya co\.gradle\caches\transforms-3\67b98dd7a568c856b37e815114262a87\transformed\jetified-play-services-maps-18.2.0\AndroidManifest.xml:36:5-42:19
 MERGED from [com.google.android.gms:play-services-base:18.1.0] C:\Users\raya co\.gradle\caches\transforms-3\45dd821083180cdde32e5169be2fa6f8\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:19:5-23:19
 MERGED from [com.google.android.gms:play-services-base:18.1.0] C:\Users\raya co\.gradle\caches\transforms-3\45dd821083180cdde32e5169be2fa6f8\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.android.play:app-update:2.1.0] C:\Users\raya co\.gradle\caches\transforms-3\b9e16ac34583a782758c3b998d88db95\transformed\jetified-app-update-2.1.0\AndroidManifest.xml:11:5-12:19
+MERGED from [com.google.android.play:app-update:2.1.0] C:\Users\raya co\.gradle\caches\transforms-3\b9e16ac34583a782758c3b998d88db95\transformed\jetified-app-update-2.1.0\AndroidManifest.xml:11:5-12:19
 MERGED from [com.google.firebase:firebase-iid-interop:17.1.0] C:\Users\raya co\.gradle\caches\transforms-3\8c73fee4e7a967a24c532b32a08e4c98\transformed\jetified-firebase-iid-interop-17.1.0\AndroidManifest.xml:7:5-8:19
 MERGED from [com.google.firebase:firebase-iid-interop:17.1.0] C:\Users\raya co\.gradle\caches\transforms-3\8c73fee4e7a967a24c532b32a08e4c98\transformed\jetified-firebase-iid-interop-17.1.0\AndroidManifest.xml:7:5-8:19
 MERGED from [com.google.android.gms:play-services-tasks:18.0.2] C:\Users\raya co\.gradle\caches\transforms-3\931658e246b9d98c6e4278886f52366b\transformed\jetified-play-services-tasks-18.0.2\AndroidManifest.xml:5:5-20
@@ -59,6 +63,8 @@ MERGED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\
 MERGED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\raya co\.gradle\caches\transforms-3\a8567457ad736daeb8b98afef2b60dcb\transformed\jetified-transport-runtime-3.1.8\AndroidManifest.xml:25:5-39:19
 MERGED from [com.jakewharton.threetenabp:threetenabp:1.2.3] C:\Users\raya co\.gradle\caches\transforms-3\9dbe6e8f6b60f1385bd52f6d5da293ae\transformed\jetified-threetenabp-1.2.3\AndroidManifest.xml:7:5-20
 MERGED from [com.jakewharton.threetenabp:threetenabp:1.2.3] C:\Users\raya co\.gradle\caches\transforms-3\9dbe6e8f6b60f1385bd52f6d5da293ae\transformed\jetified-threetenabp-1.2.3\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.play:core-common:2.0.3] C:\Users\raya co\.gradle\caches\transforms-3\c157f000a5e6cc0e1c5fe71981f5ebc6\transformed\jetified-core-common-2.0.3\AndroidManifest.xml:11:5-19:19
+MERGED from [com.google.android.play:core-common:2.0.3] C:\Users\raya co\.gradle\caches\transforms-3\c157f000a5e6cc0e1c5fe71981f5ebc6\transformed\jetified-core-common-2.0.3\AndroidManifest.xml:11:5-19:19
 MERGED from [com.android.installreferrer:installreferrer:1.0] C:\Users\raya co\.gradle\caches\transforms-3\31f695b6cd9f717c2c0fdae73c88cefa\transformed\jetified-installreferrer-1.0\AndroidManifest.xml:11:5-20
 MERGED from [com.android.installreferrer:installreferrer:1.0] C:\Users\raya co\.gradle\caches\transforms-3\31f695b6cd9f717c2c0fdae73c88cefa\transformed\jetified-installreferrer-1.0\AndroidManifest.xml:11:5-20
 	android:appComponentFactory
@@ -79,8 +85,9 @@ MERGED from [:geolocator_android] F:\Trust App\trust_app_flutter\build\geolocato
 MERGED from [:google_maps_flutter_android] F:\Trust App\trust_app_flutter\build\google_maps_flutter_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:flutter_plugin_android_lifecycle] F:\Trust App\trust_app_flutter\build\flutter_plugin_android_lifecycle\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:sqflite] F:\Trust App\trust_app_flutter\build\sqflite\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
-MERGED from [:flutter_local_notifications] F:\Trust App\trust_app_flutter\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-31:12
 MERGED from [:url_launcher_android] F:\Trust App\trust_app_flutter\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-16:12
+MERGED from [:in_app_update] F:\Trust App\trust_app_flutter\build\in_app_update\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:flutter_local_notifications] F:\Trust App\trust_app_flutter\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-31:12
 MERGED from [:path_provider_android] F:\Trust App\trust_app_flutter\build\path_provider_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:shared_preferences_android] F:\Trust App\trust_app_flutter\build\shared_preferences_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:social_share_plugin_android] F:\Trust App\trust_app_flutter\build\social_share_plugin_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
@@ -89,6 +96,7 @@ MERGED from [:fluttertoast] F:\Trust App\trust_app_flutter\build\fluttertoast\in
 MERGED from [:share] F:\Trust App\trust_app_flutter\build\share\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-21:12
 MERGED from [:video_player_android] F:\Trust App\trust_app_flutter\build\video_player_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:gallery_saver] F:\Trust App\trust_app_flutter\build\gallery_saver\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.play:app-update-ktx:2.1.0] C:\Users\raya co\.gradle\caches\transforms-3\249f990bddb84ff81d16ccd8c535a137\transformed\jetified-app-update-ktx-2.1.0\AndroidManifest.xml:2:1-14:12
 MERGED from [com.facebook.android:facebook-share:17.0.0] C:\Users\raya co\.gradle\caches\transforms-3\a9c654fbd07453f58824dd46f2fc12c1\transformed\jetified-facebook-share-17.0.0\AndroidManifest.xml:9:1-19:12
 MERGED from [com.google.firebase:firebase-messaging:23.3.1] C:\Users\raya co\.gradle\caches\transforms-3\b12e7a41c545a43b72246d4cfd153e37\transformed\jetified-firebase-messaging-23.3.1\AndroidManifest.xml:17:1-66:12
 MERGED from [com.google.firebase:firebase-installations:17.2.0] C:\Users\raya co\.gradle\caches\transforms-3\05fbf3abbaf40ae32df386ed3c475f67\transformed\jetified-firebase-installations-17.2.0\AndroidManifest.xml:2:1-24:12
@@ -97,9 +105,9 @@ MERGED from [com.google.firebase:firebase-common:20.4.2] C:\Users\raya co\.gradl
 MERGED from [androidx.window:window-java:1.0.0-beta04] C:\Users\raya co\.gradle\caches\transforms-3\fee2c687881b07b45fdc79ddebd334d4\transformed\jetified-window-java-1.0.0-beta04\AndroidManifest.xml:17:1-23:12
 MERGED from [androidx.window:window:1.0.0-beta04] C:\Users\raya co\.gradle\caches\transforms-3\60762251fae452debfca1bd89aea51ff\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:17:1-33:12
 MERGED from [com.facebook.android:facebook-common:17.0.0] C:\Users\raya co\.gradle\caches\transforms-3\d7dbb54c4c652dca4a3b5b108c932fa1\transformed\jetified-facebook-common-17.0.0\AndroidManifest.xml:9:1-44:12
+MERGED from [androidx.browser:browser:1.5.0] C:\Users\raya co\.gradle\caches\transforms-3\09f56f303f5deb5f62089ab9b72f5061\transformed\browser-1.5.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\raya co\.gradle\caches\transforms-3\a227f238156b33de3561c04743f843dd\transformed\legacy-support-v4-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.media:media:1.1.0] C:\Users\raya co\.gradle\caches\transforms-3\95c1c7da5f33665b788d922b4880a6a7\transformed\media-1.1.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.browser:browser:1.5.0] C:\Users\raya co\.gradle\caches\transforms-3\09f56f303f5deb5f62089ab9b72f5061\transformed\browser-1.5.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.exoplayer:exoplayer-hls:2.18.7] C:\Users\raya co\.gradle\caches\transforms-3\9563d33795ce201510bf6e2130c294e5\transformed\jetified-exoplayer-hls-2.18.7\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.exoplayer:exoplayer-dash:2.18.7] C:\Users\raya co\.gradle\caches\transforms-3\3f9202554682c7a61284a42cdade31dc\transformed\jetified-exoplayer-dash-2.18.7\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.exoplayer:exoplayer-smoothstreaming:2.18.7] C:\Users\raya co\.gradle\caches\transforms-3\0af5ad8d67d2edf147e393ead05c33fd\transformed\jetified-exoplayer-smoothstreaming-2.18.7\AndroidManifest.xml:17:1-24:12
@@ -107,6 +115,7 @@ MERGED from [com.google.android.exoplayer:exoplayer-core:2.18.7] C:\Users\raya c
 MERGED from [com.google.android.gms:play-services-location:21.0.1] C:\Users\raya co\.gradle\caches\transforms-3\cd81638e2d9d5a6975077280df92d6c4\transformed\jetified-play-services-location-21.0.1\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\raya co\.gradle\caches\transforms-3\67b98dd7a568c856b37e815114262a87\transformed\jetified-play-services-maps-18.2.0\AndroidManifest.xml:17:1-44:12
 MERGED from [com.google.android.gms:play-services-base:18.1.0] C:\Users\raya co\.gradle\caches\transforms-3\45dd821083180cdde32e5169be2fa6f8\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:16:1-24:12
+MERGED from [com.google.android.play:app-update:2.1.0] C:\Users\raya co\.gradle\caches\transforms-3\b9e16ac34583a782758c3b998d88db95\transformed\jetified-app-update-2.1.0\AndroidManifest.xml:2:1-14:12
 MERGED from [com.google.firebase:firebase-iid-interop:17.1.0] C:\Users\raya co\.gradle\caches\transforms-3\8c73fee4e7a967a24c532b32a08e4c98\transformed\jetified-firebase-iid-interop-17.1.0\AndroidManifest.xml:2:1-10:12
 MERGED from [com.google.android.gms:play-services-cloud-messaging:17.0.1] C:\Users\raya co\.gradle\caches\transforms-3\912974655fd269bba1249af099a0384c\transformed\jetified-play-services-cloud-messaging-17.0.1\AndroidManifest.xml:2:1-13:12
 MERGED from [com.google.firebase:firebase-installations-interop:17.1.1] C:\Users\raya co\.gradle\caches\transforms-3\d2f4d6382e08271cb3f9f09e71008591\transformed\jetified-firebase-installations-interop-17.1.1\AndroidManifest.xml:15:1-19:12
@@ -163,6 +172,7 @@ MERGED from [androidx.print:print:1.0.0] C:\Users\raya co\.gradle\caches\transfo
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.0] C:\Users\raya co\.gradle\caches\transforms-3\c57b6d3e032ea43658712f96628131b4\transformed\lifecycle-viewmodel-2.3.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.jakewharton.threetenabp:threetenabp:1.2.3] C:\Users\raya co\.gradle\caches\transforms-3\9dbe6e8f6b60f1385bd52f6d5da293ae\transformed\jetified-threetenabp-1.2.3\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\raya co\.gradle\caches\transforms-3\8f9f9afb85b21962ec225cc2653e1d5b\transformed\jetified-annotation-experimental-1.3.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.play:core-common:2.0.3] C:\Users\raya co\.gradle\caches\transforms-3\c157f000a5e6cc0e1c5fe71981f5ebc6\transformed\jetified-core-common-2.0.3\AndroidManifest.xml:2:1-21:12
 MERGED from [com.android.installreferrer:installreferrer:1.0] C:\Users\raya co\.gradle\caches\transforms-3\31f695b6cd9f717c2c0fdae73c88cefa\transformed\jetified-installreferrer-1.0\AndroidManifest.xml:2:1-13:12
 INJECTED from F:\Trust App\trust_app_flutter\android\app\src\debug\AndroidManifest.xml:1:1-7:12
 INJECTED from F:\Trust App\trust_app_flutter\android\app\src\debug\AndroidManifest.xml:1:1-7:12
@@ -267,10 +277,12 @@ MERGED from [:flutter_plugin_android_lifecycle] F:\Trust App\trust_app_flutter\b
 MERGED from [:flutter_plugin_android_lifecycle] F:\Trust App\trust_app_flutter\build\flutter_plugin_android_lifecycle\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:sqflite] F:\Trust App\trust_app_flutter\build\sqflite\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:sqflite] F:\Trust App\trust_app_flutter\build\sqflite\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:flutter_local_notifications] F:\Trust App\trust_app_flutter\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
-MERGED from [:flutter_local_notifications] F:\Trust App\trust_app_flutter\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:url_launcher_android] F:\Trust App\trust_app_flutter\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:url_launcher_android] F:\Trust App\trust_app_flutter\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:in_app_update] F:\Trust App\trust_app_flutter\build\in_app_update\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:in_app_update] F:\Trust App\trust_app_flutter\build\in_app_update\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:flutter_local_notifications] F:\Trust App\trust_app_flutter\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:flutter_local_notifications] F:\Trust App\trust_app_flutter\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:path_provider_android] F:\Trust App\trust_app_flutter\build\path_provider_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:path_provider_android] F:\Trust App\trust_app_flutter\build\path_provider_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:shared_preferences_android] F:\Trust App\trust_app_flutter\build\shared_preferences_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
@@ -287,6 +299,8 @@ MERGED from [:video_player_android] F:\Trust App\trust_app_flutter\build\video_p
 MERGED from [:video_player_android] F:\Trust App\trust_app_flutter\build\video_player_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:gallery_saver] F:\Trust App\trust_app_flutter\build\gallery_saver\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:gallery_saver] F:\Trust App\trust_app_flutter\build\gallery_saver\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.android.play:app-update-ktx:2.1.0] C:\Users\raya co\.gradle\caches\transforms-3\249f990bddb84ff81d16ccd8c535a137\transformed\jetified-app-update-ktx-2.1.0\AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.android.play:app-update-ktx:2.1.0] C:\Users\raya co\.gradle\caches\transforms-3\249f990bddb84ff81d16ccd8c535a137\transformed\jetified-app-update-ktx-2.1.0\AndroidManifest.xml:7:5-9:41
 MERGED from [com.facebook.android:facebook-share:17.0.0] C:\Users\raya co\.gradle\caches\transforms-3\a9c654fbd07453f58824dd46f2fc12c1\transformed\jetified-facebook-share-17.0.0\AndroidManifest.xml:12:5-14:41
 MERGED from [com.facebook.android:facebook-share:17.0.0] C:\Users\raya co\.gradle\caches\transforms-3\a9c654fbd07453f58824dd46f2fc12c1\transformed\jetified-facebook-share-17.0.0\AndroidManifest.xml:12:5-14:41
 MERGED from [com.google.firebase:firebase-messaging:23.3.1] C:\Users\raya co\.gradle\caches\transforms-3\b12e7a41c545a43b72246d4cfd153e37\transformed\jetified-firebase-messaging-23.3.1\AndroidManifest.xml:20:5-44
@@ -303,12 +317,12 @@ MERGED from [androidx.window:window:1.0.0-beta04] C:\Users\raya co\.gradle\cache
 MERGED from [androidx.window:window:1.0.0-beta04] C:\Users\raya co\.gradle\caches\transforms-3\60762251fae452debfca1bd89aea51ff\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:20:5-22:41
 MERGED from [com.facebook.android:facebook-common:17.0.0] C:\Users\raya co\.gradle\caches\transforms-3\d7dbb54c4c652dca4a3b5b108c932fa1\transformed\jetified-facebook-common-17.0.0\AndroidManifest.xml:13:5-15:41
 MERGED from [com.facebook.android:facebook-common:17.0.0] C:\Users\raya co\.gradle\caches\transforms-3\d7dbb54c4c652dca4a3b5b108c932fa1\transformed\jetified-facebook-common-17.0.0\AndroidManifest.xml:13:5-15:41
+MERGED from [androidx.browser:browser:1.5.0] C:\Users\raya co\.gradle\caches\transforms-3\09f56f303f5deb5f62089ab9b72f5061\transformed\browser-1.5.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.browser:browser:1.5.0] C:\Users\raya co\.gradle\caches\transforms-3\09f56f303f5deb5f62089ab9b72f5061\transformed\browser-1.5.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\raya co\.gradle\caches\transforms-3\a227f238156b33de3561c04743f843dd\transformed\legacy-support-v4-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\raya co\.gradle\caches\transforms-3\a227f238156b33de3561c04743f843dd\transformed\legacy-support-v4-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.media:media:1.1.0] C:\Users\raya co\.gradle\caches\transforms-3\95c1c7da5f33665b788d922b4880a6a7\transformed\media-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.media:media:1.1.0] C:\Users\raya co\.gradle\caches\transforms-3\95c1c7da5f33665b788d922b4880a6a7\transformed\media-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.browser:browser:1.5.0] C:\Users\raya co\.gradle\caches\transforms-3\09f56f303f5deb5f62089ab9b72f5061\transformed\browser-1.5.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.browser:browser:1.5.0] C:\Users\raya co\.gradle\caches\transforms-3\09f56f303f5deb5f62089ab9b72f5061\transformed\browser-1.5.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.exoplayer:exoplayer-hls:2.18.7] C:\Users\raya co\.gradle\caches\transforms-3\9563d33795ce201510bf6e2130c294e5\transformed\jetified-exoplayer-hls-2.18.7\AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.android.exoplayer:exoplayer-hls:2.18.7] C:\Users\raya co\.gradle\caches\transforms-3\9563d33795ce201510bf6e2130c294e5\transformed\jetified-exoplayer-hls-2.18.7\AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.android.exoplayer:exoplayer-dash:2.18.7] C:\Users\raya co\.gradle\caches\transforms-3\3f9202554682c7a61284a42cdade31dc\transformed\jetified-exoplayer-dash-2.18.7\AndroidManifest.xml:20:5-22:41
@@ -323,6 +337,8 @@ MERGED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\raya co\
 MERGED from [com.google.android.gms:play-services-maps:18.2.0] C:\Users\raya co\.gradle\caches\transforms-3\67b98dd7a568c856b37e815114262a87\transformed\jetified-play-services-maps-18.2.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-base:18.1.0] C:\Users\raya co\.gradle\caches\transforms-3\45dd821083180cdde32e5169be2fa6f8\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:18:5-43
 MERGED from [com.google.android.gms:play-services-base:18.1.0] C:\Users\raya co\.gradle\caches\transforms-3\45dd821083180cdde32e5169be2fa6f8\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.play:app-update:2.1.0] C:\Users\raya co\.gradle\caches\transforms-3\b9e16ac34583a782758c3b998d88db95\transformed\jetified-app-update-2.1.0\AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.android.play:app-update:2.1.0] C:\Users\raya co\.gradle\caches\transforms-3\b9e16ac34583a782758c3b998d88db95\transformed\jetified-app-update-2.1.0\AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.firebase:firebase-iid-interop:17.1.0] C:\Users\raya co\.gradle\caches\transforms-3\8c73fee4e7a967a24c532b32a08e4c98\transformed\jetified-firebase-iid-interop-17.1.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-iid-interop:17.1.0] C:\Users\raya co\.gradle\caches\transforms-3\8c73fee4e7a967a24c532b32a08e4c98\transformed\jetified-firebase-iid-interop-17.1.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-cloud-messaging:17.0.1] C:\Users\raya co\.gradle\caches\transforms-3\912974655fd269bba1249af099a0384c\transformed\jetified-play-services-cloud-messaging-17.0.1\AndroidManifest.xml:5:5-44
@@ -435,6 +451,8 @@ MERGED from [com.jakewharton.threetenabp:threetenabp:1.2.3] C:\Users\raya co\.gr
 MERGED from [com.jakewharton.threetenabp:threetenabp:1.2.3] C:\Users\raya co\.gradle\caches\transforms-3\9dbe6e8f6b60f1385bd52f6d5da293ae\transformed\jetified-threetenabp-1.2.3\AndroidManifest.xml:5:5-44
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\raya co\.gradle\caches\transforms-3\8f9f9afb85b21962ec225cc2653e1d5b\transformed\jetified-annotation-experimental-1.3.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\raya co\.gradle\caches\transforms-3\8f9f9afb85b21962ec225cc2653e1d5b\transformed\jetified-annotation-experimental-1.3.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.play:core-common:2.0.3] C:\Users\raya co\.gradle\caches\transforms-3\c157f000a5e6cc0e1c5fe71981f5ebc6\transformed\jetified-core-common-2.0.3\AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.android.play:core-common:2.0.3] C:\Users\raya co\.gradle\caches\transforms-3\c157f000a5e6cc0e1c5fe71981f5ebc6\transformed\jetified-core-common-2.0.3\AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.installreferrer:installreferrer:1.0] C:\Users\raya co\.gradle\caches\transforms-3\31f695b6cd9f717c2c0fdae73c88cefa\transformed\jetified-installreferrer-1.0\AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.installreferrer:installreferrer:1.0] C:\Users\raya co\.gradle\caches\transforms-3\31f695b6cd9f717c2c0fdae73c88cefa\transformed\jetified-installreferrer-1.0\AndroidManifest.xml:5:5-7:41
 INJECTED from F:\Trust App\trust_app_flutter\android\app\src\debug\AndroidManifest.xml
@@ -549,6 +567,14 @@ ADDED from [:geolocator_android] F:\Trust App\trust_app_flutter\build\geolocator
 		ADDED from [:geolocator_android] F:\Trust App\trust_app_flutter\build\geolocator_android\intermediates\merged_manifest\debug\AndroidManifest.xml:14:13-53
 	android:name
 		ADDED from [:geolocator_android] F:\Trust App\trust_app_flutter\build\geolocator_android\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-77
+activity#io.flutter.plugins.urllauncher.WebViewActivity
+ADDED from [:url_launcher_android] F:\Trust App\trust_app_flutter\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-13:74
+	android:exported
+		ADDED from [:url_launcher_android] F:\Trust App\trust_app_flutter\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-37
+	android:theme
+		ADDED from [:url_launcher_android] F:\Trust App\trust_app_flutter\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-71
+	android:name
+		ADDED from [:url_launcher_android] F:\Trust App\trust_app_flutter\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-74
 uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
 ADDED from [:flutter_local_notifications] F:\Trust App\trust_app_flutter\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-81
 	android:name
@@ -595,14 +621,6 @@ action#com.htc.intent.action.QUICKBOOT_POWERON
 ADDED from [:flutter_local_notifications] F:\Trust App\trust_app_flutter\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:26:17-82
 	android:name
 		ADDED from [:flutter_local_notifications] F:\Trust App\trust_app_flutter\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:26:25-79
-activity#io.flutter.plugins.urllauncher.WebViewActivity
-ADDED from [:url_launcher_android] F:\Trust App\trust_app_flutter\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-13:74
-	android:exported
-		ADDED from [:url_launcher_android] F:\Trust App\trust_app_flutter\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-37
-	android:theme
-		ADDED from [:url_launcher_android] F:\Trust App\trust_app_flutter\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-71
-	android:name
-		ADDED from [:url_launcher_android] F:\Trust App\trust_app_flutter\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-74
 provider#io.flutter.plugins.share.ShareFileProvider
 ADDED from [:share] F:\Trust App\trust_app_flutter\build\share\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-18:20
 	android:grantUriPermissions
@@ -869,6 +887,16 @@ ADDED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\r
 		ADDED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\raya co\.gradle\caches\transforms-3\a8567457ad736daeb8b98afef2b60dcb\transformed\jetified-transport-runtime-3.1.8\AndroidManifest.xml:34:13-37
 	android:name
 		ADDED from [com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\raya co\.gradle\caches\transforms-3\a8567457ad736daeb8b98afef2b60dcb\transformed\jetified-transport-runtime-3.1.8\AndroidManifest.xml:33:13-132
+activity#com.google.android.play.core.common.PlayCoreDialogWrapperActivity
+ADDED from [com.google.android.play:core-common:2.0.3] C:\Users\raya co\.gradle\caches\transforms-3\c157f000a5e6cc0e1c5fe71981f5ebc6\transformed\jetified-core-common-2.0.3\AndroidManifest.xml:14:9-18:65
+	android:stateNotNeeded
+		ADDED from [com.google.android.play:core-common:2.0.3] C:\Users\raya co\.gradle\caches\transforms-3\c157f000a5e6cc0e1c5fe71981f5ebc6\transformed\jetified-core-common-2.0.3\AndroidManifest.xml:17:13-42
+	android:exported
+		ADDED from [com.google.android.play:core-common:2.0.3] C:\Users\raya co\.gradle\caches\transforms-3\c157f000a5e6cc0e1c5fe71981f5ebc6\transformed\jetified-core-common-2.0.3\AndroidManifest.xml:16:13-37
+	android:theme
+		ADDED from [com.google.android.play:core-common:2.0.3] C:\Users\raya co\.gradle\caches\transforms-3\c157f000a5e6cc0e1c5fe71981f5ebc6\transformed\jetified-core-common-2.0.3\AndroidManifest.xml:18:13-62
+	android:name
+		ADDED from [com.google.android.play:core-common:2.0.3] C:\Users\raya co\.gradle\caches\transforms-3\c157f000a5e6cc0e1c5fe71981f5ebc6\transformed\jetified-core-common-2.0.3\AndroidManifest.xml:15:13-93
 uses-permission#com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE
 ADDED from [com.android.installreferrer:installreferrer:1.0] C:\Users\raya co\.gradle\caches\transforms-3\31f695b6cd9f717c2c0fdae73c88cefa\transformed\jetified-installreferrer-1.0\AndroidManifest.xml:9:5-110
 	android:name

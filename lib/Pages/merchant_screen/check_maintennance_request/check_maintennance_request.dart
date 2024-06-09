@@ -85,8 +85,9 @@ class _CheckMaintennanceRequestState extends State<CheckMaintennanceRequest> {
                     width: double.infinity,
                     child: Center(
                       child: Image.asset(
-                        'assets/images/trust-red.png',
+                        'assets/images/logo_red.png',
                         fit: BoxFit.cover,
+                        width: MediaQuery.of(context).size.width - 100,
                       ),
                     ),
                   ),

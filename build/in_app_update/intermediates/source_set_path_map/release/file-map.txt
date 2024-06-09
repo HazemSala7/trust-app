@@ -1,0 +1,14 @@
+de.ffuf.in_app_update-jetified-window-1.0.0-beta04-0 C:\Users\raya co\.gradle\caches\transforms-3\60762251fae452debfca1bd89aea51ff\transformed\jetified-window-1.0.0-beta04\res
+de.ffuf.in_app_update-core-1.6.0-1 C:\Users\raya co\.gradle\caches\transforms-3\782481524675b5e826749c7ea85d5ccf\transformed\core-1.6.0\res
+de.ffuf.in_app_update-jetified-core-common-2.0.3-2 C:\Users\raya co\.gradle\caches\transforms-3\c157f000a5e6cc0e1c5fe71981f5ebc6\transformed\jetified-core-common-2.0.3\res
+de.ffuf.in_app_update-jetified-annotation-experimental-1.1.0-3 C:\Users\raya co\.gradle\caches\transforms-3\c6a2258bcd9d71e4272c1711a07b9229\transformed\jetified-annotation-experimental-1.1.0\res
+de.ffuf.in_app_update-jetified-play-services-basement-18.1.0-4 C:\Users\raya co\.gradle\caches\transforms-3\ea4389520b701c4a0a0ff18c1f3c86a3\transformed\jetified-play-services-basement-18.1.0\res
+de.ffuf.in_app_update-jetified-window-java-1.0.0-beta04-5 C:\Users\raya co\.gradle\caches\transforms-3\fee2c687881b07b45fdc79ddebd334d4\transformed\jetified-window-java-1.0.0-beta04\res
+de.ffuf.in_app_update-main-6 C:\Users\raya co\AppData\Local\Pub\Cache\hosted\pub.dev\in_app_update-4.2.3\android\src\main\res
+de.ffuf.in_app_update-release-7 C:\Users\raya co\AppData\Local\Pub\Cache\hosted\pub.dev\in_app_update-4.2.3\android\src\release\res
+de.ffuf.in_app_update-pngs-8 F:\Trust App\trust_app_flutter\build\in_app_update\generated\res\pngs\release
+de.ffuf.in_app_update-resValues-9 F:\Trust App\trust_app_flutter\build\in_app_update\generated\res\resValues\release
+de.ffuf.in_app_update-rs-10 F:\Trust App\trust_app_flutter\build\in_app_update\generated\res\rs\release
+de.ffuf.in_app_update-mergeReleaseResources-11 F:\Trust App\trust_app_flutter\build\in_app_update\intermediates\incremental\release\mergeReleaseResources\merged.dir
+de.ffuf.in_app_update-mergeReleaseResources-12 F:\Trust App\trust_app_flutter\build\in_app_update\intermediates\incremental\release\mergeReleaseResources\stripped.dir
+de.ffuf.in_app_update-merged_res-13 F:\Trust App\trust_app_flutter\build\in_app_update\intermediates\merged_res\release

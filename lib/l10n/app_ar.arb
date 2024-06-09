@@ -1,5 +1,9 @@
 {
 "new_homepage": "جديد",
+"later": "لاحقا",
+"update": "تحديث",
+"update_available": "تحديث جديد متوفر",
+"new_version_desc": "يتوفر إصدار جديد من التطبيق. يرجى التحديث إلى الإصدار الأحدث.",
 "add_waranty": "اضافة كفالة",
 "warranties_and_maintenances": "الكفالات و الصيانة",
 "pending": "بانتظار التوصيل للصيانة",

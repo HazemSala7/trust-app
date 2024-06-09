@@ -45,7 +45,8 @@ class _BottomBarWidgetState extends State<BottomBarWidget> {
               items: [
                 BottomNavigationBarItem(
                     icon: Icon(Icons.home),
-                    label: AppLocalizations.of(context)!.home),
+                    label: AppLocalizations.of(context)!.home,
+                    backgroundColor: MAIN_COLOR),
                 BottomNavigationBarItem(
                     icon: Icon(
                       Icons.home,

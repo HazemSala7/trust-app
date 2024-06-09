@@ -63,6 +63,7 @@ class _CategoryWidgetState extends State<CategoryWidget> {
                     width: widget.width,
                     height: widget.height,
                     decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
                       gradient: LinearGradient(
                         begin: Alignment.bottomCenter,
                         end: Alignment.topCenter,

@@ -74,8 +74,9 @@ class _AddMaintanenceRequestState extends State<AddMaintanenceRequest> {
                     width: double.infinity,
                     child: Center(
                       child: Image.asset(
-                        'assets/images/trust-red.png',
+                        'assets/images/logo_red.png',
                         fit: BoxFit.cover,
+                        width: MediaQuery.of(context).size.width - 100,
                       ),
                     ),
                   ),
@@ -407,6 +408,8 @@ class _AddMaintanenceRequestState extends State<AddMaintanenceRequest> {
                                                   1,
                                                   DescriptionController.text,
                                                   context);
+                                              Navigator.pop(context);
+                                              Navigator.pop(context);
                                             }
                                           },
                                           BorderRaduis: 40,

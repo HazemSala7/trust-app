@@ -1,0 +1,82 @@
+{
+    "logs": [
+        {
+            "outputFile": "de.ffuf.in_app_update-merged_res-12:/values-ta/values-ta.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\raya co\\.gradle\\caches\\transforms-3\\ea4389520b701c4a0a0ff18c1f3c86a3\\transformed\\jetified-play-services-basement-18.1.0\\res\\values-ta\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "195",
+                        "endColumns": "156",
+                        "endOffsets": "351"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "160",
+                        "endOffsets": "211"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\raya co\\.gradle\\caches\\transforms-3\\782481524675b5e826749c7ea85d5ccf\\transformed\\core-1.6.0\\res\\values-ta\\values-ta.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "216",
+                        "endColumns": "100",
+                        "endOffsets": "312"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "de.ffuf.in_app_update-mergeReleaseResources-10:/values-ta/values-ta.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\raya co\\.gradle\\caches\\transforms-3\\ea4389520b701c4a0a0ff18c1f3c86a3\\transformed\\jetified-play-services-basement-18.1.0\\res\\values-ta\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "195",
+                        "endColumns": "156",
+                        "endOffsets": "351"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "160",
+                        "endOffsets": "211"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\raya co\\.gradle\\caches\\transforms-3\\782481524675b5e826749c7ea85d5ccf\\transformed\\core-1.6.0\\res\\values-ta\\values-ta.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "216",
+                        "endColumns": "100",
+                        "endOffsets": "312"
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -582,7 +582,9 @@ class _WarrantyCardState extends State<WarrantyCard> {
           ],
         ),
         Padding(
-          padding: const EdgeInsets.only(left: 15, bottom: 5),
+          padding: locale.toString() == "ar"
+              ? EdgeInsets.only(left: 15, bottom: 5)
+              : EdgeInsets.only(right: 15, bottom: 5),
           child: Container(
             width: 40,
             height: 40,

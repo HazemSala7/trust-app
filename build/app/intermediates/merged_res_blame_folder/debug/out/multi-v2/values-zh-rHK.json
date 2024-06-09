@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.royal.trust.app-mergeDebugResources-30:/values-zh-rHK/values-zh-rHK.xml",
+            "outputFile": "com.royal.trust.app-mergeDebugResources-31:/values-zh-rHK/values-zh-rHK.xml",
             "map": [
                 {
                     "source": "C:\\Users\\raya co\\.gradle\\caches\\transforms-3\\09f56f303f5deb5f62089ab9b72f5061\\transformed\\browser-1.5.0\\res\\values-zh-rHK\\values-zh-rHK.xml",

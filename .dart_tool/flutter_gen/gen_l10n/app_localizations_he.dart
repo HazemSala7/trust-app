@@ -8,6 +8,18 @@ class AppLocalizationsHe extends AppLocalizations {
   String get new_homepage => 'New';
 
   @override
+  String get later => 'Later';
+
+  @override
+  String get update => 'Update';
+
+  @override
+  String get update_available => 'Update Available';
+
+  @override
+  String get new_version_desc => 'A new version of the app is available. Please update to the latest version.';
+
+  @override
   String get add_waranty => 'Add Wareanty';
 
   @override

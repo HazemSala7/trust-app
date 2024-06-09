@@ -6,6 +6,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:http/http.dart' as http;
+import 'package:in_app_update/in_app_update.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -18,6 +19,7 @@ import '../../Constants/constants.dart';
 import '../../LocalDB/Models/CartItem.dart';
 import '../../LocalDB/Provider/CartProvider.dart';
 import '../../Pages/all_seasons/all_seasons.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import '../../Pages/merchant_screen/maintenance_department/maintenance_department.dart';
 import '../../Pages/products_by_season/products_by_season.dart';
 import '../../main.dart';
@@ -29,6 +31,16 @@ var headers = {'ContentType': 'application/json', "Connection": "Keep-Alive"};
 
 NavigatorFunction(BuildContext context, Widget Widget) {
   Navigator.push(context, MaterialPageRoute(builder: (context) => Widget));
+}
+
+Future<bool> checkForUpdate() async {
+  try {
+    final updateInfo = await InAppUpdate.checkForUpdate();
+    return updateInfo.updateAvailability == UpdateAvailability.updateAvailable;
+  } catch (e) {
+    // Handle errors or assume no update available
+    return false;
+  }
 }
 
 getHome() async {
@@ -165,10 +177,14 @@ getShareUrl(category_id) async {
 }
 
 sendLoginRequest(email, password, context) async {
+  final _firebaseMessaging = FirebaseMessaging.instance;
+  final token =
+      _firebaseMessaging.getToken().then((value) => print('Token: $value'));
   final url = Uri.parse(URL_LOGIN);
   final jsonData = {
     'password': password.toString(),
     'email': email.toString(),
+    'userToken': token.toString(),
   };
   final response = await http.post(
     url,
@@ -260,7 +276,7 @@ sendMassageRequest(message, productName, email, name, context) async {
 }
 
 addWarranty(customerPhone, customerName, productSerialNumber, productId,
-    merchantId, notes, context) async {
+    id_number, merchantId, notes, context) async {
   final url = Uri.parse(URL_WARRANTIES);
 
   final jsonData = {
@@ -268,6 +284,7 @@ addWarranty(customerPhone, customerName, productSerialNumber, productId,
     "customerName": "${customerName}",
     "productSerialNumber": "${productSerialNumber}",
     "productId": "${productId}",
+    "idNumber": "${id_number}",
     "merchantId": "${merchantId}",
     "notes": "${notes}"
   };
@@ -302,11 +319,13 @@ addWarranty(customerPhone, customerName, productSerialNumber, productId,
   }
 }
 
-editWarranty(warrantyID, customerPhone, customerName, notes, context) async {
+editWarranty(
+    warrantyID, idNumber, customerPhone, customerName, notes, context) async {
   final url = Uri.parse("$URL_WARRANTIES/edit");
 
   final jsonData = {
     "id": "${warrantyID}",
+    "idNumber": "${idNumber}",
     "customerPhone": "${customerPhone}",
     "customerName": "${customerName}",
     "notes": "${notes}"

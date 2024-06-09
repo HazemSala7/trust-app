@@ -101,6 +101,30 @@ abstract class AppLocalizations {
   /// **'New'**
   String get new_homepage;
 
+  /// No description provided for @later.
+  ///
+  /// In en, this message translates to:
+  /// **'Later'**
+  String get later;
+
+  /// No description provided for @update.
+  ///
+  /// In en, this message translates to:
+  /// **'Update'**
+  String get update;
+
+  /// No description provided for @update_available.
+  ///
+  /// In en, this message translates to:
+  /// **'Update Available'**
+  String get update_available;
+
+  /// No description provided for @new_version_desc.
+  ///
+  /// In en, this message translates to:
+  /// **'A new version of the app is available. Please update to the latest version.'**
+  String get new_version_desc;
+
   /// No description provided for @add_waranty.
   ///
   /// In en, this message translates to:

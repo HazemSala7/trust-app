@@ -65,13 +65,18 @@ class _DrawerWellState extends State<DrawerWell> {
       ),
       child: ListView(
         children: [
+          SizedBox(
+            height: 20,
+          ),
           Container(
-            height: 100,
-            width: 50,
+            height: 70,
+            // width: 100,
             child: Center(
               child: Image.asset(
-                'assets/images/logo-trust.png',
+                'assets/images/logo_white.png',
                 fit: BoxFit.cover,
+                height: 70,
+                // width: 100,
               ),
             ),
           ),
@@ -102,7 +107,7 @@ class _DrawerWellState extends State<DrawerWell> {
           Visibility(
             visible: ROLEID.toString() == "3" ? true : false,
             child: DrawerMethod(
-                name: "الكفالات و الصيانة",
+                name: AppLocalizations.of(context)!.warranties_and_maintenances,
                 OnCLICK: () {
                   NavigatorFunction(context, MerchantScreen());
                 },

@@ -8,6 +8,18 @@ class AppLocalizationsAr extends AppLocalizations {
   String get new_homepage => 'جديد';
 
   @override
+  String get later => 'لاحقا';
+
+  @override
+  String get update => 'تحديث';
+
+  @override
+  String get update_available => 'تحديث جديد متوفر';
+
+  @override
+  String get new_version_desc => 'يتوفر إصدار جديد من التطبيق. يرجى التحديث إلى الإصدار الأحدث.';
+
+  @override
   String get add_waranty => 'اضافة كفالة';
 
   @override

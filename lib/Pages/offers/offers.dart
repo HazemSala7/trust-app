@@ -319,7 +319,10 @@ class _OffersState extends State<Offers> {
                   children: [
                     Text(
                       AppLocalizations.of(context)!.more_products,
-                      style: TextStyle(color: Colors.red, fontSize: 20),
+                      style: TextStyle(
+                          color: MAIN_COLOR,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),

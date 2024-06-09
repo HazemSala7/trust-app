@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.royal.trust.app-mergeReleaseResources-30:/values-in/values-in.xml",
+            "outputFile": "com.royal.trust.app-mergeReleaseResources-31:/values-in/values-in.xml",
             "map": [
                 {
                     "source": "C:\\Users\\raya co\\.gradle\\caches\\transforms-3\\d7dbb54c4c652dca4a3b5b108c932fa1\\transformed\\jetified-facebook-common-17.0.0\\res\\values-in\\values-in.xml",
