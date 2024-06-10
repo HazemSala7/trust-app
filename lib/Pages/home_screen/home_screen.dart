@@ -31,48 +31,48 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  @override
-  void initState() {
-    super.initState();
-    Future.delayed(Duration.zero, () {
-      _checkForUpdates();
-    });
-  }
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   Future.delayed(Duration.zero, () {
+  //     _checkForUpdates();
+  //   });
+  // }
 
-  Future<void> _checkForUpdates() async {
-    // final isUpdateAvailable = await checkForUpdate();
+  // Future<void> _checkForUpdates() async {
+  //   // final isUpdateAvailable = await checkForUpdate();
 
-    // if (isUpdateAvailable) {
-    _showUpdateDialog();
-    // }
-  }
+  //   // if (isUpdateAvailable) {
+  //   _showUpdateDialog();
+  //   // }
+  // }
 
-  void _showUpdateDialog() {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          backgroundColor: Colors.white,
-          title: Text(AppLocalizations.of(context)!.update_available),
-          content: Text(AppLocalizations.of(context)!.new_version_desc),
-          actions: <Widget>[
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              child: Text(AppLocalizations.of(context)!.later),
-            ),
-            TextButton(
-              onPressed: () {
-                InAppUpdate.performImmediateUpdate();
-              },
-              child: Text(AppLocalizations.of(context)!.update),
-            ),
-          ],
-        );
-      },
-    );
-  }
+  // void _showUpdateDialog() {
+  //   showDialog(
+  //     context: context,
+  //     builder: (BuildContext context) {
+  //       return AlertDialog(
+  //         backgroundColor: Colors.white,
+  //         title: Text(AppLocalizations.of(context)!.update_available),
+  //         content: Text(AppLocalizations.of(context)!.new_version_desc),
+  //         actions: <Widget>[
+  //           TextButton(
+  //             onPressed: () {
+  //               Navigator.of(context).pop();
+  //             },
+  //             child: Text(AppLocalizations.of(context)!.later),
+  //           ),
+  //           TextButton(
+  //             onPressed: () {
+  //               InAppUpdate.performImmediateUpdate();
+  //             },
+  //             child: Text(AppLocalizations.of(context)!.update),
+  //           ),
+  //         ],
+  //       );
+  //     },
+  //   );
+  // }
 
   List<Widget> _pages = [MainScreen(), NewProducts(), Offers()];
   final GlobalKey<ScaffoldState> _scaffoldState = GlobalKey();
