@@ -205,6 +205,7 @@ class _MaintennceCategoryState extends State<MaintennceCategory> {
                                             child: FadeInAnimation(
                                               curve: Curves.easeOut,
                                               child: WarrantyCard(
+                                                showCost: true,
                                                 index: index,
                                                 reload: () {
                                                   _firstLoad();

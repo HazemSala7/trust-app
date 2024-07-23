@@ -50,7 +50,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           width: double.infinity,
                           child: Center(
                             child: Image.asset(
-                              'assets/images/logo_well.png',
+                              'assets/images/icon.png',
                               fit: BoxFit.cover,
                             ),
                           ),

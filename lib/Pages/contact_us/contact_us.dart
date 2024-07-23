@@ -105,38 +105,74 @@ class _ContactUsState extends State<ContactUs> {
                         BorderColor: MAIN_COLOR,
                         FontSize: 16,
                         OnClickFunction: () {
-                          showDialog(
-                            context: context,
-                            builder: (BuildContext context) {
-                              return AlertDialog(
-                                content: SizedBox(
-                                  height: 60,
-                                  width: 60,
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceAround,
-                                    children: [
-                                      SpinKitFadingCircle(
-                                        color: Colors.black,
-                                        size: 40.0,
-                                      ),
-                                      Text(
-                                        "Sending",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 16),
-                                      )
-                                    ],
+                          if (NameController.text.isEmpty ||
+                              EmailController.text.isEmpty ||
+                              MessageController.text.isEmpty) {
+                            // Show error message or handle validation failure
+                            showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return AlertDialog(
+                                  content: Text(
+                                    AppLocalizations.of(context)!.regempty,
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 18),
                                   ),
-                                ),
-                              );
-                            },
-                          );
-                          sendContact(
+                                  actions: [
+                                    ButtonWidget(
+                                        name: AppLocalizations.of(context)!.ok,
+                                        height: 40,
+                                        width: 80,
+                                        BorderColor: MAIN_COLOR,
+                                        FontSize: 16,
+                                        OnClickFunction: () {
+                                          Navigator.pop(context);
+                                        },
+                                        BorderRaduis: 10,
+                                        ButtonColor: MAIN_COLOR,
+                                        NameColor: Colors.white)
+                                  ],
+                                );
+                              },
+                            );
+                          } else {
+                            // Proceed with sending the contact information
+                            showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return AlertDialog(
+                                  content: SizedBox(
+                                    height: 60,
+                                    width: 60,
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceAround,
+                                      children: [
+                                        SpinKitFadingCircle(
+                                          color: Colors.black,
+                                          size: 40.0,
+                                        ),
+                                        Text(
+                                          "Sending",
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 16,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                );
+                              },
+                            );
+                            sendContact(
                               MessageController.text,
                               EmailController.text,
                               NameController.text,
-                              context);
+                              context,
+                            );
+                          }
                         },
                         BorderRaduis: 20,
                         ButtonColor: MAIN_COLOR,
@@ -161,28 +197,6 @@ class _ContactUsState extends State<ContactUs> {
                     padding: const EdgeInsets.only(top: 5),
                     child: Text(
                       AppLocalizations.of(context)!.address2,
-                      style: TextStyle(fontSize: 18),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 20),
-                    child: Text(
-                      AppLocalizations.of(context)!.mailing_address,
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 5),
-                    child: Text(
-                      AppLocalizations.of(context)!.mailing_address1,
-                      style: TextStyle(fontSize: 18),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 5),
-                    child: Text(
-                      AppLocalizations.of(context)!.mailing_address2,
                       style: TextStyle(fontSize: 18),
                     ),
                   ),
@@ -220,7 +234,7 @@ class _ContactUsState extends State<ContactUs> {
                                 "${AppLocalizations.of(context)!.contact_phone} : ",
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               ),
-                              Text("+970 2 2255315",
+                              Text("02 221 9800",
                                   textDirection: TextDirection.ltr,
                                   style: TextStyle(fontWeight: FontWeight.bold))
                             ],
@@ -234,7 +248,7 @@ class _ContactUsState extends State<ContactUs> {
                                   "${AppLocalizations.of(context)!.contact_fax} : ",
                                   style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
-                                Text("+970 2 225314",
+                                Text("022220127",
                                     textDirection: TextDirection.ltr,
                                     style:
                                         TextStyle(fontWeight: FontWeight.bold))
@@ -250,7 +264,7 @@ class _ContactUsState extends State<ContactUs> {
                                   "${AppLocalizations.of(context)!.contact_mobile} : ",
                                   style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
-                                Text("+970 599 678087",
+                                Text("1700900300",
                                     textDirection: TextDirection.ltr,
                                     style:
                                         TextStyle(fontWeight: FontWeight.bold))
@@ -266,7 +280,7 @@ class _ContactUsState extends State<ContactUs> {
                                   "${AppLocalizations.of(context)!.contact_email} : ",
                                   style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
-                                Text("info@well.com.co",
+                                Text("Info@redtrust.ps",
                                     style:
                                         TextStyle(fontWeight: FontWeight.bold))
                               ],

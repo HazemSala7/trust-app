@@ -9,10 +9,13 @@ import 'package:well_app_flutter/Components/text_field_widget/text_field_widget.
 import 'package:well_app_flutter/Pages/merchant_screen/add_maintanence_request/add_maintanence_request.dart';
 import 'package:well_app_flutter/Pages/merchant_screen/add_warranty/add_warranty.dart';
 import 'package:well_app_flutter/Pages/merchant_screen/driver_screen/Warantty_Card/Warantty_Card.dart';
+import 'package:well_app_flutter/Pages/merchant_screen/driver_screen/report_table/report_table.dart';
+import 'package:well_app_flutter/Pages/merchant_screen/driver_screen/sort_dialog/sort_dialog.dart';
 import 'package:well_app_flutter/Server/functions/functions.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../../Components/button_widget/button_widget.dart';
+import '../../../Components/drawer_widget/drawer_widget.dart';
 import '../../../Components/loading_widget/loading_widget.dart';
 import '../../../Constants/constants.dart';
 import '../../home_screen/home_screen.dart';
@@ -27,13 +30,65 @@ class DriverScreen extends StatefulWidget {
 
 class _DriverScreenState extends State<DriverScreen> {
   @override
+  String FromDate = "";
+  String EndDate = "";
+  String selectedStatus = "pending";
+  String selectedSortCriteria = "very_late";
+  String selectedcategory = "all";
+  String countryID = "-1";
+
+  void shoeSortBottomSheet(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      backgroundColor: Color(0xffFFFAF3),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(25.0)),
+      ),
+      isScrollControlled: true,
+      builder: (context) {
+        return SortDialog(
+          initialFromDate: FromDate,
+          initialEndDate: EndDate,
+          initialCountryID: countryID,
+          initialSelectedStatus: selectedStatus,
+          initialSelectedCategory: selectedcategory,
+          AllCountries: AllCountries,
+          initialSelectedSortCriteria: selectedSortCriteria,
+          DoneStatus: DoneStatus,
+          PendingStatus: PendingStatus,
+          onSortSelected: (_fromDate, _endDate, _countryID, _selectedStatus,
+              _selectedCategory, _selectedSortCrit) {
+            setState(() {
+              _page = 1;
+              FromDate = _fromDate;
+              EndDate = _endDate;
+              countryID = _countryID;
+              selectedStatus = _selectedStatus;
+              selectedCity = _selectedCategory;
+              selectedcategory = _selectedCategory;
+              selectedSortCriteria = _selectedSortCrit;
+            });
+            _firstLoad();
+          },
+        );
+      },
+    );
+  }
+
+  final GlobalKey<ScaffoldState> _scaffoldState = GlobalKey();
   TextEditingController SearchController = TextEditingController();
-  String selectedCity = "الجميع";
+  String selectedCity = "all";
   Widget build(BuildContext context) {
     return Container(
       color: MAIN_COLOR,
       child: SafeArea(
         child: Scaffold(
+          key: _scaffoldState,
+          drawer: DrawerWell(
+            Refresh: () {
+              setState(() {});
+            },
+          ),
           body: Column(
             children: [
               Container(
@@ -44,9 +99,14 @@ class _DriverScreenState extends State<DriverScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Container(
-                      width: 30,
-                    ),
+                    IconButton(
+                        onPressed: () {
+                          _scaffoldState.currentState?.openDrawer();
+                        },
+                        icon: Icon(
+                          Icons.menu,
+                          color: Colors.white,
+                        )),
                     Text(
                       AppLocalizations.of(context)!.maintenance_requests,
                       style: TextStyle(
@@ -54,112 +114,9 @@ class _DriverScreenState extends State<DriverScreen> {
                           fontSize: 22,
                           color: Colors.white),
                     ),
-                    IconButton(
-                        onPressed: () async {
-                          SharedPreferences preferences =
-                              await SharedPreferences.getInstance();
-                          await preferences.clear();
-                          NavigatorFunction(
-                              context, HomeScreen(currentIndex: 0));
-                          Fluttertoast.showToast(
-                              msg: AppLocalizations.of(context)!.toastlogout,
-                              toastLength: Toast.LENGTH_SHORT,
-                              gravity: ToastGravity.BOTTOM,
-                              timeInSecForIosWeb: 3,
-                              backgroundColor: Colors.green,
-                              textColor: Colors.white,
-                              fontSize: 16.0);
-                        },
-                        icon: Icon(
-                          Icons.logout,
-                          size: 35,
-                          color: Colors.white,
-                        ))
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  children: [
-                    Expanded(
-                      flex: 1,
-                      child: ButtonWidget(
-                        name: AppLocalizations.of(context)!.all,
-                        height: 40,
-                        width: double.infinity,
-                        BorderColor: MAIN_COLOR,
-                        FontSize: 18,
-                        OnClickFunction: () {
-                          selectedCity = "الجميع";
-                          AllProducts = [];
-                          _page = 1;
-                          _firstLoad();
-                          setState(() {});
-                        },
-                        BorderRaduis: 40,
-                        ButtonColor: selectedCity == "الجميع"
-                            ? MAIN_COLOR
-                            : Colors.white,
-                        NameColor: selectedCity == "الجميع"
-                            ? Colors.white
-                            : Colors.black,
-                      ),
-                    ),
-                    SizedBox(
-                      width: 15,
-                    ),
-                    Expanded(
-                      flex: 1,
-                      child: ButtonWidget(
-                        name: AppLocalizations.of(context)!.hebron,
-                        height: 40,
-                        width: double.infinity,
-                        BorderColor: MAIN_COLOR,
-                        FontSize: 18,
-                        OnClickFunction: () {
-                          selectedCity = "الخليل";
-                          _page = 1;
-                          AllProducts = [];
-                          _firstLoad();
-                          setState(() {});
-                        },
-                        BorderRaduis: 40,
-                        ButtonColor: selectedCity == "الخليل"
-                            ? MAIN_COLOR
-                            : Colors.white,
-                        NameColor: selectedCity == "الخليل"
-                            ? Colors.white
-                            : Colors.black,
-                      ),
-                    ),
-                    SizedBox(
-                      width: 15,
-                    ),
-                    Expanded(
-                      flex: 1,
-                      child: ButtonWidget(
-                        name: AppLocalizations.of(context)!.ramallah,
-                        height: 40,
-                        width: double.infinity,
-                        BorderColor: MAIN_COLOR,
-                        FontSize: 18,
-                        OnClickFunction: () {
-                          selectedCity = "رام الله";
-                          _page = 1;
-                          AllProducts = [];
-                          _firstLoad();
-                          setState(() {});
-                        },
-                        BorderRaduis: 40,
-                        ButtonColor: selectedCity == "رام الله"
-                            ? MAIN_COLOR
-                            : Colors.white,
-                        NameColor: selectedCity == "رام الله"
-                            ? Colors.white
-                            : Colors.black,
-                      ),
-                    ),
+                    Container(
+                      width: 20,
+                    )
                   ],
                 ),
               ),
@@ -167,223 +124,212 @@ class _DriverScreenState extends State<DriverScreen> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    InkWell(
-                      onTap: () {
-                        showGeneralDialog(
-                          context: context,
-                          barrierDismissible: true,
-                          barrierLabel: MaterialLocalizations.of(context)
-                              .modalBarrierDismissLabel,
-                          barrierColor: Colors.black.withOpacity(0.5),
-                          transitionDuration: Duration(milliseconds: 300),
-                          pageBuilder:
-                              (context, animation, secondaryAnimation) {
-                            String statusValue = "";
-                            return StatefulBuilder(builder:
-                                (BuildContext context, StateSetter setState) {
-                              return Center(
-                                child: Stack(
-                                  alignment: Alignment.topLeft,
-                                  children: [
-                                    Container(
-                                      padding: EdgeInsets.all(20),
-                                      decoration: BoxDecoration(
-                                        color: Colors.transparent,
-                                        borderRadius: BorderRadius.circular(10),
-                                      ),
-                                      child: Material(
-                                        color: Color.fromARGB(198, 0, 0, 0),
-                                        child: Padding(
-                                          padding: const EdgeInsets.all(20),
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.min,
-                                            children: <Widget>[
-                                              Text(
-                                                AppLocalizations.of(context)!
-                                                    .edit,
-                                                style: TextStyle(
-                                                    fontSize: 18,
-                                                    color: Colors.white),
-                                              ),
-                                              SizedBox(height: 20),
-                                              ButtonWidget(
-                                                name:
-                                                    AppLocalizations.of(context)
-                                                        .pending,
-                                                height: 40,
-                                                width: double.infinity,
-                                                BorderColor: MAIN_COLOR,
-                                                FontSize: 18,
-                                                OnClickFunction: () {
-                                                  setState(() {
-                                                    statusValue = "pending";
-                                                  });
-                                                },
-                                                BorderRaduis: 40,
-                                                ButtonColor:
-                                                    statusValue == "pending"
-                                                        ? MAIN_COLOR
-                                                        : Colors.white,
-                                                NameColor:
-                                                    statusValue == "pending"
-                                                        ? Colors.white
-                                                        : Colors.black,
-                                              ),
-                                              SizedBox(height: 15),
-                                              ButtonWidget(
-                                                name:
-                                                    AppLocalizations.of(context)
+                    Row(
+                      children: [
+                        InkWell(
+                          onTap: () {
+                            showGeneralDialog(
+                              context: context,
+                              barrierDismissible: true,
+                              barrierLabel: MaterialLocalizations.of(context)
+                                  .modalBarrierDismissLabel,
+                              barrierColor: Colors.black.withOpacity(0.5),
+                              transitionDuration: Duration(milliseconds: 300),
+                              pageBuilder:
+                                  (context, animation, secondaryAnimation) {
+                                String statusValue = "";
+                                return StatefulBuilder(builder:
+                                    (BuildContext context,
+                                        StateSetter setState) {
+                                  return Center(
+                                    child: Stack(
+                                      alignment: Alignment.topLeft,
+                                      children: [
+                                        Container(
+                                          padding: EdgeInsets.all(20),
+                                          decoration: BoxDecoration(
+                                            color: Colors.transparent,
+                                            borderRadius:
+                                                BorderRadius.circular(10),
+                                          ),
+                                          child: Material(
+                                            color: Color.fromARGB(198, 0, 0, 0),
+                                            child: Padding(
+                                              padding: const EdgeInsets.all(20),
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.min,
+                                                children: <Widget>[
+                                                  Text(
+                                                    AppLocalizations.of(
+                                                            context)!
+                                                        .edit,
+                                                    style: TextStyle(
+                                                        fontSize: 18,
+                                                        color: Colors.white),
+                                                  ),
+                                                  SizedBox(height: 15),
+                                                  ButtonWidget(
+                                                    name: AppLocalizations.of(
+                                                            context)
                                                         .in_progress,
-                                                height: 40,
-                                                width: double.infinity,
-                                                BorderColor: MAIN_COLOR,
-                                                FontSize: 18,
-                                                OnClickFunction: () {
-                                                  setState(() {
-                                                    statusValue = "in_progress";
-                                                  });
-                                                },
-                                                BorderRaduis: 40,
-                                                ButtonColor:
-                                                    statusValue == "in_progress"
-                                                        ? MAIN_COLOR
-                                                        : Colors.white,
-                                                NameColor:
-                                                    statusValue == "in_progress"
-                                                        ? Colors.white
-                                                        : Colors.black,
-                                              ),
-                                              SizedBox(height: 15),
-                                              ButtonWidget(
-                                                name:
-                                                    AppLocalizations.of(context)
-                                                        .done,
-                                                height: 40,
-                                                width: double.infinity,
-                                                BorderColor: MAIN_COLOR,
-                                                FontSize: 18,
-                                                OnClickFunction: () {
-                                                  setState(() {
-                                                    statusValue = "done";
-                                                  });
-                                                },
-                                                BorderRaduis: 40,
-                                                ButtonColor:
-                                                    statusValue == "done"
-                                                        ? MAIN_COLOR
-                                                        : Colors.white,
-                                                NameColor: statusValue == "done"
-                                                    ? Colors.white
-                                                    : Colors.black,
-                                              ),
-                                              SizedBox(height: 15),
-                                              ButtonWidget(
-                                                name:
-                                                    AppLocalizations.of(context)
-                                                        .delivered,
-                                                height: 40,
-                                                width: double.infinity,
-                                                BorderColor: MAIN_COLOR,
-                                                FontSize: 18,
-                                                OnClickFunction: () {
-                                                  setState(() {
-                                                    statusValue = "delivered";
-                                                  });
-                                                },
-                                                BorderRaduis: 40,
-                                                ButtonColor:
-                                                    statusValue == "delivered"
-                                                        ? MAIN_COLOR
-                                                        : Colors.white,
-                                                NameColor:
-                                                    statusValue == "delivered"
-                                                        ? Colors.white
-                                                        : Colors.black,
-                                              ),
-                                              SizedBox(height: 20),
-                                              ButtonWidget(
-                                                name: AppLocalizations.of(
-                                                        context)!
-                                                    .save_date,
-                                                height: 30,
-                                                width: 90,
-                                                BorderColor: MAIN_COLOR,
-                                                FontSize: 12,
-                                                OnClickFunction: () async {
-                                                  var warrantiesCardsFinal = [];
-                                                  for (int i = 0;
-                                                      i < warrantiesCard.length;
-                                                      i++) {
-                                                    if (warrantiesCard[i]
-                                                            ["status"] ==
-                                                        true) {
-                                                      warrantiesCardsFinal.add({
-                                                        "status": statusValue
-                                                            .toString(),
-                                                        "id": warrantiesCard[i]
-                                                            ["id"]
+                                                    height: 40,
+                                                    width: double.infinity,
+                                                    BorderColor: MAIN_COLOR,
+                                                    FontSize: 18,
+                                                    OnClickFunction: () {
+                                                      setState(() {
+                                                        statusValue =
+                                                            "in_progress";
                                                       });
-                                                    }
-                                                  }
+                                                    },
+                                                    BorderRaduis: 40,
+                                                    ButtonColor: statusValue ==
+                                                            "in_progress"
+                                                        ? MAIN_COLOR
+                                                        : Colors.white,
+                                                    NameColor: statusValue ==
+                                                            "in_progress"
+                                                        ? Colors.white
+                                                        : Colors.black,
+                                                  ),
+                                                  SizedBox(height: 15),
+                                                  ButtonWidget(
+                                                    name: AppLocalizations.of(
+                                                            context)
+                                                        .delivered,
+                                                    height: 40,
+                                                    width: double.infinity,
+                                                    BorderColor: MAIN_COLOR,
+                                                    FontSize: 18,
+                                                    OnClickFunction: () {
+                                                      setState(() {
+                                                        statusValue =
+                                                            "delivered";
+                                                      });
+                                                    },
+                                                    BorderRaduis: 40,
+                                                    ButtonColor: statusValue ==
+                                                            "delivered"
+                                                        ? MAIN_COLOR
+                                                        : Colors.white,
+                                                    NameColor: statusValue ==
+                                                            "delivered"
+                                                        ? Colors.white
+                                                        : Colors.black,
+                                                  ),
+                                                  SizedBox(height: 20),
+                                                  ButtonWidget(
+                                                    name: AppLocalizations.of(
+                                                            context)!
+                                                        .save_date,
+                                                    height: 30,
+                                                    width: 90,
+                                                    BorderColor: MAIN_COLOR,
+                                                    FontSize: 12,
+                                                    OnClickFunction: () async {
+                                                      var warrantiesCardsFinal =
+                                                          [];
+                                                      for (int i = 0;
+                                                          i <
+                                                              warrantiesCard
+                                                                  .length;
+                                                          i++) {
+                                                        if (warrantiesCard[i]
+                                                                ["status"] ==
+                                                            true) {
+                                                          warrantiesCardsFinal
+                                                              .add({
+                                                            "status":
+                                                                statusValue
+                                                                    .toString(),
+                                                            "id":
+                                                                warrantiesCard[
+                                                                    i]["id"]
+                                                          });
+                                                        }
+                                                      }
 
-                                                  await editMaintanenceRequestStatusArray(
-                                                      warrantiesCardsFinal,
-                                                      context);
-                                                  Navigator.pop(context);
-                                                  _firstLoad();
-                                                },
-                                                BorderRaduis: 20,
-                                                ButtonColor: MAIN_COLOR,
-                                                NameColor: Colors.white,
+                                                      await editMaintanenceRequestStatusArray(
+                                                          warrantiesCardsFinal,
+                                                          context);
+                                                      Navigator.pop(context);
+                                                      _firstLoad();
+                                                    },
+                                                    BorderRaduis: 20,
+                                                    ButtonColor: MAIN_COLOR,
+                                                    NameColor: Colors.white,
+                                                  ),
+                                                ],
                                               ),
-                                            ],
+                                            ),
                                           ),
                                         ),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.all(15.0),
-                                      child: IconButton(
-                                        onPressed: () {
-                                          Navigator.pop(context);
-                                        },
-                                        icon: Icon(
-                                          Icons.close_outlined,
-                                          color: Colors.white,
+                                        Padding(
+                                          padding: const EdgeInsets.all(15.0),
+                                          child: IconButton(
+                                            onPressed: () {
+                                              Navigator.pop(context);
+                                            },
+                                            icon: Icon(
+                                              Icons.close_outlined,
+                                              color: Colors.white,
+                                            ),
+                                          ),
                                         ),
-                                      ),
+                                      ],
                                     ),
-                                  ],
-                                ),
-                              );
-                            });
+                                  );
+                                });
+                              },
+                            );
                           },
-                        );
-                      },
-                      child: Row(
-                        children: [
-                          FaIcon(
-                            FontAwesomeIcons.pencil,
-                            color: MAIN_COLOR,
-                            size: 15,
-                          ),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          Text(
-                            AppLocalizations.of(context).edit_selected,
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
+                          child: Row(
+                            children: [
+                              FaIcon(
+                                FontAwesomeIcons.pencil,
                                 color: MAIN_COLOR,
-                                fontSize: 20),
-                          )
-                        ],
-                      ),
+                                size: 15,
+                              ),
+                              SizedBox(
+                                width: 5,
+                              ),
+                              Text(
+                                AppLocalizations.of(context).edit_selected,
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: MAIN_COLOR,
+                                    fontSize: 20),
+                              )
+                            ],
+                          ),
+                        ),
+                        SizedBox(
+                          width: 15,
+                        ),
+                      ],
                     ),
-                    SizedBox(
-                      width: 15,
-                    ),
+                    Row(
+                      children: [
+                        IconButton(
+                            onPressed: () {
+                              NavigatorFunction(context, ReportTable());
+                            },
+                            icon: Icon(
+                              Icons.table_chart,
+                              size: 30,
+                              color: MAIN_COLOR,
+                            )),
+                        IconButton(
+                            onPressed: () => shoeSortBottomSheet(context),
+                            icon: Icon(
+                              Icons.filter_alt,
+                              size: 30,
+                              color: MAIN_COLOR,
+                            )),
+                      ],
+                    )
                   ],
                 ),
               ),
@@ -401,7 +347,7 @@ class _DriverScreenState extends State<DriverScreen> {
                         )
                       : AllProducts.length == 0
                           ? Padding(
-                              padding: const EdgeInsets.only(top: 50),
+                              padding: const EdgeInsets.only(top: 150),
                               child: Text(
                                 AppLocalizations.of(context).empty_maintencaes,
                                 style: TextStyle(
@@ -432,26 +378,36 @@ class _DriverScreenState extends State<DriverScreen> {
                                                 padding: const EdgeInsets.only(
                                                     bottom: 15),
                                                 child: WarrantyCard(
+                                                  showCost: false,
                                                   index: index,
                                                   showMore: false,
                                                   reload: () {
                                                     _firstLoad();
+                                                    _page = 1;
                                                     setState(() {});
                                                   },
-                                                  customerName:
-                                                      AllProducts[index]
-                                                              .containsKey(
-                                                                  "merchant")
-                                                          ? AllProducts[index]
+                                                  customerName: AllProducts[
+                                                              index]
+                                                          .containsKey(
+                                                              "merchant")
+                                                      ? AllProducts[index][
+                                                                  "merchant"] ==
+                                                              null
+                                                          ? "-"
+                                                          : AllProducts[index]
                                                                   ["merchant"]
                                                               ["name"]
-                                                          : "-",
+                                                      : "-",
                                                   latitude: AllProducts[index]
                                                           .containsKey(
                                                               "merchant")
-                                                      ? AllProducts[index]
-                                                              ["merchant"]
-                                                          ["coordinates"]["y"]
+                                                      ? AllProducts[index][
+                                                                  "merchant"] ==
+                                                              null
+                                                          ? 0.0
+                                                          : AllProducts[index]
+                                                                  ["merchant"][
+                                                              "coordinates"]["y"]
                                                       : 0.0,
                                                   cost: AllProducts[index]
                                                           ["maintenanceCost"] ??
@@ -459,9 +415,13 @@ class _DriverScreenState extends State<DriverScreen> {
                                                   longitude: AllProducts[index]
                                                           .containsKey(
                                                               "merchant")
-                                                      ? AllProducts[index]
-                                                              ["merchant"]
-                                                          ["coordinates"]["x"]
+                                                      ? AllProducts[index][
+                                                                  "merchant"] ==
+                                                              null
+                                                          ? 0.0
+                                                          : AllProducts[index]
+                                                                  ["merchant"][
+                                                              "coordinates"]["x"]
                                                       : 0.0,
                                                   productName:
                                                       AllProducts[index]
@@ -482,14 +442,18 @@ class _DriverScreenState extends State<DriverScreen> {
                                                   notes: AllProducts[index]
                                                           ["notes"] ??
                                                       "",
-                                                  customerPhone:
-                                                      AllProducts[index]
-                                                              .containsKey(
-                                                                  "merchant")
-                                                          ? AllProducts[index]
+                                                  customerPhone: AllProducts[
+                                                              index]
+                                                          .containsKey(
+                                                              "merchant")
+                                                      ? AllProducts[index][
+                                                                  "merchant"] ==
+                                                              null
+                                                          ? "-"
+                                                          : AllProducts[index]
                                                                   ["merchant"]
                                                               ["phoneNumber"]
-                                                          : "-",
+                                                      : "-",
                                                   warrantieStatus:
                                                       AllProducts[index]
                                                           ["warrantyStatus"],
@@ -514,7 +478,10 @@ class _DriverScreenState extends State<DriverScreen> {
     );
   }
 
+  int PendingStatus = 0;
+  int DoneStatus = 0;
   var AllProducts;
+  var AllCountries = [];
   // At the beginning, we fetch the first 20 posts
   int _page = 1;
   // you can change this value to fetch more or less posts per page (10, 15, 5, etc)
@@ -535,17 +502,43 @@ class _DriverScreenState extends State<DriverScreen> {
     });
 
     try {
-      var _products = selectedCity == "الجميع"
-          ? await getMaintenanceRequests(_page)
-          : selectedCity == "الخليل"
-              ? await getMaintenanceRequestsFilter(_page, "hebron")
-              : await getMaintenanceRequestsFilter(_page, "ramallah");
-      for (int i = 0; i < _products.length; i++) {
-        warrantiesCard.add({"status": false, "id": _products[i]["id"]});
+      var _products = await getMaintenanceRequestsFilterDriver(_page,
+          countryID: countryID.toString() == "null"
+              ? null
+              : countryID.toString() == "-1"
+                  ? null
+                  : countryID.toString(),
+          category: selectedCity == "all" ? null : selectedCity.toString(),
+          endDate: EndDate.toString() == "" ? null : EndDate.toString(),
+          fromDate: FromDate.toString() == "" ? null : FromDate.toString(),
+          selectedStatus: selectedStatus.toString());
+
+      if (_products != null &&
+          _products["data"] != null &&
+          _products["data"].isNotEmpty) {
+        for (int i = 0; i < _products["data"].length; i++) {
+          warrantiesCard
+              .add({"status": false, "id": _products["data"][i]["id"]});
+        }
+
+        setState(() {
+          AllProducts = _products["data"];
+          AllCountries = _products["countryCounts"];
+          PendingStatus = _products["statusCounts"]["pending"] ?? 0;
+          DoneStatus = _products["statusCounts"]["done"] ?? 0;
+        });
+      } else {
+        setState(() {
+          AllProducts = [];
+          AllCountries = [];
+          PendingStatus = 0;
+          DoneStatus = 0;
+        });
+
+        Fluttertoast.showToast(
+          msg: AppLocalizations.of(context)!.no_products,
+        );
       }
-      setState(() {
-        AllProducts = _products;
-      });
     } catch (err) {
       if (kDebugMode) {
         print('Something went wrong');
@@ -568,24 +561,32 @@ class _DriverScreenState extends State<DriverScreen> {
       });
       _page += 1; // Increase _page by 1
       try {
-        // Fetch data from the API
-        var _products = await selectedCity == "الجميع"
-            ? await getMaintenanceRequests(_page)
-            : selectedCity == "الخليل"
-                ? await getMaintenanceRequestsFilter(_page, "الخليل")
-                : await getMaintenanceRequestsFilter(_page, "رام الله");
+        var _products = await getMaintenanceRequestsFilterDriver(_page,
+            countryID: countryID.toString() == "null"
+                ? null
+                : countryID.toString() == "-1"
+                    ? null
+                    : countryID.toString(),
+            category: selectedCity == "all" ? null : selectedCity.toString(),
+            endDate: EndDate.toString() == "" ? null : EndDate.toString(),
+            fromDate: FromDate.toString() == "" ? null : FromDate.toString(),
+            selectedStatus: selectedStatus.toString());
 
-        if (_products.isNotEmpty) {
-          for (int i = 0; i < _products.length; i++) {
-            warrantiesCard.add({"status": false, "id": _products[i]["id"]});
+        if (_products != null &&
+            _products["data"] != null &&
+            _products["data"].isNotEmpty) {
+          for (int i = 0; i < _products["data"].length; i++) {
+            warrantiesCard
+                .add({"status": false, "id": _products["data"][i]["id"]});
           }
 
           setState(() {
-            AllProducts.addAll(_products);
+            AllProducts.addAll(_products["data"]);
           });
         } else {
           Fluttertoast.showToast(
-              msg: AppLocalizations.of(context)!.no_products);
+            msg: AppLocalizations.of(context)!.no_products,
+          );
         }
       } catch (err) {
         if (kDebugMode) {

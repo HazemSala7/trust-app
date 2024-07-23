@@ -24,66 +24,81 @@ class _AboutUsState extends State<AboutUs> {
     return Container(
       color: MAIN_COLOR,
       child: SafeArea(
-        child: Scaffold(
-          // bottomNavigationBar: BottomBarWidget(currentIndex: _currentIndex),
-          key: _scaffoldState,
-          drawer: DrawerWell(
-            Refresh: () {
-              setState(() {});
-            },
-          ),
-          body: LayoutBuilder(builder: (context, constraints) {
-            if (constraints.maxWidth > 600) {
-              isTablet = true;
-            } else {
-              isTablet = false;
-            }
-            return Column(
-              children: [
-                Container(
-                  height: MediaQuery.of(context).size.height * 0.4,
-                  width: MediaQuery.of(context).size.width,
-                  color: MAIN_COLOR,
-                  child: Center(
-                    child: Image.asset(
-                      "assets/images/logo_white.png",
-                      width: MediaQuery.of(context).size.width - 100,
+        child: Stack(
+          alignment: Alignment.topLeft,
+          children: [
+            Scaffold(
+              // bottomNavigationBar: BottomBarWidget(currentIndex: _currentIndex),
+              key: _scaffoldState,
+              drawer: DrawerWell(
+                Refresh: () {
+                  setState(() {});
+                },
+              ),
+              body: LayoutBuilder(builder: (context, constraints) {
+                if (constraints.maxWidth > 600) {
+                  isTablet = true;
+                } else {
+                  isTablet = false;
+                }
+                return Column(
+                  children: [
+                    Container(
+                      height: MediaQuery.of(context).size.height * 0.4,
+                      width: MediaQuery.of(context).size.width,
+                      color: MAIN_COLOR,
+                      child: Center(
+                        child: Image.asset(
+                          "assets/images/logo_white.png",
+                          width: MediaQuery.of(context).size.width - 100,
+                        ),
+                      ),
                     ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 30),
-                  child: Text(
-                    AppLocalizations.of(context)!.about_well,
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(15.0),
-                  child: FutureBuilder(
-                      future: getAboutUs(),
-                      builder: (context, AsyncSnapshot snapshot) {
-                        if (snapshot.connectionState ==
-                            ConnectionState.waiting) {
-                          return AboutUsContent("");
-                        } else {
-                          if (snapshot.data != null) {
-                            return AboutUsContent(locale.toString() == "ar"
-                                ? snapshot.data["translations"][0]["value"]
-                                : snapshot.data["body"]);
-                          } else {
-                            return Container(
-                              height: MediaQuery.of(context).size.height * 0.25,
-                              width: double.infinity,
-                              color: Colors.white,
-                            );
-                          }
-                        }
-                      }),
-                )
-              ],
-            );
-          }),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 30),
+                      child: Text(
+                        AppLocalizations.of(context)!.about_well,
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 30),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(15.0),
+                      child: FutureBuilder(
+                          future: getAboutUs(),
+                          builder: (context, AsyncSnapshot snapshot) {
+                            if (snapshot.connectionState ==
+                                ConnectionState.waiting) {
+                              return AboutUsContent("");
+                            } else {
+                              if (snapshot.data != null) {
+                                return AboutUsContent(locale.toString() == "ar"
+                                    ? snapshot.data["translations"][0]["value"]
+                                    : snapshot.data["body"]);
+                              } else {
+                                return Container(
+                                  height:
+                                      MediaQuery.of(context).size.height * 0.25,
+                                  width: double.infinity,
+                                  color: Colors.white,
+                                );
+                              }
+                            }
+                          }),
+                    )
+                  ],
+                );
+              }),
+            ),
+            IconButton(
+                onPressed: () {
+                  _scaffoldState.currentState?.openDrawer();
+                },
+                icon: Icon(
+                  Icons.menu,
+                  color: Colors.white,
+                ))
+          ],
         ),
       ),
     );
@@ -95,7 +110,7 @@ class _AboutUsState extends State<AboutUs> {
         child: Text(
           locale.toString() == "ar"
               ? "مع بداية كل موسم تطلق شركة ترست مجموعة من الفرش المنزلي تم تصميمها خصيصا لك من قبل مصممينا في عدة دول مصنوعة من مواد فائقة الجودة لتناسب مجموعة واسعة من البيوت ذات التصاميم الحديثة والتقليدية شركة ويل توزع منتجاتها على العديد من المواقع باستمرار ملتزمة بتقديم تصاميم متميزة وابتكار لانهائي مع تجربة استثنائية لعملائنا."
-              : "With the start of every season, Trust Company launches a new collection of home textiles. Designed and produced for you by our stylists in many countries with high quality materials to fit a wide spectrum of homes from traditional to modern. Well International Co. distributes it&rsquo;s products to many locations, constantly committed to deliver outstanding value, continuous innovation and exceptional customer experience.",
+              : "With the start of every season, Trust Company launches a new collection of home textiles. Designed and produced for you by our stylists in many countries with high quality materials to fit a wide spectrum of homes from traditional to modern. Trust International Co. distributes it&rsquo;s products to many locations, constantly committed to deliver outstanding value, continuous innovation and exceptional customer experience.",
           style: TextStyle(
               fontSize: isTablet ? 25 : 16, fontWeight: FontWeight.bold),
         )

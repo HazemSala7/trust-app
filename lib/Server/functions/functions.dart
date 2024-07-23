@@ -52,6 +52,50 @@ getHome() async {
   return res;
 }
 
+getNotifications(int page) async {
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  String? id = prefs.getString('user_id');
+  var response = await http.get(
+      Uri.parse("$URL_NOTIFICATIONS/userId/170?page=$page"),
+      headers: headers);
+  var res = jsonDecode(response.body);
+  return res;
+}
+
+deleteAllNotifications(context) async {
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  String? id = prefs.getString('user_id');
+  final url = Uri.parse("$URL_NOTIFICATIONS/userId/$id");
+  final response = await http.delete(
+    url,
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  );
+  var data = json.decode(response.body);
+  if (data["success"] == true) {
+    Fluttertoast.showToast(
+        msg: "تم حذف جميع الاشعارات بنجاح",
+        toastLength: Toast.LENGTH_LONG,
+        gravity: ToastGravity.BOTTOM,
+        timeInSecForIosWeb: 2,
+        backgroundColor: const Color.fromARGB(255, 28, 116, 31),
+        textColor: Colors.white,
+        fontSize: 16.0);
+    Navigator.pop(context);
+  } else {
+    Fluttertoast.showToast(
+        msg: "فشلت عملية حذف الاشعارات , الرجاء المحاولة فيما بعد",
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.BOTTOM,
+        timeInSecForIosWeb: 3,
+        backgroundColor: Colors.red,
+        textColor: Colors.white,
+        fontSize: 16.0);
+    Navigator.pop(context);
+  }
+}
+
 getSeasons() async {
   var response = await http.get(Uri.parse(URL_SEASONS), headers: headers);
   var res = jsonDecode(response.body)["response"]["data"];
@@ -74,19 +118,68 @@ getWarranties(int page) async {
 }
 
 getMaintenanceRequests(int page) async {
+  print("$URL_MAINTENANCE_REQUESTS?page=$page");
   var response = await http
       .get(Uri.parse("$URL_MAINTENANCE_REQUESTS?page=$page"), headers: headers);
-  var res = jsonDecode(response.body)["response"]["data"];
+  var res = jsonDecode(response.body)["response"];
+  return res;
+}
+
+getMaintenanceRequestsDriver(int page) async {
+  print("$URL_MAINTENANCE_REQUESTS?page=$page&driver=true");
+  var response = await http.get(
+      Uri.parse("$URL_MAINTENANCE_REQUESTS?page=$page&driver=true"),
+      headers: headers);
+  var res = jsonDecode(response.body)["response"];
+  return res;
+}
+
+getRequestsReports() async {
+  print("URL_REPORTS");
+  print(URL_REPORTS);
+  var response = await http.get(Uri.parse(URL_REPORTS), headers: headers);
+  var res = jsonDecode(response.body)["response"];
   return res;
 }
 
 getMaintenanceRequestsFilter(int page, String City) async {
-  print("$URL_MAINTENANCE_REQUESTS/maintenanceDepartment/$City?page=$page");
   var response = await http.get(
       Uri.parse(
           "$URL_MAINTENANCE_REQUESTS/maintenanceDepartment/$City?page=$page"),
       headers: headers);
-  var res = jsonDecode(response.body)["response"]["data"];
+  var res = jsonDecode(response.body)["response"];
+  return res;
+}
+
+getMaintenanceRequestsFilterDriver(int page,
+    {String? fromDate,
+    String? endDate,
+    String? category,
+    String? countryID,
+    String? selectedStatus}) async {
+  String url = "$URL_MAINTENANCE_REQUESTS?page=$page&driver=true";
+
+  // Conditionally append parameters if they are not empty
+  if (fromDate != null && fromDate.isNotEmpty) {
+    url += "&fromDate=$fromDate";
+  }
+  if (endDate != null && endDate.isNotEmpty) {
+    url += "&toDate=$endDate";
+  }
+  if (countryID != null && countryID.isNotEmpty) {
+    url += "&countryId=$countryID";
+  }
+  if (category != null && category.isNotEmpty) {
+    url += "&maintenanceDepartment=$category";
+  }
+  if (selectedStatus != null && selectedStatus.isNotEmpty) {
+    url += "&statuses=$selectedStatus";
+  }
+  print("url");
+  print(url);
+
+  var response = await http.get(Uri.parse(url), headers: headers);
+  var res = jsonDecode(response.body)["response"];
   return res;
 }
 
@@ -111,22 +204,22 @@ getSubCategories(sub_category_id) async {
 
 getSubCategoriesBySeasonID(sub_category_id, page) async {
   var response = await http.get(
-      Uri.parse(
-          "http://162.214.197.34:3002/cats/SubCat/$sub_category_id?page=$page"),
+      Uri.parse("${URL}cats/SubCat/$sub_category_id?page=$page"),
       headers: headers);
   var res = jsonDecode(response.body)["response"]["data"];
   return res;
 }
 
 getProductByID(id) async {
+  print('$URL_SINGLE_PRODUCT/$id');
   var response = await http.get(Uri.parse('$URL_SINGLE_PRODUCT/$id'));
   var res = jsonDecode(response.body)["response"];
   return res;
 }
 
 getProductsBySeasonID(season_id, page) async {
-  var response = await http.get(Uri.parse(
-      'http://162.214.197.34:3002/products/season/$season_id?page=$page'));
+  var response =
+      await http.get(Uri.parse('${URL}products/season/$season_id?page=$page'));
   var res = jsonDecode(response.body)["response"]["data"];
   return res;
 }
@@ -178,14 +271,18 @@ getShareUrl(category_id) async {
 
 sendLoginRequest(email, password, context) async {
   final _firebaseMessaging = FirebaseMessaging.instance;
-  final token =
-      _firebaseMessaging.getToken().then((value) => print('Token: $value'));
+
+  // Wait for the token to be available
+  final token = await _firebaseMessaging.getToken();
+  print('Token: $token');
   final url = Uri.parse(URL_LOGIN);
   final jsonData = {
     'password': password.toString(),
     'email': email.toString(),
     'userToken': token.toString(),
   };
+  print("json.encode(jsonData)");
+  print(json.encode(jsonData));
   final response = await http.post(
     url,
     headers: {
@@ -461,6 +558,8 @@ editMaintanenceRequestStatus(maintanenceRequestID, status, context) async {
     "id": "${maintanenceRequestID}",
     "status": "${status}",
   };
+  print("json.encode(jsonData)");
+  print(json.encode(jsonData));
   final response = await http.put(
     url,
     headers: {
@@ -762,6 +861,8 @@ getCatPage() async {
 }
 
 getRequest(API_URL) async {
+  print("API_URL");
+  print(API_URL);
   var response = await http.get(Uri.parse(API_URL), headers: headers);
   var res = jsonDecode(response.body);
   return res;

@@ -25,19 +25,29 @@ class AppBarWidget extends StatefulWidget {
 class _AppBarWidgetState extends State<AppBarWidget> {
   @override
   String ROLEID = "";
-  setSharedPref() async {
+  bool LOGIN = false;
+  setControolers() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
+    bool? login = await prefs.getBool('login') ?? false;
     String? RoleID = await prefs.getString('role_id');
-    setState(() {
-      ROLEID = RoleID.toString();
-    });
+    if (login) {
+      setState(() {
+        LOGIN = true;
+        ROLEID = RoleID.toString();
+      });
+    } else {
+      setState(() {
+        LOGIN = false;
+        ROLEID = RoleID.toString();
+      });
+    }
   }
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    setSharedPref();
+    setControolers();
   }
 
   Widget build(BuildContext context) {
@@ -77,18 +87,25 @@ class _AppBarWidgetState extends State<AppBarWidget> {
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
                   children: [
-                    IconButton(
-                        padding: EdgeInsets.all(0),
-                        onPressed: () {
-                          NavigatorFunction(context, Notifications());
-                        },
-                        icon: Icon(
-                          Icons.notifications,
-                          color: Colors.white,
-                          size: 20,
-                        )),
-                    SizedBox(
-                      width: 5,
+                    Visibility(
+                      visible: LOGIN,
+                      child: Row(
+                        children: [
+                          IconButton(
+                              padding: EdgeInsets.all(0),
+                              onPressed: () {
+                                NavigatorFunction(context, Notifications());
+                              },
+                              icon: Icon(
+                                Icons.notifications,
+                                color: Colors.white,
+                                size: 20,
+                              )),
+                          SizedBox(
+                            width: 5,
+                          ),
+                        ],
+                      ),
                     ),
                     Container(
                       width: 20,

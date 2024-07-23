@@ -9,6 +9,7 @@ import 'package:well_app_flutter/Pages/merchant_screen/add_maintanence_request/a
 import 'package:well_app_flutter/Pages/merchant_screen/add_warranty/add_warranty.dart';
 import 'package:well_app_flutter/Server/functions/functions.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:well_app_flutter/main.dart';
 
 import '../../../Components/button_widget/button_widget.dart';
 import '../../../Components/loading_widget/loading_widget.dart';
@@ -96,11 +97,74 @@ class _MaintenanceRequestsState extends State<MaintenanceRequests> {
                 ),
               ),
               _isFirstLoadRunning
+                  ? Container()
+                  : Padding(
+                      padding:
+                          const EdgeInsets.only(right: 30, left: 30, top: 15),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "${AppLocalizations.of(context)!.done} : ${DoneStatus}",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 16,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Text(
+                                "${AppLocalizations.of(context)!.in_progress}: ${InProgressStatus}",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16,
+                                ),
+                              ),
+                            ],
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 10),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Row(
+                                  children: [
+                                    Text(
+                                      "${AppLocalizations.of(context)!.pending} : ${PendingStatus}",
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 16,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Text(
+                                  "${AppLocalizations.of(context)!.delivered}: ${DeliveredStatus}",
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 16,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+
+              _isFirstLoadRunning
                   ? LoadingWidget(
                       heightLoading: MediaQuery.of(context).size.height * 0.7)
                   : no_internet
                       ? Padding(
-                          padding: const EdgeInsets.only(top: 50),
+                          padding: const EdgeInsets.only(top: 150),
                           child: Text(
                             AppLocalizations.of(context).no_internet,
                             style: TextStyle(
@@ -109,7 +173,7 @@ class _MaintenanceRequestsState extends State<MaintenanceRequests> {
                         )
                       : AllProducts.length == 0
                           ? Padding(
-                              padding: const EdgeInsets.only(top: 50),
+                              padding: const EdgeInsets.only(top: 150),
                               child: Text(
                                 AppLocalizations.of(context).empty_maintencaes,
                                 style: TextStyle(
@@ -143,6 +207,43 @@ class _MaintenanceRequestsState extends State<MaintenanceRequests> {
                                                 },
                                                 customerName: AllProducts[index]
                                                     ["customerName"],
+                                                status: AllProducts[index]
+                                                                ["status"]
+                                                            .toString() ==
+                                                        "delivered"
+                                                    ? AppLocalizations.of(context)!
+                                                        .delivered
+                                                    : AllProducts[index]
+                                                                    ["status"]
+                                                                .toString() ==
+                                                            "done"
+                                                        ? AppLocalizations
+                                                                .of(context)!
+                                                            .done
+                                                        : AllProducts[index]
+                                                                        [
+                                                                        "status"]
+                                                                    .toString() ==
+                                                                "pending"
+                                                            ? AppLocalizations.of(
+                                                                    context)!
+                                                                .pending
+                                                            : AppLocalizations.of(
+                                                                    context)!
+                                                                .in_progress,
+                                                productName: AllProducts[index]
+                                                            ["product"] !=
+                                                        null
+                                                    ? locale.toString() == "ar"
+                                                        ? AllProducts[index]
+                                                                    ["product"]
+                                                                ["translations"]
+                                                            [0]["value"]
+                                                        : AllProducts[index]
+                                                                    ["product"]
+                                                                ["name"] ??
+                                                            ""
+                                                    : "-",
                                                 id: AllProducts[index]["id"],
                                                 malfunctionDdescription:
                                                     AllProducts[index][
@@ -177,6 +278,10 @@ class _MaintenanceRequestsState extends State<MaintenanceRequests> {
     );
   }
 
+  int DoneStatus = 0;
+  int InProgressStatus = 0;
+  int PendingStatus = 0;
+  int DeliveredStatus = 0;
   Widget warrantyCard({
     bool warrantieStatus = true,
     String customerPhone = "",
@@ -185,6 +290,8 @@ class _MaintenanceRequestsState extends State<MaintenanceRequests> {
     String notes = "",
     int id = 0,
     String customerName = "",
+    String status = "",
+    String productName = "",
   }) {
     return Padding(
       padding: const EdgeInsets.only(right: 20, left: 20, top: 15),
@@ -210,35 +317,39 @@ class _MaintenanceRequestsState extends State<MaintenanceRequests> {
             child: Column(
               children: [
                 Container(
-                  height: 40,
+                  height: 60,
                   width: double.infinity,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Row(
                         children: [
-                          Container(
-                            decoration: BoxDecoration(
-                                color: Color(0xffF1F1F1),
-                                shape: BoxShape.circle),
-                            width: 40,
-                            height: 40,
-                            child: Center(
-                              child: Icon(
-                                Icons.assured_workload,
-                                color: MAIN_COLOR,
-                              ),
-                            ),
-                          ),
                           SizedBox(
                             width: 15,
                           ),
-                          Text(
-                            customerName.toString().length > 20
-                                ? customerName.toString().substring(0, 20)
-                                : customerName.toString(),
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 18),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                customerName.toString().length > 20
+                                    ? customerName.toString().substring(0, 20)
+                                    : customerName.toString(),
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 16),
+                              ),
+                              Text(
+                                productName.toString().length > 20
+                                    ? productName.toString().substring(0, 20)
+                                    : productName.toString(),
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 16),
+                              ),
+                              Text(
+                                status,
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 16),
+                              ),
+                            ],
                           )
                         ],
                       ),
@@ -591,23 +702,6 @@ class _MaintenanceRequestsState extends State<MaintenanceRequests> {
                     ],
                   ),
                 ),
-                Row(
-                  children: [
-                    Expanded(
-                      flex: 1,
-                      child: Container(),
-                    ),
-                    Expanded(
-                      flex: 6,
-                      child: Container(
-                        child: Text(
-                          customerPhone,
-                          style: TextStyle(color: Color(0xff666666)),
-                        ),
-                      ),
-                    ),
-                  ],
-                )
               ],
             ),
           ),
@@ -638,7 +732,19 @@ class _MaintenanceRequestsState extends State<MaintenanceRequests> {
     try {
       var _products = await getMaintenanceRequests(_page);
       setState(() {
-        AllProducts = _products;
+        if (_products != null && _products["data"] != null) {
+          AllProducts = _products["data"];
+          DoneStatus = _products["statusCounts"]["done"] ?? 0;
+          PendingStatus = _products["statusCounts"]["pending"] ?? 0;
+          InProgressStatus = _products["statusCounts"]["in_progress"] ?? 0;
+          DeliveredStatus = _products["statusCounts"]["delivered"] ?? 0;
+        } else {
+          AllProducts = [];
+          DoneStatus = 0;
+          PendingStatus = 0;
+          InProgressStatus = 0;
+          DeliveredStatus = 0;
+        }
       });
     } catch (err) {
       if (kDebugMode) {

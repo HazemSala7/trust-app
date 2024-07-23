@@ -22,12 +22,14 @@ class WarrantyCard extends StatefulWidget {
   final int cost;
   final String customerName;
   bool showMore = false;
+  bool showCost = false;
   final double latitude;
   final double longitude;
 
   WarrantyCard({
     this.warrantieStatus = true,
     this.showMore = false,
+    required this.showCost,
     this.customerPhone = "",
     this.productName = "",
     this.initialStatus = "",
@@ -59,7 +61,11 @@ class _WarrantyCardState extends State<WarrantyCard> {
       barrierColor: Colors.black.withOpacity(0.5),
       transitionDuration: Duration(milliseconds: 300),
       pageBuilder: (context, animation, secondaryAnimation) {
-        String statusValue = widget.initialStatus;
+        String statusValue = widget.initialStatus.toString() == "done"
+            ? "delivered"
+            : widget.initialStatus.toString() == "pending"
+                ? "in_progress"
+                : widget.initialStatus.toString();
 
         NotesController.text = widget.notes;
         CostController.text = widget.cost.toString();
@@ -86,25 +92,32 @@ class _WarrantyCardState extends State<WarrantyCard> {
                             AppLocalizations.of(context)!.edit,
                             style: TextStyle(fontSize: 18, color: Colors.white),
                           ),
-                          SizedBox(height: 20),
-                          ButtonWidget(
-                            name: AppLocalizations.of(context).pending,
-                            height: 40,
-                            width: double.infinity,
-                            BorderColor: MAIN_COLOR,
-                            FontSize: 18,
-                            OnClickFunction: () {
-                              setState(() {
-                                statusValue = "pending";
-                              });
-                            },
-                            BorderRaduis: 40,
-                            ButtonColor: statusValue == "pending"
-                                ? MAIN_COLOR
-                                : Colors.white,
-                            NameColor: statusValue == "pending"
-                                ? Colors.white
-                                : Colors.black,
+                          Visibility(
+                            visible: widget.showCost,
+                            child: Column(
+                              children: [
+                                SizedBox(height: 20),
+                                ButtonWidget(
+                                  name: AppLocalizations.of(context).pending,
+                                  height: 40,
+                                  width: double.infinity,
+                                  BorderColor: MAIN_COLOR,
+                                  FontSize: 18,
+                                  OnClickFunction: () {
+                                    setState(() {
+                                      statusValue = "pending";
+                                    });
+                                  },
+                                  BorderRaduis: 40,
+                                  ButtonColor: statusValue == "pending"
+                                      ? MAIN_COLOR
+                                      : Colors.white,
+                                  NameColor: statusValue == "pending"
+                                      ? Colors.white
+                                      : Colors.black,
+                                ),
+                              ],
+                            ),
                           ),
                           SizedBox(height: 15),
                           ButtonWidget(
@@ -126,25 +139,32 @@ class _WarrantyCardState extends State<WarrantyCard> {
                                 ? Colors.white
                                 : Colors.black,
                           ),
-                          SizedBox(height: 15),
-                          ButtonWidget(
-                            name: AppLocalizations.of(context).done,
-                            height: 40,
-                            width: double.infinity,
-                            BorderColor: MAIN_COLOR,
-                            FontSize: 18,
-                            OnClickFunction: () {
-                              setState(() {
-                                statusValue = "done";
-                              });
-                            },
-                            BorderRaduis: 40,
-                            ButtonColor: statusValue == "done"
-                                ? MAIN_COLOR
-                                : Colors.white,
-                            NameColor: statusValue == "done"
-                                ? Colors.white
-                                : Colors.black,
+                          Visibility(
+                            visible: widget.showCost,
+                            child: Column(
+                              children: [
+                                SizedBox(height: 15),
+                                ButtonWidget(
+                                  name: AppLocalizations.of(context).done,
+                                  height: 40,
+                                  width: double.infinity,
+                                  BorderColor: MAIN_COLOR,
+                                  FontSize: 18,
+                                  OnClickFunction: () {
+                                    setState(() {
+                                      statusValue = "done";
+                                    });
+                                  },
+                                  BorderRaduis: 40,
+                                  ButtonColor: statusValue == "done"
+                                      ? MAIN_COLOR
+                                      : Colors.white,
+                                  NameColor: statusValue == "done"
+                                      ? Colors.white
+                                      : Colors.black,
+                                ),
+                              ],
+                            ),
                           ),
                           SizedBox(height: 15),
                           ButtonWidget(
@@ -168,97 +188,101 @@ class _WarrantyCardState extends State<WarrantyCard> {
                           ),
                           SizedBox(height: 20),
                           Visibility(
+                              visible: widget.showCost,
                               child: Column(
-                            children: [
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Text(
-                                    AppLocalizations.of(context).cost,
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 14,
-                                        color: Colors.white),
-                                  )
-                                ],
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(
-                                    left: 12, right: 12, top: 5),
-                                child: Container(
-                                  height: 40,
-                                  decoration: BoxDecoration(
-                                    color: Color(0xffEBEBEB),
-                                    borderRadius: BorderRadius.circular(40),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        AppLocalizations.of(context).cost,
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 14,
+                                            color: Colors.white),
+                                      )
+                                    ],
                                   ),
-                                  child: TextField(
-                                    controller: CostController,
-                                    obscureText: false,
-                                    maxLines: 1,
-                                    textAlign: TextAlign.center,
-                                    decoration: InputDecoration(
-                                      isDense: true,
-                                      contentPadding:
-                                          EdgeInsets.only(bottom: 10, top: 12),
-                                      hintStyle: TextStyle(
-                                          color:
-                                              Color.fromARGB(255, 85, 84, 84),
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 15),
-                                      border: InputBorder.none,
-                                      hintText:
-                                          AppLocalizations.of(context).cost,
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                        left: 12, right: 12, top: 5),
+                                    child: Container(
+                                      height: 40,
+                                      decoration: BoxDecoration(
+                                        color: Color(0xffEBEBEB),
+                                        borderRadius: BorderRadius.circular(40),
+                                      ),
+                                      child: TextField(
+                                        controller: CostController,
+                                        obscureText: false,
+                                        maxLines: 1,
+                                        textAlign: TextAlign.center,
+                                        decoration: InputDecoration(
+                                          isDense: true,
+                                          contentPadding: EdgeInsets.only(
+                                              bottom: 10, top: 12),
+                                          hintStyle: TextStyle(
+                                              color: Color.fromARGB(
+                                                  255, 85, 84, 84),
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 15),
+                                          border: InputBorder.none,
+                                          hintText:
+                                              AppLocalizations.of(context).cost,
+                                        ),
+                                      ),
                                     ),
                                   ),
-                                ),
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    AppLocalizations.of(context).notes,
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 14,
-                                        color: Colors.white),
-                                  )
-                                ],
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(
-                                    left: 12, right: 12, top: 5, bottom: 20),
-                                child: Container(
-                                  height: 80,
-                                  decoration: BoxDecoration(
-                                    color: Color(0xffEBEBEB),
-                                    borderRadius: BorderRadius.circular(10),
+                                  SizedBox(
+                                    height: 10,
                                   ),
-                                  child: TextField(
-                                    controller: NotesController,
-                                    obscureText: false,
-                                    maxLines: 3,
-                                    textAlign: TextAlign.center,
-                                    decoration: InputDecoration(
-                                      isDense: true,
-                                      contentPadding:
-                                          EdgeInsets.only(bottom: 10, top: 12),
-                                      hintStyle: TextStyle(
-                                          color:
-                                              Color.fromARGB(255, 85, 84, 84),
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 15),
-                                      border: InputBorder.none,
-                                      hintText:
-                                          AppLocalizations.of(context).notes,
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        AppLocalizations.of(context).notes,
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 14,
+                                            color: Colors.white),
+                                      )
+                                    ],
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                        left: 12,
+                                        right: 12,
+                                        top: 5,
+                                        bottom: 20),
+                                    child: Container(
+                                      height: 80,
+                                      decoration: BoxDecoration(
+                                        color: Color(0xffEBEBEB),
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                      child: TextField(
+                                        controller: NotesController,
+                                        obscureText: false,
+                                        maxLines: 3,
+                                        textAlign: TextAlign.center,
+                                        decoration: InputDecoration(
+                                          isDense: true,
+                                          contentPadding: EdgeInsets.only(
+                                              bottom: 10, top: 12),
+                                          hintStyle: TextStyle(
+                                              color: Color.fromARGB(
+                                                  255, 85, 84, 84),
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 15),
+                                          border: InputBorder.none,
+                                          hintText: AppLocalizations.of(context)
+                                              .notes,
+                                        ),
+                                      ),
                                     ),
                                   ),
-                                ),
-                              ),
-                            ],
-                          )),
+                                ],
+                              )),
                           ButtonWidget(
                             name: AppLocalizations.of(context)!.save_date,
                             height: 30,

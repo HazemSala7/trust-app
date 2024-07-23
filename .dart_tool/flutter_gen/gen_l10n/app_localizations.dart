@@ -101,6 +101,96 @@ abstract class AppLocalizations {
   /// **'New'**
   String get new_homepage;
 
+  /// No description provided for @under_maintenance.
+  ///
+  /// In en, this message translates to:
+  /// **'Under Maintenance'**
+  String get under_maintenance;
+
+  /// No description provided for @maintenance_done.
+  ///
+  /// In en, this message translates to:
+  /// **'Maintenance Done'**
+  String get maintenance_done;
+
+  /// No description provided for @waiting_for_delivery_for_maintenance.
+  ///
+  /// In en, this message translates to:
+  /// **'Waiting For Delivery'**
+  String get waiting_for_delivery_for_maintenance;
+
+  /// No description provided for @country.
+  ///
+  /// In en, this message translates to:
+  /// **'Country'**
+  String get country;
+
+  /// No description provided for @maintenance_requests_report.
+  ///
+  /// In en, this message translates to:
+  /// **'Maintenance Requests Report'**
+  String get maintenance_requests_report;
+
+  /// No description provided for @reset.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset'**
+  String get reset;
+
+  /// No description provided for @order_by_countries.
+  ///
+  /// In en, this message translates to:
+  /// **'Order By Countries'**
+  String get order_by_countries;
+
+  /// No description provided for @sort_by_maintenance_department.
+  ///
+  /// In en, this message translates to:
+  /// **'Sort by maintenance department'**
+  String get sort_by_maintenance_department;
+
+  /// No description provided for @apply.
+  ///
+  /// In en, this message translates to:
+  /// **'Apply'**
+  String get apply;
+
+  /// No description provided for @order_too_late.
+  ///
+  /// In en, this message translates to:
+  /// **'Too Late'**
+  String get order_too_late;
+
+  /// No description provided for @order_late.
+  ///
+  /// In en, this message translates to:
+  /// **'Late'**
+  String get order_late;
+
+  /// No description provided for @new_maintenance_requests.
+  ///
+  /// In en, this message translates to:
+  /// **'New Maintenance Requests'**
+  String get new_maintenance_requests;
+
+  /// No description provided for @activate_warranty.
+  ///
+  /// In en, this message translates to:
+  /// **'Activate Warranty'**
+  String get activate_warranty;
+
+  /// No description provided for @order_by.
+  ///
+  /// In en, this message translates to:
+  /// **'Order By'**
+  String get order_by;
+
+  /// No description provided for @sort_by_order_status.
+  ///
+  /// In en, this message translates to:
+  /// **'Sort By Order Status'**
+  String get sort_by_order_status;
+
   /// No description provided for @later.
   ///
   /// In en, this message translates to:

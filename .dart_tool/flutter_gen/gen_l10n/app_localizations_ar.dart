@@ -8,6 +8,51 @@ class AppLocalizationsAr extends AppLocalizations {
   String get new_homepage => 'جديد';
 
   @override
+  String get under_maintenance => 'قيد الصيانة';
+
+  @override
+  String get maintenance_done => 'تم الصيانة';
+
+  @override
+  String get waiting_for_delivery_for_maintenance => 'بانتظار التوصيل للصيانة';
+
+  @override
+  String get country => 'المحافظة';
+
+  @override
+  String get maintenance_requests_report => 'تقرير طلبات الصيانة';
+
+  @override
+  String get reset => 'اعادة';
+
+  @override
+  String get order_by_countries => 'ترتيب حسب المحافظات';
+
+  @override
+  String get sort_by_maintenance_department => 'ترتيب حسب قسم الصيانة';
+
+  @override
+  String get apply => 'تطبيق';
+
+  @override
+  String get order_too_late => 'متأخر جدا';
+
+  @override
+  String get order_late => 'متأخر';
+
+  @override
+  String get new_maintenance_requests => 'طلبات صيانة جديدة';
+
+  @override
+  String get activate_warranty => 'تفعيل كفالة';
+
+  @override
+  String get order_by => 'ترتيب حسب';
+
+  @override
+  String get sort_by_order_status => 'ترتيب حسب حالة الطلب';
+
+  @override
   String get later => 'لاحقا';
 
   @override
@@ -191,7 +236,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get categories_page => 'صفحة الأقسام';
 
   @override
-  String get order_status => 'حالة الطلبية';
+  String get order_status => 'حالة الطلبية : ';
 
   @override
   String get order_number => 'رقم الطلبية';

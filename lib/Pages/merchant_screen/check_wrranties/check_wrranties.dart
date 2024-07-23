@@ -26,6 +26,7 @@ class _CheckWrrantiesState extends State<CheckWrranties> {
   String resultMessageWarrantStatus = "";
   String productImage = "";
   String productName = "";
+  String WarrantCreatedAt = "";
   Widget build(BuildContext context) {
     return Container(
       color: MAIN_COLOR,
@@ -152,6 +153,11 @@ class _CheckWrrantiesState extends State<CheckWrranties> {
                                             "$URL_PRODUCT_BY_FIRST_SERIAL_PART/$serialNumberFirstPart");
                                         if (productData
                                             .containsKey("response")) {
+                                          WarrantCreatedAt =
+                                              responseWarranyData["response"]
+                                                      ["createdAt"]
+                                                  .toString()
+                                                  .substring(0, 10);
                                           var imageString =
                                               productData["response"]["image"];
                                           List<String> resultList = [];
@@ -182,6 +188,7 @@ class _CheckWrrantiesState extends State<CheckWrranties> {
                                           resultMessageWarrantStatus =
                                               AppLocalizations.of(context)!
                                                   .not_effectice;
+
                                           productImage = "";
                                           productName = "";
                                         });
@@ -251,6 +258,41 @@ class _CheckWrrantiesState extends State<CheckWrranties> {
                                         children: [
                                           Text(
                                             resultMessageWarrantStatus,
+                                            style: TextStyle(
+                                                fontSize: 16,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 10),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Column(
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Text(
+                                            "تاريخ التفعيل",
+                                            style: TextStyle(
+                                                fontSize: 16,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                        ],
+                                      ),
+                                      SizedBox(
+                                        height: 15,
+                                      ),
+                                      Row(
+                                        children: [
+                                          Text(
+                                            WarrantCreatedAt,
                                             style: TextStyle(
                                                 fontSize: 16,
                                                 fontWeight: FontWeight.bold),

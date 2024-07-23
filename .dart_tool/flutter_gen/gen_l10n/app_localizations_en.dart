@@ -8,6 +8,51 @@ class AppLocalizationsEn extends AppLocalizations {
   String get new_homepage => 'New';
 
   @override
+  String get under_maintenance => 'Under Maintenance';
+
+  @override
+  String get maintenance_done => 'Maintenance Done';
+
+  @override
+  String get waiting_for_delivery_for_maintenance => 'Waiting For Delivery';
+
+  @override
+  String get country => 'Country';
+
+  @override
+  String get maintenance_requests_report => 'Maintenance Requests Report';
+
+  @override
+  String get reset => 'Reset';
+
+  @override
+  String get order_by_countries => 'Order By Countries';
+
+  @override
+  String get sort_by_maintenance_department => 'Sort by maintenance department';
+
+  @override
+  String get apply => 'Apply';
+
+  @override
+  String get order_too_late => 'Too Late';
+
+  @override
+  String get order_late => 'Late';
+
+  @override
+  String get new_maintenance_requests => 'New Maintenance Requests';
+
+  @override
+  String get activate_warranty => 'Activate Warranty';
+
+  @override
+  String get order_by => 'Order By';
+
+  @override
+  String get sort_by_order_status => 'Sort By Order Status';
+
+  @override
   String get later => 'Later';
 
   @override

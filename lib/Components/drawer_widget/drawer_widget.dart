@@ -14,6 +14,8 @@ import 'package:well_app_flutter/Pages/my_account/my_account.dart';
 import 'package:well_app_flutter/Pages/my_account/my_orders/my_orders.dart';
 import 'package:well_app_flutter/Pages/wishlists/wishlists.dart';
 import 'package:well_app_flutter/Server/functions/functions.dart';
+import '../../Constants/constants.dart';
+import '../../Pages/merchant_screen/driver_screen/driver_screen.dart';
 import '../../Pages/merchant_screen/merchant_screen.dart';
 import '../../Pages/point_of_sales/point_of_sales.dart';
 import '../../main.dart';
@@ -105,11 +107,17 @@ class _DrawerWellState extends State<DrawerWell> {
               icon: Icons.category_sharp,
               iconPath: "assets/images/point_of_sales.svg"),
           Visibility(
-            visible: ROLEID.toString() == "3" ? true : false,
+            visible: ROLEID.toString() == "3" || ROLEID.toString() == "5"
+                ? true
+                : false,
             child: DrawerMethod(
                 name: AppLocalizations.of(context)!.warranties_and_maintenances,
                 OnCLICK: () {
-                  NavigatorFunction(context, MerchantScreen());
+                  if (ROLEID.toString() == "3") {
+                    NavigatorFunction(context, MerchantScreen());
+                  } else {
+                    NavigatorFunction(context, DriverScreen());
+                  }
                 },
                 icon: Icons.fmd_good,
                 iconPath: "assets/images/maintences_warranties.svg"),
@@ -202,18 +210,79 @@ class _DrawerWellState extends State<DrawerWell> {
             child: DrawerMethod(
                 name: AppLocalizations.of(context)!.logout,
                 OnCLICK: () async {
-                  SharedPreferences preferences =
-                      await SharedPreferences.getInstance();
-                  await preferences.clear();
-                  NavigatorFunction(context, HomeScreen(currentIndex: 0));
-                  Fluttertoast.showToast(
-                      msg: AppLocalizations.of(context)!.toastlogout,
-                      toastLength: Toast.LENGTH_SHORT,
-                      gravity: ToastGravity.BOTTOM,
-                      timeInSecForIosWeb: 3,
-                      backgroundColor: Colors.green,
-                      textColor: Colors.white,
-                      fontSize: 16.0);
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return AlertDialog(
+                        content: Text(
+                          AppLocalizations.of(context)!.logoutsure,
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        actions: <Widget>[
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              InkWell(
+                                onTap: () async {
+                                  SharedPreferences preferences =
+                                      await SharedPreferences.getInstance();
+                                  await preferences.clear();
+                                  NavigatorFunction(
+                                      context, HomeScreen(currentIndex: 0));
+                                  Fluttertoast.showToast(
+                                      msg: AppLocalizations.of(context)!
+                                          .toastlogout,
+                                      toastLength: Toast.LENGTH_SHORT,
+                                      gravity: ToastGravity.BOTTOM,
+                                      timeInSecForIosWeb: 3,
+                                      backgroundColor: Colors.green,
+                                      textColor: Colors.white,
+                                      fontSize: 16.0);
+                                },
+                                child: Container(
+                                  height: 50,
+                                  width: 100,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                      color: MAIN_COLOR),
+                                  child: Center(
+                                    child: Text(
+                                      AppLocalizations.of(context).yes,
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 15,
+                                          color: Colors.white),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              InkWell(
+                                onTap: () {
+                                  Navigator.pop(context);
+                                },
+                                child: Container(
+                                  height: 50,
+                                  width: 100,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                      color: MAIN_COLOR),
+                                  child: Center(
+                                    child: Text(
+                                      AppLocalizations.of(context).no,
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 15,
+                                          color: Colors.white),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          )
+                        ],
+                      );
+                    },
+                  );
                 },
                 icon: Icons.logout,
                 iconPath: "assets/images/logout.svg"),

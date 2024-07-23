@@ -236,7 +236,7 @@ class _ProductScreenState extends State<ProductScreen> {
                               errorBuilder: (BuildContext context,
                                   Object exception, StackTrace? stackTrace) {
                                 return Image.asset(
-                                  "assets/images/logo_well.png",
+                                  "assets/images/icon.png",
                                   fit: BoxFit.cover,
                                   height:
                                       MediaQuery.of(context).size.height * 0.4,
@@ -1681,7 +1681,7 @@ class _ProductScreenState extends State<ProductScreen> {
                       InkWell(
                         onTap: () {
                           String modifiedUrl = modifyURL(
-                              "http://well.com.co/$ShareUrl/${name_en}");
+                              "http://test.redtrust.ps/$ShareUrl/${name_en}");
 
                           Share.share(modifiedUrl);
                         },
@@ -1874,7 +1874,7 @@ class _ProductScreenState extends State<ProductScreen> {
                                                             resultList[0],
                                                         errorWidget:
                                                             Image.asset(
-                                                          "assets/images/logo_well.png",
+                                                          "assets/images/icon.png",
                                                           fit: BoxFit.cover,
                                                           height: isTablet
                                                               ? 230

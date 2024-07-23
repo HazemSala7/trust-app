@@ -88,6 +88,22 @@ class _MerchantScreenState extends State<MerchantScreen> {
                               padding: const EdgeInsets.only(top: 15),
                               child: ButtonWidget(
                                   name: AppLocalizations.of(context)!
+                                      .activate_warranty,
+                                  height: 50,
+                                  width: double.infinity,
+                                  BorderColor: Color(0xffEBEBEB),
+                                  FontSize: 16,
+                                  OnClickFunction: () {
+                                    NavigatorFunction(context, AddWarranty());
+                                  },
+                                  BorderRaduis: 40,
+                                  ButtonColor: Color(0xffEBEBEB),
+                                  NameColor: Colors.black),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 15),
+                              child: ButtonWidget(
+                                  name: AppLocalizations.of(context)!
                                       .warranty_inspection,
                                   height: 50,
                                   width: double.infinity,

@@ -432,6 +432,7 @@ class _MaintenanceDepartmentState extends State<MaintenanceDepartment> {
                                                 padding: const EdgeInsets.only(
                                                     bottom: 15),
                                                 child: WarrantyCard(
+                                                  showCost: true,
                                                   showMore: true,
                                                   index: index,
                                                   cost: AllProducts[index]
@@ -540,11 +541,11 @@ class _MaintenanceDepartmentState extends State<MaintenanceDepartment> {
           : selectedCity == "الخليل"
               ? await getMaintenanceRequestsFilter(_page, "hebron")
               : await getMaintenanceRequestsFilter(_page, "ramallah");
-      for (int i = 0; i < _products.length; i++) {
-        warrantiesCard.add({"status": false, "id": _products[i]["id"]});
+      for (int i = 0; i < _products["data"].length; i++) {
+        warrantiesCard.add({"status": false, "id": _products["data"][i]["id"]});
       }
       setState(() {
-        AllProducts = _products;
+        AllProducts = _products["data"];
       });
     } catch (err) {
       if (kDebugMode) {
@@ -581,7 +582,7 @@ class _MaintenanceDepartmentState extends State<MaintenanceDepartment> {
           }
 
           setState(() {
-            AllProducts.addAll(_products);
+            AllProducts.addAll(_products["data"]);
           });
         } else {
           Fluttertoast.showToast(

@@ -16,6 +16,7 @@ var URL_SUB_CATEGORIES_SEASON = URL + "cats/SubCat";
 var URL_SINGLE_PRODUCT = URL + "products";
 var URL_OFFERS = URL + "offers";
 var URL_ORDERS = URL + "orders";
+var URL_NOTIFICATIONS = URL + "notifications";
 var URL_ABOUT_US = URL + "pages/welcome-to-well";
 var URL_CAT_PAGE = URL + "pages/categories-page";
 var URL_CONTACT = URL + "contact";
@@ -24,6 +25,7 @@ var URL_EDIT_NAME = URL + "auth/edit";
 var URL_EDIT_PASSWORD = URL + "auth/change-password";
 var URL_WARRANTIES = URL + "warranties";
 var URL_MERCHANTS = URL + "merchants";
+var URL_REPORTS = URL + "maintenanceRequests/requstsReport";
 var URL_MAINTENANCE_REQUESTS = URL + "maintenanceRequests";
 var URL_MAINTENNANCE_REQUEST_BY_PRODUCT_SERIAL_NUMBER =
     URL + "maintenanceRequests/ProductSerialNumber";

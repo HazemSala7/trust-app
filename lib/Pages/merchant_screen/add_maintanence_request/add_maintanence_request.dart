@@ -349,7 +349,7 @@ class _AddMaintanenceRequestState extends State<AddMaintanenceRequest> {
                                           borderRadius: 40,
                                           controller: DescriptionController,
                                           hintText: AppLocalizations.of(context)
-                                              .description,
+                                              .malfunction_description,
                                           height: 50,
                                           validator: null),
                                     ),

@@ -48,7 +48,7 @@ class _MyAccountState extends State<MyAccount> {
               backgroundColor: MAIN_COLOR,
               centerTitle: true,
               title: Image.asset(
-                "assets/images/logo-white.png",
+                "assets/images/logo_white.png",
                 height: 25,
               ),
               actions: [

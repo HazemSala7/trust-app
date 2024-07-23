@@ -1,4 +1,4 @@
-#Mon Jun 10 11:59:18 EEST 2024
+#Mon Jul 22 13:46:17 EEST 2024
 base.0=F\:\\Trust App\\trust_app_flutter\\build\\app\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex
